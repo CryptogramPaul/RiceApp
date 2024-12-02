@@ -38,7 +38,8 @@ function LoadSymptomsScript() {
       value.symptoms.forEach((symptom) => {
         container.append(`
                     <div class="col-12 col-xl-2">
-                        <input type="checkbox" class="form-control" id="${symptom.name}">
+                        <input class="form-check-input" type="checkbox" value="" id="${symptom.name}">
+                        <label for="${symptom.name}">${symptom.name}</label>
                         
                     </div>
                 `);
