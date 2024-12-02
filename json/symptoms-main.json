@@ -1,0 +1,110 @@
+[
+    {
+        "disease" : "Bacterial Leaf Blight" ,
+        "symptoms" : [
+            {
+                "name" :  "Nalalantang Dahon",
+                "img_path" : "images/16.jpg"
+            },
+            {
+                "name" :  "Lumulukot",
+                "img_path" : "images/16.jpg"
+            },
+            {
+                "name" :  "Abuhing-berde",
+                "img_path" : "images/16.jpg"
+            },
+            {
+                "name" :  "Dilaw ang dahon",
+                "img_path" : "images/16.jpg"
+            },
+            {
+                "name" :  "Natutuyo ang palay",
+                "img_path" : "images/16.jpg"
+            }
+           
+        ],
+        "description" : "disease",
+        "recommendations" : [
+            "1",
+            "2",
+            "3",
+            "4"
+        ],
+        "treatment" : [
+            "treatment1",
+            "treatment2",
+            "treatment3"
+        ]
+        
+    },
+
+    {
+        "disease" : "Bacterial Leaf Streak" ,
+        "symptoms" : [
+            {
+                "name" :  "Streak sa gitnang bahagi",
+                "img_path" : "images/16.jpg"
+            },
+            {
+                "name" :  "Naninilaw at Tumutuyo",
+                "img_path" : "images/16.jpg"
+            },
+            {
+                "name" :  "Naga brown ang dahon",
+                "img_path" : "images/16.jpg"
+            },
+            {
+                "name" :  "Palabog nga marka sa dahon",
+                "img_path" : "images/16.jpg"
+            },
+            {
+                "name" :  "Yellow colorea droplets",
+                "img_path" : "images/16.jpg"
+            }
+
+        ],
+        "description" : "disease",
+        "recommendations" : [
+            "recommendation1",
+            "recommendation2",
+            "recommendation3"
+        ],
+        "treatment" : [
+            "treatment1",
+            "treatment2",
+            "treatment3"
+        ]
+
+    },
+
+    {
+        "disease" : "Brown Spot" ,
+        "symptoms" : [
+            {
+                "name" :  "Bilog nga marka sa dahon",
+                "img_path" : "images/16.jpg"
+            },
+            {
+                "name" :  "Spots on leaves with brown margin",
+                "img_path" : "images/16.jpg"
+            },
+            {
+                "name" :  "Brown panicle",
+                "img_path" : "images/16.jpg"
+            }
+        ],
+        "description" : "disease",
+        "recommendations" : [
+            "recommendation1",
+            "recommendation2",
+            "recommendation3"
+        ],
+        "treatment" : [
+            "treatment1",
+            "treatment2",
+            "treatment3"
+        ]
+
+    }
+]
