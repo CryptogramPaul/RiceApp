@@ -25,6 +25,8 @@
 // 			});
 // 		})
 // 	}
+//<label for="${symptom.name}">${symptom.name}</label>
+// <img src="${symptom.img_path}" alt="${symptom.name}" width="auto" />
 
 function LoadSymptomsScript() {
   const url = "json/symptoms-main.json";
@@ -36,9 +38,8 @@ function LoadSymptomsScript() {
       value.symptoms.forEach((symptom) => {
         container.append(`
                     <div class="col-12 col-xl-2">
+                        <input type="checkbox" class="form-control" id="${symptom.name}">
                         
-                        <label for="${symptom.name}">${symptom.name}</label>
-                        <img src="${symptom.img_path}" alt="${symptom.name}" width="auto" />
                     </div>
                 `);
       });
