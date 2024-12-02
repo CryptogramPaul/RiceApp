@@ -26,23 +26,22 @@
 // 		})
 // 	}
 
-function LoadSymptomsScript(){
-    const url = 'json/symptoms-main.json';
-    // const container = document.getElementById('LoadSymptoms');
-    const container = $('#LoadSymptoms');
+function LoadSymptomsScript() {
+  const url = "json/symptoms-main.json";
+  // const container = document.getElementById('LoadSymptoms');
+  const container = $("#LoadSymptoms");
 
-    $.getJSON(url, function(data){
-        data.forEach(value => {
-            
-            value.symptoms.forEach(symptom => {
-               container.append(`
+  $.getJSON(url, function (data) {
+    data.forEach((value) => {
+      value.symptoms.forEach((symptom) => {
+        container.append(`
                     <div class="col-12 col-xl-2">
-                        <input type="checkbox" class="form-control" id="${symptom.name}">
+                        
                         <label for="${symptom.name}">${symptom.name}</label>
                         <img src="${symptom.img_path}" alt="${symptom.name}" width="auto" />
                     </div>
-                `)
-            });
-        });
-    })
+                `);
+      });
+    });
+  });
 }
