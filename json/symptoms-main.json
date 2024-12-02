@@ -3,39 +3,45 @@
         "disease" : "Bacterial Leaf Blight" ,
         "symptoms" : [
             {
-                "name" :  "Nalalantang Dahon",
+                "name" :  "Pagkalanta sang dahon.",
                 "img_path" : "images/16.jpg"
             },
             {
-                "name" :  "Lumulukot",
+                "name" :  "Dilaw nga kurit sa dahon nga nagakurba ang magkabilang gilid.",
                 "img_path" : "images/16.jpg"
             },
             {
-                "name" :  "Abuhing-berde",
+                "name" :  "Dilaw nga parte sa dahon.",
                 "img_path" : "images/16.jpg"
             },
             {
-                "name" :  "Dilaw ang dahon",
+                "name" :  "Nagamara nga paray.",
                 "img_path" : "images/16.jpg"
             },
             {
-                "name" :  "Natutuyo ang palay",
+                "name" :  "Gagmay nga batik-batik nga brown.",
                 "img_path" : "images/16.jpg"
             }
            
         ],
-        "description" : "disease",
+        "description" : "Nagadala ini sang pagkalanta sa mga punla ukon kresek, kag pagkadilaw kag pagkamala sang mga dahon. Isa sa mga sintomas sini amo ang pagkadilaw (yellow) nga kurit halin sa tuktok sini kag may kurba ang magkabilang gilid.",
         "recommendations" : [
-            "1",
-            "2",
-            "3",
-            "4"
+            "Pagbulong sang binhi gamit ang bleaching powder (100g/l) kag zinc sulfate (2%) makabawas sang bacterial blight.",
+            "Pagbulong sang binhi-paghulom sang binhi sa sulod sang 8 ka oras sa Agrimycin (0.025%) kag wettable caresan (0.05%) kag init nga tubig sa sulod sang 30 ka minuti sa 52-54oC; paghulom sang binhi sa sulod ka 8 ka oras sa caresan (0.1%) kag pagbulong gamit ang Streptocyclin (3g sa 1 ka litro).",
+            "Mag-spray sang neem oil 3% o NSKE 5%.",
+            "Magtanum sang mga nursery sa husto nga lugar nga malayo sa uban nga lugar kag ara sa mataas nga lugar.",
+            "Likawan ang pag-utod sang mga seedling sa panahon sang pagtanum.",
+            "Balanseha ang pag-abuno, likawan ang sobra nga paggamit sang N- application.",
+            "I-skip ang N-application sapanahon sang booting (kung medyo mabug-at ang sakit).",
+            "Pamul on ang hilamon sa palibot."
+            
         ],
         "treatment" : [
-            "treatment1",
-            "treatment2",
-            "treatment3"
-        ]
+            "Pagbulong sang bini gamit ang bleaching powder (100g/l) kag zinc sulfate (2%) makabawas sang bacteria blight.",
+            "Pagtratar sang bini - pag-isod sang binhi sa sulod sang 8 ks oras sa Agrimycin (0.025%) kag wettable ceresan (0.05%) kag sunod sang 30 ka minuto sa 52-54oC; pag-isod sang binhi sa sulod sang 8 ka oras sa ceresan (0.1%) kag pagtratar gamit ang Streptocyclin (3g sa 1 la litro).",
+            "Mag-spray sang Streptomycin sulphate + Tetracycline nga gin-combine 300 g + Copper oxychloride 1.25kg/ha. Kon kinahanglan, balika pagkatapo sang 15 ka adlaw."
+        ],
+        "disease_img" : ""
         
     },
 
@@ -43,38 +49,49 @@
         "disease" : "Bacterial Leaf Streak" ,
         "symptoms" : [
             {
-                "name" :  "Streak sa gitnang bahagi",
+                "name" : "Nagamara ang dahon.",
                 "img_path" : "images/16.jpg"
             },
             {
-                "name" :  "Naninilaw at Tumutuyo",
+                "name" : "Dilaw nga parte sa dahon.",
                 "img_path" : "images/16.jpg"
             },
             {
-                "name" :  "Naga brown ang dahon",
+                "name" : "Ang streaks ukon marka sa dahon nagapalabog.",
                 "img_path" : "images/16.jpg"
             },
             {
-                "name" :  "Palabog nga marka sa dahon",
+                "name" : "Gagmay nga batik-batik nga brown.",
                 "img_path" : "images/16.jpg"
             },
             {
-                "name" :  "Yellow colorea droplets",
+                "name" : "Dilaw nga parte sa dahon.",
+                "img_path" : "images/16.jpg"
+            },
+            {
+                "name" : "May bilog nga marka sa dahon.",
+                "img_path" : "images/16.jpg"
+            },
+            {
+                "name" : "Gagmay nga batik-batik nga brown.",
+                "img_path" : "images/16.jpg"
+            },
+            {
+                "name" : "Dilaw nga parte sa dahon.", 
                 "img_path" : "images/16.jpg"
             }
-
         ],
-        "description" : "disease",
+        "description" : "Nagadala ini sang pagkamala kag pagkadilaw (yellow) sang mga dahon. Ang pag-usad sang streaks ukon marka nagapalabog, limitado sa mga ugat kag sa ulihi nagaka orange-brown ang kolor Ini ang sakit nga ginadala sang fungi nga nagaguba sa bisan diin nga parte sang paray. Isa sa mga sintomas sini amo ang pagkabatik-batik sa dahon nga may kayumanggi (brown) sa palibot sini. Ang impeksyon nagakatabo man sa bulak, li-og nga may angay mn nga kolor sang kayumanggi (brown).",
         "recommendations" : [
-            "recommendation1",
-            "recommendation2",
-            "recommendation3"
+           "",
+           ""
         ],
         "treatment" : [
             "treatment1",
             "treatment2",
             "treatment3"
-        ]
+        ],
+        "disease_img" : ""
 
     },
 
@@ -94,7 +111,7 @@
                 "img_path" : "images/16.jpg"
             }
         ],
-        "description" : "disease",
+        "description" : "Ini ang sakit nga ginadala sang fungi nga nagaguba sa bisan diin nga parte sang paray. Isa sa mga sintomas sini amo ang pagkabatik-batik sa dahon nga may kayumanggi (brown) sa palibot sini. Ang impeksyon nagakatabo man sa bulak, li-og nga may angay mn nga kolor sang kayumanggi (brown).",
         "recommendations" : [
             "recommendation1",
             "recommendation2",
@@ -104,7 +121,205 @@
             "treatment1",
             "treatment2",
             "treatment3"
-        ]
+        ],
+        "disease_img" : ""
+
+    },
+    {
+        "disease" : "Blast (leaf)" ,
+        "symptoms" : [
+            {
+                "name" : "hugis diyamante nga marka sa dahon.",
+                "img_path" : "images/16.jpg"
+            },
+            {
+                "name" : "Gagmay nga batik-batik nga brown.",
+                "img_path" : "images/16.jpg"
+            },
+            {
+                "name" : "Hugis mata ang marka nga may abo nga kolor sa tunga, naggapula ang palibot.",
+                "img_path" : "images/16.jpg"
+            }
+        ],
+        "description" : "Ang blast makita sa mga lugar nga indi kaayo mahalumigmig, nagaka eksperyensya sang malawig kag masami nga pag-uran, kag may mabugnaw nga temperatura sa aga. Ang mga sintomas sa dahon, amo sini ang pagka batik-batik nga dahon nga kayumanggi (brown) nga kolor kag mala hugis diyamante nga marka sa dahon.",
+        "recommendations" : [
+           "",
+           ""
+        ],
+        "treatment" : [
+            "treatment1",
+            "treatment2",
+            "treatment3"
+        ],
+        "disease_img" : ""
+
+    },
+    {
+        "disease" : "Blast (neck)" ,
+        "symptoms" : [
+            {
+                "name" :  "Kayumanggi (brown) nga kolor sang uhay.",
+                "img_path" : "images/16.jpg"
+            },
+            {
+                "name" :  "Kayumanggi (brown) nga kolor sang li-og sang paray.",
+                "img_path" : "images/16.jpg"
+            },
+            {
+                "name" :  "Nagakabali ang li-og sang paray.",
+                "img_path" : "images/16.jpg"
+            },
+            {
+                "name" :  "Puti nga uhay.",
+                "img_path" : "images/16.jpg"
+            }
+        ],
+        "description" : "Ang blast makita sa mga lugar nga indi kaayo mahalumigmig, nagaka eksperyensya sang malawig kag masami nga pag-uran, kag may mabugnaw nga temperatura sa aga. Ang rehiyon sang li-og sang bulak nagaka kayumanggi (brown) kag nagakupas sing lubos/ bahagya nga napunggan ang pagkabunga sang butil, ang bulak nagakabali sa li-og kag nagabitay.",
+        "recommendations" : [
+            "recommendation1",
+            "recommendation2",
+            "recommendation3"
+        ],
+        "treatment" : [
+            "treatment1",
+            "treatment2",
+            "treatment3"
+        ],
+        "disease_img" : ""
+
+    },
+    {
+        "disease" : "Blast (node)" ,
+        "symptoms" : [
+            {
+                "name" :  "Nagautod ang uhay.",
+                "img_path" : "images/16.jpg"
+            },
+            {
+                "name" :  "Grayish-brown nga kolor sang batok.",
+                "img_path" : "images/16.jpg"
+            },
+            {
+                "name" :  "Puti nga uhay.",
+                "img_path" : "images/16.jpg"
+            }
+        ],
+        "description" : "Ang blast makita sa mga lugar nga indi kaayo mahalumigmig, nagaka eksperyensya sang malawig kag masami nga pag-uran, kag may mabugnaw nga temperatura sa aga. Ang pinsala sang pamumutok-batok (node blast) amo ang pilas nga may malaabong-kayumanggi (grayish brown) ang kolor nga nagapalibot sa batok hasta nga mautod ang uhay.",
+        "recommendations" : [
+            "recommendation1",
+            "recommendation2",
+            "recommendation3"
+        ],
+        "treatment" : [
+            "treatment1",
+            "treatment2",
+            "treatment3"
+        ],
+        "disease_img" : ""
+    },
+    {
+        "disease" : "Sheath rot" ,
+        "symptoms" : [
+            {
+                "name" :  "Batik-batik nga kayumanggi (brown) sa lapak ukon talukap.",
+                "img_path" : "images/16.jpg"
+            },
+            {
+                "name" :  "Pagkadunot sang lapak (sheath).",
+                "img_path" : "images/16.jpg"
+            },
+            {
+                "name" :  "Kayumanggi (brown) nga kolor sang uhay.",
+                "img_path" : "images/16.jpg"
+            }
+        ],
+        "description" : "Ang sakit nagadala sang pagbuhin sang ani tungod sa pagka-hinay sang pagtubo ikon indi na pagtubo sang uhay. Ang mga sintomas amo ang pagkadunot sang lapak, mga batik-batik nga kayumanggi (brown) sa lapak ukon talukap, kag ang bata nga bunga nagapabilin sa lapak.",
+        "recommendations" : [
+            "Ang paggamit sang Pseudomonas fluorescens nakabawas sang kalubha sang sheath rot sa 20-42% nagpalig-on sang pagtubo sang tanum, kag nagdugang sang ani.",
+            "Pagbulong sang binhi gamit ang Bacillus subtilis sa 10g/kg sang binhi, sunod sa pag-dip sang mga seedlings sa 2.5 kg o mga produkto/ha nga gintunaw sa 100 ka litro kag pag-dip sa sulod sang 30 ka minuto.",
+            "Pagkuha sang mga infected nga stubs pagkatapos sang pag-ani.",
+            "Ang husto nga distansya sa pagtanum mahimo makabawas sang sakit.",
+            "Ginarekomenda man ang pag-apply sang potash sa panahon sang pag-tiller.",
+            "Kontrola ang mga hilamon kag padayon nga limpyuhan ang uma."
+
+        ],
+        "treatment" : [
+            "Para makontrol ang sheath rot, mag-soray sang mga fungicide sa panahon sa paggwa sang bulak.",
+            "Mahimo lang mag-apply sang Ediphenhos gamit ang high volume sprayers.",
+            "Ang paggamit sang systematic pesticide, Tridemorph (isa ka fungicide) kag Phosphamidon (isa ka insecticide) nga gincombine makaprotekta sa mga tanom gikan sa sheath rot.",
+            "Pagbulong sa binhi gamit ang mga fungicide pareho sang Mancozeb kag Benomyl epektibo nga mag-eliminar sang seedborne inoculum.",
+            "Sa panahonsang booting, ang pag-spray sa dahon gamit ang Carbendezim, Edifenphos, o Mancozeb nakita nga nagabawas sang sheath rot."
+        ],
+        "disease_img" : ""
+
+    },
+    {
+        "disease" : "Sheath blight" ,
+        "symptoms" : [
+            {
+                "name" :  "Nagamara ang dahon.",
+                "img_path" : "images/16.jpg"
+            },
+            {
+                "name" :  "Kayumanggi (brown) nga kolor sang uhay.",
+                "img_path" : "images/16.jpg"
+            },
+            {
+                "name" :  "Abo (gray) nga kolor sang batik-batik nga lapit sa lupa ukon nakalubong sa tubig.",
+                "img_path" : "images/16.jpg"
+            }
+        ],
+        "description" : "Nagadala ini sang pagkamala kag madasig nga pagkamatay sang dahon. Isa sa mga sintomas sini amo ang pagkaguba sang lapak lapit sa lebel sang tubig, mga batik-batik sa lapak ukon pagka kayumanggi (brown) sa kilid sini.",
+        "recommendations" : [
+            "Pagbulong sang binhi gamit ang Pseudomonas fluorescens sa 10g/kg sang binhi, sunid sa pag-dip sang mga seedling sa 2.5kg o mga produkto/ha nga gin-tunaw sa 100 ka litro kag pag-dip sa sulod sang 30 ka minuto.",
+            "Pag-apply sang P. Fluorescens sa duta sa 2.5kg/ha pagkatapos sang 30 ka adlaw nga pagtanum.",
+            "Likawan ang sobra nga paggamit sang abono.",
+            "Gamita ang husto nga distansya sa pagtanum.",
+            "Panggabuton ang mga hilamon.",
+            "Mag-araro sing madalom sa tag-init kag sunuga ang mga stubs."
+
+        ],
+        "treatment" : [
+            "Mahimo gamiton ang Carbendazim (1g/lit) kag Propiconazole (1ml/lit).",
+            "Epektibo ang pag-spray sang mga tanum nga may sakit gamit ang mga fungicides pareho sang Benomyl kag Iprodione, kag mga antibiotics pareho sang Validamycin kag Polyoxin batok sa sakit.",
+            "Mag-spray sang Carbendazim 250g o Chlorothalonil 1kg o Edifenphos 1 lit/ha."
+        ],
+        "disease_img" : ""
+
+    },
+    {
+        "disease" : "tungro" ,
+        "symptoms" : [
+            {
+                "name" :  "Dilaw nga parte sa dahon.",
+                "img_path" : "images/16.jpg"
+            },
+            {
+                "name" :  "Putot nga pagtubo sang paray.",
+                "img_path" : "images/16.jpg"
+            },
+            {
+                "name" :  "Pagkalanta sang dahon.",
+                "img_path" : "images/16.jpg"
+            }
+        ],
+        "description" : "Nagadala ini sang pagka dilaw (yellow) sang dahon, pagkaputot, pagbuhin sang kadamuon sang suwi, kag baog ukon wala sing laman o wala napuno ang mga butil.",
+        "recommendations" : [
+            "Ginarekomenda ang pag-adjust sang petsa sang pagtanum.",
+            "Pag-obserba sang fallow period nga indi magkubos sa isa ka bulan para malimpyuhan ang mga host kag mga virus kag vectors sang sakit.",
+            "Pagsunod sa crop rotation gamit ang mga pulses o oil seeds.",
+            "Pag-araro kag pag-arado sang uma para mabuol ang mga stubs kag tapos ani.",
+            "Paggabot sa mga hilamon."
+
+        ],
+        "treatment" : [
+            "Mahimo mapaubos ang pag-yellow sang mga dahon paagi sa pag-spray sang duha ka beses nga urea nga gin-mix sa Mancozeb sa 2.5 gm/lit.",
+            "Mahimo ka mag-spray sang multi-k (potassium nitrate) sa 1 porsyento nga nagadugang sang resistensya tungod sa taas nga potassium content.",
+            "Mag-spray sang insecticide duha ka beses, 15 kag 30 ka adlaw pagkatapos sang pagtanum",
+            "mahimo nga mag-spray sang Fenthion 100 EC (40 ml/ha) 15 kag 30 ka adlaw pagkatapos sang pagtanum",
+            "Dapat man mag-spray sang insecticide ang mga tanum sa mga bunds. Mantini ang 2.5 cm sang tubig sa nursery kag I-broadcast ang bisan ano sa masunod: 20 sentimos Carbonfuran 3G 3.5 kg. o Phorate 100G 1.0kg o Quinalphos 5G 2.0 kg."
+        ],
+        "disease_img" : ""
 
     }
 ]
