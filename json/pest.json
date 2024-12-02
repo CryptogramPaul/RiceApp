@@ -1,0 +1,110 @@
+[
+    {
+        "pest_name": "Bacterial Leaf Blight",
+        "description": "Pagkalaya o, pagkamala sang tanum nga ginatawag nga hopperburn. May bilog nga mga lugar sang pagkamala kag pagkahapay sang matured nga tanom. Ang mga ulod kag ang hamtong nga insekto nagatipon sa ubos sang tanom sa ibabaw sang lebel sang tubig.",
+        "recommendations": [
+            "Ginarekomenda ang papadrain sang uma sang humay sa sulod sang 3-4 ka adlaw sang temprano nga yugto sang pagsulong sang peste.",
+            "Mahimo nga buhinan ang paggamit sang nitrogen para mabawasan ang pagdamo sang brown planthopper.",
+            "Synchronous nga pagtanum  sa sulod sang 3 ka semana sang pagkalain-lain kag pagmentinar sang free-rice period mahimo man nga makabawas sa pagdamo sang brown planthopper."
+        ],
+        "treatment": [
+            "ETL: 2/ sanga sang tanum kon may 1 ka damang/bukid o wala/1/sanga sang tanum kon wala sing damang o isa ka hopper/ sanga sang tanum kon wala sing manunukob nga damang kag 2 ka hopper/ sanga sang tanum kon may 1 ka damang/ bukid.",
+            "I-drain ang tubig antis gamiton ang mga insecticide kag direktaha ang spray padulong sa ubos sang mga tanum.",
+            "Likawan ang paggamit sang mga insecticide nga mahimo magdamo sang peste, pareho sang synthetic pyrethroids, methyl parathuion, fenthon kag quinalphos."
+        ],
+        "pest_img" : ""
+    },
+    {
+        "pest_name": "Waya-waya (green leafhopper)",
+        "description": "Pagkadilaw sang mga dahon, nagasugod halin sa punta kag nagapadulog sa ubos, nagaresulta mn ini sang pagkulang o putot nga pagtubo sang tanom. Ini nga sapat mangin rason sa pagkalaya o pakamala sang tanum tungod sa pagsuyop sang katas ka tanum. Ang mga ulod kag ang mga hamtong nga insekto pareho nga nagasuyop sang katas sang tanum.",
+        "recommendations": [
+            "I-apply ang neem cake sa 12.5kg/20 sentimos nga nursery bilang basal dose.",
+            "Ang pagtanum sang mga tigulang nga mga seedling (> 3 ka semana) makabawas sang posibilidad nga malatnan sang viral diseases nga ginadala sang leafhoppers.",
+            "Ang nitrogen dapat I-apply kon kinahanglanon para malikawan ang pagdamo sang peste o pagpugong sa pag-ayo sang tanum gikan sa  kadaot sang planthopper painaagi sa paggamit sang kulang nga nitrogen.",
+            "Ang crop rotation sang mga tanum gamit ang indi-humay nga tanum sa panahon sang tig-init makabawas sang mga alternatibong host para sa mga sakit."
+        ],
+        "treatment": [
+            "ETL: 60/25 nga net sweeps o 5/bukid sa vegetative stage o 10/bukid sa panahon sang pagpamulak, o, 2/bukid sa lugar nga madamo sang tungro.",
+            "Pang inspeksyunon ang uma para sa presensya sang tungro kag waya-waya. Pang inspeksyunon ang 20 ka bukid samtang nagalakat nga diagonal sa tanum nga ginbalhin.",
+            "Mag-spray sang insecticide duha ka beses, 15 kag 30 ka adlaw pagkatapos sang pagtanum.",
+            "Mag-spray sang bisan ano sa mga masunod: Fenitrothin 50 EC 80ml o Phosphamidon 40 SL 50ml o Fenthion 100 EC 40ml o Quinalphos 25 EC 80ml o Phosalone 35 EC 120ml o Monocrotophos 36SL 40ml."
+        ],
+        "pest_img" : ""
+    },
+    {
+        "pest_name": "Mara-mara (mole cricket)",
+        "recommendations": [
+            "Ang kultural nga pagkontrol nagalakip sang pagmentinar sang tubig sa uma, nga makatabang sa pagtangtang sang mga itlog sa duta.",
+            "Mahimo nga magtangtang ang mga itlog pinaagi sa pagshave sang bunds kag pagplastar sang bag-o kag basa nga duta.",
+            "Ang pagpatag sa uma naghatag sing mas maayo nga pagkontrol sang tubig.",
+            "Dapat likawan ang pagtukod sang taas nga nursery para mabuhinan ang pagkaguba sang pagkaon sa mga seedlings."
+        ],
+        "treatment": [
+            "ETL: 60/25 nga net sweeps o 5/bukid sa vegetative stage o 10/bukid sa panahon sang pagpamulak, o, 2/bukid sa lugar nga madamo sang tungro.",
+            "Pang inspeksyunon ang uma para sa presensya sang tungro kag waya-waya. Pang inspeksyunon ang 20 ka bukid samtang nagalakat nga diagonal sa tanum nga ginbalhin.",
+            "Mag-spray sang insecticide duha ka beses, 15 kag 30 ka adlaw pagkatapos sang pagtanum.",
+            "Mag-spray sang bisan ano sa mga masunod: Fenitrothin 50 EC 80ml o Phosphamidon 40 SL 50ml o Fenthion 100 EC 40ml o Quinalphos 25 EC 80ml o Phosalone 35 EC 120ml o Monocrotophos 36SL 40ml."
+        ],
+        "pest_img" : ""
+    },
+    {
+        "pest_name": "Tiangaw (rice bug)",
+        "recommendations": [
+        
+        ],
+        "treatment": [
+            
+        ],
+        "pest_img" : ""
+    },
+    {
+        "pest_name": "Tamasok (stemborer)",
+        "recommendations": [
+        
+        ],
+        "treatment": [
+            
+        ],
+        "pest_img" : ""
+    },
+    {
+        "pest_name": "Lukot-lukot (leafolder)",
+        "recommendations": [
+        
+        ],
+        "treatment": [
+            
+        ],
+        "pest_img" : ""
+    },
+    {
+        "pest_name": "Balabaw (rats)",
+        "recommendations": [
+        
+        ],
+        "treatment": [
+            
+        ],
+        "pest_img" : ""
+    },
+    {
+        "pest_name": "Black bug",
+        "recommendations": [
+        
+        ],
+        "treatment": [
+            
+        ],
+        "pest_img" : ""
+    },
+    {
+        "pest_name": "Pispis",
+        "recommendations": [
+        
+        ],
+        "treatment": [
+            
+        ],
+        "pest_img" : ""
+    }
+]
