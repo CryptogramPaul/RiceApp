@@ -37,7 +37,7 @@ function LoadSymptomsScript() {
         const [name, { img_path, disease }] = symptomsArray[i];
 
         container.append(`
-          <div class="col-xl-3 my-1 symptom-item" data-name="${name.toLowerCase()}">
+          <div class="col-xl-3 col-sm-6 col-md-4 my-1 symptom-item" data-name="${name.toLowerCase()}">
             <div class="card mb-2">
               <img src="${img_path}" class="card-img-top symptoms_img" alt="${name}"  class="m-1" />
               <div class="card-body">
@@ -110,14 +110,13 @@ function loadDiseaseData() {
 
   $.getJSON(url, function (data) {
     data.forEach((entry) => {
-      entry.symptoms.forEach((symptom) => {
-        const { disease, disease_img } = symptom;
-
-        // Store the disease and its image if not already added
-        if (!diseaseData[disease]) {
-          diseaseData[disease] = disease_img;
-        }
-      });
+     
+      const disease = entry.disease;
+      const disease_img = entry.disease_img;
+    
+      if (!diseaseData[disease]) {
+        diseaseData[disease] = disease_img;
+      }
     });
   });
 }
@@ -126,7 +125,6 @@ function viewSelectedSymptoms() {
   loadDiseaseData();
   const selectedSymptomsList = $("#DiseaseList");
   selectedSymptomsList.empty();
-  // asdasd;
   const selectedDiseases = new Set();
 
   $(".symptom-checkbox:checked").each(function () {
@@ -139,9 +137,8 @@ function viewSelectedSymptoms() {
 
   selectedDiseases.forEach((disease) => {
     const diseaseImg = diseaseData[disease] || "images/sample.png";
-    console.log(diseaseImg);
     selectedSymptomsList.append(`
-      <div class="col-xl-3 my-1">
+      <div class="col-xl-3 col-sm-6 col-md-4 my-1">
         <div class="card mb-2">
           <img src="${diseaseImg}" class="card-img-top symptoms_img" alt="${disease}" class="m-1" />
           <div class="card-body">
@@ -149,6 +146,7 @@ function viewSelectedSymptoms() {
               <label class="form-check-label">
                 ${disease}
               </label>
+              <a href="x" class="text-center">VIEW INFORMATION</a>
             </div>
           </div>
         </div>
