@@ -18,7 +18,8 @@
 	<link rel="stylesheet" type="text/css" href="css/normalize.css">
 	<link rel="stylesheet" type="text/css" href="icomoon/icomoon.css">
 	<link rel="stylesheet" type="text/css" href="css/vendor.css">
-	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/card.css">
 
 </head>
 
@@ -119,8 +120,14 @@
 					</div>
 
 					<div class="product-list" data-aos="fade-up">
+						<div class="row">
+							<div class="col-12 col-xl-6">
+								<input type="search" class="form-control" onkeypress="handleSearch(event)"  id="SymptomSearch" placeholder="Search for symptoms" >
+							</div>
+						</div>
+						<hr>
 						<div class="row" id="LoadSymptoms">
-
+							
 						</div>
 					</div>
 
@@ -129,11 +136,8 @@
 				
 			<div class="row">
 				<div class="col-md-12">
-
 					<div class="btn-wrap align-right">
-						 
 					</div>
-
 				</div>
 			</div>
 		</div>
@@ -141,7 +145,7 @@
 	<section id="pest" class="py-5 my-5 bg-white" >
 		<div class="container">
 			<div class="row">
-				<div class="col-md-12">
+				<div class="col-12">
 					<div class="section-header align-center">
 						<div class="title">
 							<h2 class="section-title">Pest</h2>
@@ -182,5 +186,5 @@
 </html>
 <script>
 	LoadSymptomsScript();
-	
+	LoadPestScript();	
 </script>

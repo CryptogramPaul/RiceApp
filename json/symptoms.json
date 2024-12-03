@@ -4,23 +4,23 @@
         "symptoms" : [
             {
                 "name" :  "Pagkalanta sang dahon.",
-                "img_path" : "images/16.jpg"
+                "img_path" : "images/symptoms_img/nalantang_palay.png"
             },
             {
                 "name" :  "Dilaw nga kurit sa dahon nga nagakurba ang magkabilang gilid.",
-                "img_path" : "images/16.jpg"
+                "img_path" : "images/symptoms_img/dilaw_nga_kurit_sa_dahon_nga_nagakurba.png"
             },
             {
                 "name" :  "Dilaw nga parte sa dahon.",
-                "img_path" : "images/16.jpg"
+                "img_path" : "images/symptoms_img/dilaw_nga_parte_sa_dahon.jpeg"
             },
             {
                 "name" :  "Nagamara nga paray.",
-                "img_path" : "images/16.jpg"
+                "img_path" : "images/symptoms_img/nagmara_nga_paray.jpg"
             },
             {
                 "name" :  "Gagmay nga batik-batik nga brown.",
-                "img_path" : "images/16.jpg"
+                "img_path" : "images/symptoms_img/gagmay_nga_batik_batik_nga_brown.jpeg"
             }
            
         ],
@@ -50,35 +50,23 @@
         "symptoms" : [
             {
                 "name" : "Nagamara ang dahon.",
-                "img_path" : "images/16.jpg"
+                "img_path" : "images/symptoms_img/sample.png"
             },
             {
                 "name" : "Dilaw nga parte sa dahon.",
-                "img_path" : "images/16.jpg"
+                "img_path" : "images/symptoms_img/dilaw_nga_parte_sa_dahon.jpeg"
             },
             {
                 "name" : "Ang streaks ukon marka sa dahon nagapalabog.",
-                "img_path" : "images/16.jpg"
+                "img_path" : "images/symptoms_img/streaks_sa_dahon_nagapalabog.jpeg"
             },
             {
                 "name" : "Gagmay nga batik-batik nga brown.",
-                "img_path" : "images/16.jpg"
-            },
-            {
-                "name" : "Dilaw nga parte sa dahon.",
-                "img_path" : "images/16.jpg"
+                "img_path" : "images/symptoms_img/gagmay_nga_batik_batik_nga_brown.jpeg"
             },
             {
                 "name" : "May bilog nga marka sa dahon.",
-                "img_path" : "images/16.jpg"
-            },
-            {
-                "name" : "Gagmay nga batik-batik nga brown.",
-                "img_path" : "images/16.jpg"
-            },
-            {
-                "name" : "Dilaw nga parte sa dahon.", 
-                "img_path" : "images/16.jpg"
+                "img_path" : "images/symptoms_img/may_bilog_nga_marka_sa_dahon.png"
             }
         ],
         "description" : "Nagadala ini sang pagkamala kag pagkadilaw (yellow) sang mga dahon. Ang pag-usad sang streaks ukon marka nagapalabog, limitado sa mga ugat kag sa ulihi nagaka orange-brown ang kolor Ini ang sakit nga ginadala sang fungi nga nagaguba sa bisan diin nga parte sang paray. Isa sa mga sintomas sini amo ang pagkabatik-batik sa dahon nga may kayumanggi (brown) sa palibot sini. Ang impeksyon nagakatabo man sa bulak, li-og nga may angay mn nga kolor sang kayumanggi (brown).",
@@ -99,16 +87,16 @@
         "disease" : "Brown Spot" ,
         "symptoms" : [
             {
-                "name" :  "Bilog nga marka sa dahon",
-                "img_path" : "images/16.jpg"
+                "name" :  "May bilog nga marka sa dahon.",
+                "img_path" : "images/symptoms_img/may_bilog_nga_marka_sa_dahon.png"
             },
             {
                 "name" :  "Spots on leaves with brown margin",
-                "img_path" : "images/16.jpg"
+                "img_path" : "images/symptoms_img/gagmay_nga_batik_batik_nga_brown.jpeg"
             },
             {
                 "name" :  "Brown panicle",
-                "img_path" : "images/16.jpg"
+                "img_path" : "images/symptoms_img/sample.png"
             }
         ],
         "description" : "Ini ang sakit nga ginadala sang fungi nga nagaguba sa bisan diin nga parte sang paray. Isa sa mga sintomas sini amo ang pagkabatik-batik sa dahon nga may kayumanggi (brown) sa palibot sini. Ang impeksyon nagakatabo man sa bulak, li-og nga may angay mn nga kolor sang kayumanggi (brown).",
@@ -129,16 +117,16 @@
         "disease" : "Blast (leaf)" ,
         "symptoms" : [
             {
-                "name" : "hugis diyamante nga marka sa dahon.",
-                "img_path" : "images/16.jpg"
+                "name" : "Hugis diyamante nga marka sa dahon.",
+                "img_path" : "images/symptoms_img/hugis_diyamante_nga_marka_sa_dahon.png"
             },
             {
                 "name" : "Gagmay nga batik-batik nga brown.",
-                "img_path" : "images/16.jpg"
+                "img_path" : "images/symptoms_img/gagmay_nga_batik_batik_nga_brown.jpeg"
             },
             {
                 "name" : "Hugis mata ang marka nga may abo nga kolor sa tunga, naggapula ang palibot.",
-                "img_path" : "images/16.jpg"
+                "img_path" : "images/symptoms_img/hugis_mata_ang_marka_nga_may_abo_nga_kolor_sa_tunga_naggapula_ang_palibot.jpg"
             }
         ],
         "description" : "Ang blast makita sa mga lugar nga indi kaayo mahalumigmig, nagaka eksperyensya sang malawig kag masami nga pag-uran, kag may mabugnaw nga temperatura sa aga. Ang mga sintomas sa dahon, amo sini ang pagka batik-batik nga dahon nga kayumanggi (brown) nga kolor kag mala hugis diyamante nga marka sa dahon.",
@@ -159,19 +147,19 @@
         "symptoms" : [
             {
                 "name" :  "Kayumanggi (brown) nga kolor sang uhay.",
-                "img_path" : "images/16.jpg"
+                "img_path" : "images/symptoms_img/kayumanggi_(brown)_nga_kolor_sang_uhay.jpg"
             },
             {
                 "name" :  "Kayumanggi (brown) nga kolor sang li-og sang paray.",
-                "img_path" : "images/16.jpg"
+                "img_path" : "images/symptoms_img/kayumanggi_(brown)_nga_kolor_sang_li-ogsang_paray.jpg"
             },
             {
                 "name" :  "Nagakabali ang li-og sang paray.",
-                "img_path" : "images/16.jpg"
+                "img_path" : "images/symptoms_img/nagakabali_ang_li-og_sang_paray.jpg"
             },
             {
                 "name" :  "Puti nga uhay.",
-                "img_path" : "images/16.jpg"
+                "img_path" : "images/symptoms_img/puti_nga_uhay.jpg"
             }
         ],
         "description" : "Ang blast makita sa mga lugar nga indi kaayo mahalumigmig, nagaka eksperyensya sang malawig kag masami nga pag-uran, kag may mabugnaw nga temperatura sa aga. Ang rehiyon sang li-og sang bulak nagaka kayumanggi (brown) kag nagakupas sing lubos/ bahagya nga napunggan ang pagkabunga sang butil, ang bulak nagakabali sa li-og kag nagabitay.",
@@ -193,15 +181,15 @@
         "symptoms" : [
             {
                 "name" :  "Nagautod ang uhay.",
-                "img_path" : "images/16.jpg"
+                "img_path" : "images/symptoms_img/sample.png"
             },
             {
                 "name" :  "Grayish-brown nga kolor sang batok.",
-                "img_path" : "images/16.jpg"
+                "img_path" : "images/symptoms_img/sample.png"
             },
             {
                 "name" :  "Puti nga uhay.",
-                "img_path" : "images/16.jpg"
+                "img_path" : "images/symptoms_img/puti_nga_uhay.jpg"
             }
         ],
         "description" : "Ang blast makita sa mga lugar nga indi kaayo mahalumigmig, nagaka eksperyensya sang malawig kag masami nga pag-uran, kag may mabugnaw nga temperatura sa aga. Ang pinsala sang pamumutok-batok (node blast) amo ang pilas nga may malaabong-kayumanggi (grayish brown) ang kolor nga nagapalibot sa batok hasta nga mautod ang uhay.",
@@ -222,15 +210,15 @@
         "symptoms" : [
             {
                 "name" :  "Batik-batik nga kayumanggi (brown) sa lapak ukon talukap.",
-                "img_path" : "images/16.jpg"
+                "img_path" : "images/symptoms_img/gagmay_nga_batik_batik_nga_brown.jpeg"
             },
             {
                 "name" :  "Pagkadunot sang lapak (sheath).",
-                "img_path" : "images/16.jpg"
+                "img_path" : "images/symptoms_img/nalantang_palay.png"
             },
             {
                 "name" :  "Kayumanggi (brown) nga kolor sang uhay.",
-                "img_path" : "images/16.jpg"
+                "img_path" : "images/symptoms_img/kayumanggi_(brown)_nga_kolor_sang_uhay.jpg"
             }
         ],
         "description" : "Ang sakit nagadala sang pagbuhin sang ani tungod sa pagka-hinay sang pagtubo ikon indi na pagtubo sang uhay. Ang mga sintomas amo ang pagkadunot sang lapak, mga batik-batik nga kayumanggi (brown) sa lapak ukon talukap, kag ang bata nga bunga nagapabilin sa lapak.",
@@ -258,15 +246,15 @@
         "symptoms" : [
             {
                 "name" :  "Nagamara ang dahon.",
-                "img_path" : "images/16.jpg"
+                "img_path" : "images/symptoms_img/sample.png"
             },
             {
                 "name" :  "Kayumanggi (brown) nga kolor sang uhay.",
-                "img_path" : "images/16.jpg"
+                "img_path" : "images/symptoms_img/kayumanggi_(brown)_nga_kolor_sang_uhay.jpg"
             },
             {
                 "name" :  "Abo (gray) nga kolor sang batik-batik nga lapit sa lupa ukon nakalubong sa tubig.",
-                "img_path" : "images/16.jpg"
+                "img_path" : "images/symptoms_img/tulo_sang_katas_sa_dahon.png"
             }
         ],
         "description" : "Nagadala ini sang pagkamala kag madasig nga pagkamatay sang dahon. Isa sa mga sintomas sini amo ang pagkaguba sang lapak lapit sa lebel sang tubig, mga batik-batik sa lapak ukon pagka kayumanggi (brown) sa kilid sini.",
@@ -292,15 +280,15 @@
         "symptoms" : [
             {
                 "name" :  "Dilaw nga parte sa dahon.",
-                "img_path" : "images/16.jpg"
+                "img_path" : "images/symptoms_img/dilaw_nga_parte_sa_dahon.jpeg"
             },
             {
                 "name" :  "Putot nga pagtubo sang paray.",
-                "img_path" : "images/16.jpg"
+                "img_path" : "images/symptoms_img/sample.png"
             },
             {
                 "name" :  "Pagkalanta sang dahon.",
-                "img_path" : "images/16.jpg"
+                "img_path" : "images/symptoms_img/nalantang_palay.png"
             }
         ],
         "description" : "Nagadala ini sang pagka dilaw (yellow) sang dahon, pagkaputot, pagbuhin sang kadamuon sang suwi, kag baog ukon wala sing laman o wala napuno ang mga butil.",
