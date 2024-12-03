@@ -2,11 +2,11 @@ function LoadSymptomsScript() {
   const url = "json/symptoms.json";
   const container = $("#LoadSymptoms");
   const viewMoreButton = $(
-    '<button id="viewMoreButton" class="btn btn-secondary my-1" data-bs-toggle="modal" data-bs-target="#show_disease_modal"> <small>View More Symptoms</small></button>'
+    '<button id="viewMoreButton" class="btn btn-secondary my-1" > <small>More Symptoms</small></button>'
   );
 
   const ViewSymptomsButton = $(
-    '<button id="ViewSymptoms" class="btn btn-success my-3" title="View Symptoms" onclick="updateSelectedSymptoms()" disabled>View Symptoms</button>'
+    '<button id="ViewSymptoms" class="btn btn-success my-3" title="View Symptoms" onclick="viewSelectedSymptoms()" disabled>View Symptoms</button>'
   );
 
   $.getJSON(url, function (data) {
@@ -90,20 +90,109 @@ function LoadSymptomsScript() {
   });
 }
 
-let selectedSymptoms = [];
+// function updateSelectedSymptoms() {
+//   selectedSymptoms = [];
 
-function updateSelectedSymptoms() {
-  selectedSymptoms = [];
+//   $(".symptom-checkbox:checked").each(function () {
+//     const symptomName = $(this).siblings("label").text().trim();
+//     const disease = $(this).attr("disease");
+//     // selectedSymptoms.push(symptomName, disease);
+//     selectedSymptoms.push({ disease: disease, symptom: symptomName });
+//   });
+
+//   console.log(selectedSymptoms); // You can use this for debugging
+// }
+
+let diseaseData = {};
+
+function loadDiseaseData() {
+  const url = "json/symptoms.json";
+
+  $.getJSON(url, function (data) {
+    data.forEach((entry) => {
+      entry.symptoms.forEach((symptom) => {
+        const { disease, disease_img } = symptom;
+
+        // Store the disease and its image if not already added
+        if (!diseaseData[disease]) {
+          diseaseData[disease] = disease_img;
+        }
+      });
+    });
+  });
+}
+
+function viewSelectedSymptoms() {
+  loadDiseaseData();
+  const selectedSymptomsList = $("#DiseaseList");
+  selectedSymptomsList.empty();
+
+  const selectedDiseases = new Set();
 
   $(".symptom-checkbox:checked").each(function () {
-    const symptomName = $(this).siblings("label").text().trim();
     const disease = $(this).attr("disease");
-    // selectedSymptoms.push(symptomName, disease);
-    selectedSymptoms.push({ disease: disease, symptom: symptomName });
+
+    if (disease) {
+      selectedDiseases.add(disease);
+    }
   });
 
-  console.log(selectedSymptoms); // You can use this for debugging
+  selectedDiseases.forEach((disease) => {
+    const diseaseImg = diseaseData[disease] || "images/sample.png";
+    console.log(diseaseImg);
+    selectedSymptomsList.append(`
+      <div class="col-xl-3 my-1">
+        <div class="card mb-2">
+          <img src="${diseaseImg}" class="card-img-top symptoms_img" alt="${disease}" class="m-1" />
+          <div class="card-body">
+            <div class="form-check">
+              <label class="form-check-label">
+                ${disease}
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+    `);
+  });
+
+  const modal = new bootstrap.Modal(
+    document.getElementById("selectedSymptomsModal")
+  );
+  modal.show();
 }
+
+// let selectedSymptoms = [];
+
+// function viewSelectedSymptoms() {
+//   loadDiseaseData();
+
+//   const selectedSymptomsList = $("#DiseaseList");
+//   selectedSymptomsList.empty();
+
+//   $(".symptom-checkbox:checked").each(function () {
+//     const disease = $(this).attr("disease");
+//     selectedSymptomsList.append(`
+//         <div class="col-xl-3 my-1">
+//           <div class="card mb-2">
+//             <img src="" class="card-img-top symptoms_img" alt="${disease}"  class="m-1" />
+//             <div class="card-body">
+//               <div class="form-check">
+//                 <label class="form-check-label"">
+//                   ${disease}
+//                 </label>
+//               </div>
+//             </div>
+//           </div>
+//         </div>
+//       `);
+//   });
+
+//   const modal = new bootstrap.Modal(
+//     document.getElementById("selectedSymptomsModal")
+//   );
+//   modal.show();
+// }
 
 // function LoadSymptomsScript() {
 //   const url = "json/symptoms.json";

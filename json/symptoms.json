@@ -41,7 +41,7 @@
             "Pagtratar sang bini - pag-isod sang binhi sa sulod sang 8 ks oras sa Agrimycin (0.025%) kag wettable ceresan (0.05%) kag sunod sang 30 ka minuto sa 52-54oC; pag-isod sang binhi sa sulod sang 8 ka oras sa ceresan (0.1%) kag pagtratar gamit ang Streptocyclin (3g sa 1 la litro).",
             "Mag-spray sang Streptomycin sulphate + Tetracycline nga gin-combine 300 g + Copper oxychloride 1.25kg/ha. Kon kinahanglan, balika pagkatapo sang 15 ka adlaw."
         ],
-        "disease_img" : ""
+         "disease_img" : "images/disease/Bacterial_Leaf_Blight.jpg"
         
     },
 
@@ -79,7 +79,7 @@
             "treatment2",
             "treatment3"
         ],
-        "disease_img" : ""
+         "disease_img" : "images/disease/Bacterial_Leaf_Streak.jpg"
 
     },
 
@@ -139,7 +139,7 @@
             "treatment2",
             "treatment3"
         ],
-        "disease_img" : ""
+        "disease_img" : "images/disease/"
 
     },
     {
