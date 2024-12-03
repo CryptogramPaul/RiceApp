@@ -126,7 +126,7 @@ function viewSelectedSymptoms() {
   loadDiseaseData();
   const selectedSymptomsList = $("#DiseaseList");
   selectedSymptomsList.empty();
-
+  // asdasd;
   const selectedDiseases = new Set();
 
   $(".symptom-checkbox:checked").each(function () {
