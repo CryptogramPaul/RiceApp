@@ -105,7 +105,6 @@
 							<h2 class="section-title">Sintomas</h2>
 						</div>
 					</div>
-
 					<div class="product-list" data-aos="fade-up">
 						<div class="row">
 							<div class="col-12 col-xl-6">
@@ -114,12 +113,10 @@
 						</div>
 						<hr>
 						<div class="row" id="LoadSymptoms">
-							
 						</div>
 					</div>
-				</div><!--inner-content-->
+				</div>
 			</div>
-				
 			<div class="row">
 				<div class="col-md-12">
 					<div class="btn-wrap align-right">
@@ -137,23 +134,22 @@
 							<h2 class="section-title">Pest</h2>
 						</div>
 					</div>
-
 					<div class="product-list" data-aos="fade-up">
+						<div class="row">
+							<div class="col-12 col-xl-6">
+								<input type="search" class="form-control" onkeypress="PestSearch(event)"  id="PestSearch" placeholder="Search for pests" >
+							</div>
+						</div>
+						<hr>
 						<div class="row" id="LoadPest">
-
 						</div>
 					</div>
-
-				</div><!--inner-content-->
+				</div>
 			</div>
-				
 			<div class="row">
 				<div class="col-md-12">
-
-					<div class="btn-wrap align-right">
-						 
+					<div class="btn-wrap align-right">			 
 					</div>
-
 				</div>
 			</div>
 		</div>
@@ -183,7 +179,8 @@
 	crossorigin="anonymous"></script>
 <script src="js/plugins.js"></script>
 <script src="js/script.js"></script>
-<script src="js/json.js"></script>
+<script src="js/symptoms.js"></script>
+<script src="js/pest.js"></script>
 </html>
 <script>
 	LoadSymptomsScript();

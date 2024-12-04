@@ -61,17 +61,22 @@ function LoadSymptomsScript() {
       $("#NoRecordFound").hide();
 
       if (limit < totalSymptoms) {
-        container.append(viewMoreButton);
+        container.after(viewMoreButton);
       }
     }
 
     displaySymptoms(displayedSymptomsCount);
-    $("#viewMoreButton").before(ViewSymptomsButton);
+    $("#viewMoreButton").after(ViewSymptomsButton);
 
     viewMoreButton.on("click", function () {
-      displayedSymptomsCount += 8; // Load next 10 symptoms
-      displaySymptoms(displayedSymptomsCount); // Display them
-      $("#viewMoreButton").before(ViewSymptomsButton);
+      displayedSymptomsCount += 8;
+      displaySymptoms(displayedSymptomsCount);
+
+      if (displayedSymptomsCount >= totalSymptoms) {
+        viewMoreButton.hide(); // Hide the button
+      }
+
+      $("#viewMoreButton").after(ViewSymptomsButton);
     });
 
     container.on("change", ".symptom-checkbox", function () {
@@ -91,11 +96,13 @@ function LoadSymptomsScript() {
 }
 
 let diseaseData = {};
+let diseaseDataLoaded = false;
 
 function loadDiseaseData() {
-  const url = "json/symptoms.json";
+  if (diseaseDataLoaded) return Promise.resolve();
 
-  $.getJSON(url, function (data) {
+  const url = "json/symptoms.json";
+  return $.getJSON(url).then((data) => {
     data.forEach((entry) => {
       const disease = entry.disease;
       const disease_img = entry.disease_img;
@@ -104,47 +111,105 @@ function loadDiseaseData() {
         diseaseData[disease] = disease_img;
       }
     });
+    diseaseDataLoaded = true;
   });
 }
 
 function viewSelectedSymptoms() {
-  loadDiseaseData();
-  const selectedSymptomsList = $("#DiseaseList");
-  selectedSymptomsList.empty();
-  const selectedDiseases = new Set();
+  loadDiseaseData().then(() => {
+    const selectedSymptomsList = $("#DiseaseList");
+    selectedSymptomsList.empty();
+    const selectedDiseases = new Set();
 
-  $(".symptom-checkbox:checked").each(function () {
-    const disease = $(this).attr("disease");
+    $(".symptom-checkbox:checked").each(function () {
+      const disease = $(this).attr("disease");
 
-    if (disease) {
-      selectedDiseases.add(disease);
-    }
-  });
+      if (disease) {
+        selectedDiseases.add(disease);
+      }
+    });
 
-  selectedDiseases.forEach((disease) => {
-    const diseaseImg = diseaseData[disease] || "images/sample.png";
-    selectedSymptomsList.append(`
-      <div class="col-xl-3 col-sm-6 col-md-4 my-1">
-        <div class="card mb-2">
-          <img src="${diseaseImg}" class="card-img-top symptoms_img" alt="${disease}" class="m-1" />
-          <div class="card-body">
-            <div class="form-check">
-              <label class="form-check-label">
-                ${disease}
-              </label>
-              <button class="btn btn-sm btn-outline-success" style="height: 30px;" onclick="ViewInformation('${disease}')">VIEW INFORMATION</button>
+    selectedDiseases.forEach((disease) => {
+      const diseaseImg = diseaseData[disease] || "images/sample.png";
+      selectedSymptomsList.append(`
+        <div class="col-xl-3 col-sm-6 col-md-4 my-1">
+          <div class="card mb-2">
+            <img src="${diseaseImg}" class="card-img-top symptoms_img" alt="${disease}" class="m-1" />
+            <div class="card-body">
+              <div class="form-check">
+                <label class="form-check-label">
+                  ${disease}
+                </label>
+                <button class="btn btn-sm btn-outline-success" style="height: 30px;" onclick="ViewInformation('${disease}')">VIEW INFORMATION</button>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    `);
-  });
+      `);
+    });
 
-  const modal = new bootstrap.Modal(
-    document.getElementById("selectedSymptomsModal")
-  );
-  modal.show();
+    const modal = new bootstrap.Modal(
+      document.getElementById("selectedSymptomsModal")
+    );
+    modal.show();
+  });
 }
+
+// let diseaseData = {};
+
+// function loadDiseaseData() {
+//   const url = "json/symptoms.json";
+
+//   $.getJSON(url, function (data) {
+//     data.forEach((entry) => {
+//       const disease = entry.disease;
+//       const disease_img = entry.disease_img;
+
+//       if (!diseaseData[disease]) {
+//         diseaseData[disease] = disease_img;
+//       }
+//     });
+//   });
+// }
+
+// function viewSelectedSymptoms() {
+//   loadDiseaseData();
+//   const selectedSymptomsList = $("#DiseaseList");
+//   selectedSymptomsList.empty();
+//   const selectedDiseases = new Set();
+
+//   $(".symptom-checkbox:checked").each(function () {
+//     const disease = $(this).attr("disease");
+
+//     if (disease) {
+//       selectedDiseases.add(disease);
+//     }
+//   });
+
+//   selectedDiseases.forEach((disease) => {
+//     const diseaseImg = diseaseData[disease] || "images/sample.png";
+//     selectedSymptomsList.append(`
+//       <div class="col-xl-3 col-sm-6 col-md-4 my-1">
+//         <div class="card mb-2">
+//           <img src="${diseaseImg}" class="card-img-top symptoms_img" alt="${disease}" class="m-1" />
+//           <div class="card-body">
+//             <div class="form-check">
+//               <label class="form-check-label">
+//                 ${disease}
+//               </label>
+//               <button class="btn btn-sm btn-outline-success" style="height: 30px;" onclick="ViewInformation('${disease}')">VIEW INFORMATION</button>
+//             </div>
+//           </div>
+//         </div>
+//       </div>
+//     `);
+//   });
+
+//   const modal = new bootstrap.Modal(
+//     document.getElementById("selectedSymptomsModal")
+//   );
+//   modal.show();
+// }
 
 function ViewInformation(disease) {
   const url = "json/symptoms.json";
@@ -202,9 +267,9 @@ function ViewInformation(disease) {
         treList.appendChild(li);
       });
 
-      console.log("Description:", description);
-      console.log("Recommendations:", recommendations);
-      console.log("Treatments:", treatments);
+      // console.log("Description:", description);
+      // console.log("Recommendations:", recommendations);
+      // console.log("Treatments:", treatments);
     } else {
       console.log(`Disease "${disease}" not found in the dataset.`);
     }
@@ -279,20 +344,63 @@ function SearchSymptoms() {
   });
 }
 
-function LoadPestScript() {
-  const url = "json/pest.json";
-  // const container = document.getElementById('LoadSymptoms');
-  const container = $("#LoadPest");
+// PEST FUNCTIONS
 
-  $.getJSON(url, function (data) {
-    data.forEach((value) => {
-      container.append(`
-        <div class="col-12 col-xl-2">
-            <input class="form-check-input" type="checkbox" value="" id="${value.pest_name}">
-            <label for="${value.pest_name}">${value.pest_name}</label>
-            
-        </div>
-      `);
-    });
-  });
-}
+// function LoadPestScript() {
+//   const url = "json/pest.json";
+//   const container = $("#LoadPest");
+
+//   const viewPestMoreButton = $(
+//     '<button id="viewPestMoreButton" class="btn btn-secondary my-1" ><small>More Symptoms</small></button>'
+//   );
+
+//   const ViewPestSymptomsButton = $(
+//     '<button id="ViewPestSymptomsButton" class="btn btn-success my-3" title="View Symptoms" onclick="viewSelectedSymptoms()" disabled>View Symptoms</button>'
+//   );
+
+//   $.getJSON(url, function (data) {
+//     data.forEach((value) => {
+//       container.append(`
+//         <div class="col-xl-3 col-sm-6 col-md-4 my-1 pest-item" data-name="${value.pest_name.toLowerCase()}">
+//             <div class="card mb-2">
+//               <img src="${
+//                 value.pest_img
+//               }" class="card-img-top pests_img" alt="${
+//         value.pest_name
+//       }"  class="m-1" />
+//               <div class="card-body">
+//                 <div class="form-check">
+//                   <input class="form-check-input pest-checkbox" type="checkbox" pest="${
+//                     value.pest_name
+//                   }" id="${value.pest_name}">
+//                   <label for="${value.pest_name}">${value.pest_name}</label>
+//                 </div>
+//               </div>
+//             </div>
+//           </div>
+//       `);
+//     });
+
+//     container.append(`
+//         <div id="NoRecordFound" class="col-12">
+//           <p class="text-center">No records found</p>
+//         </div>
+//       `);
+
+//     $("#NoRecordFound").hide();
+
+//     container.on("change", ".pest-checkbox", function () {
+//       const checkedCount = $(".pest-checkbox:checked").length;
+//       $(ViewPestSymptomsButton).attr("disabled", false);
+
+//       if (checkedCount == 0) {
+//         $(ViewPestSymptomsButton).attr("disabled", true);
+//       }
+
+//       if (checkedCount > 5) {
+//         this.checked = false; // Uncheck the current box
+//         alert("You can select a maximum of 5 Pest.");
+//       }
+//     });
+//   });
+// }

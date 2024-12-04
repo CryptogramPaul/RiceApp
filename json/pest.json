@@ -1,6 +1,6 @@
 [
     {
-        "pest_name": "Bacterial Leaf Blight",
+        "pest_name": "Waya-waya (Brown Planthopper)",
         "description": "Pagkalaya o, pagkamala sang tanum nga ginatawag nga hopperburn. May bilog nga mga lugar sang pagkamala kag pagkahapay sang matured nga tanom. Ang mga ulod kag ang hamtong nga insekto nagatipon sa ubos sang tanom sa ibabaw sang lebel sang tubig.",
         "recommendations": [
             "Ginarekomenda ang papadrain sang uma sang humay sa sulod sang 3-4 ka adlaw sang temprano nga yugto sang pagsulong sang peste.",
@@ -12,10 +12,10 @@
             "I-drain ang tubig antis gamiton ang mga insecticide kag direktaha ang spray padulong sa ubos sang mga tanum.",
             "Likawan ang paggamit sang mga insecticide nga mahimo magdamo sang peste, pareho sang synthetic pyrethroids, methyl parathuion, fenthon kag quinalphos."
         ],
-        "pest_img" : ""
+        "pest_img" : "images/pest/brownleafhopper.jpg"
     },
     {
-        "pest_name": "Waya-waya (green leafhopper)",
+        "pest_name": "Waya-waya (Green Leafhopper)",
         "description": "Pagkadilaw sang mga dahon, nagasugod halin sa punta kag nagapadulog sa ubos, nagaresulta mn ini sang pagkulang o putot nga pagtubo sang tanom. Ini nga sapat mangin rason sa pagkalaya o pakamala sang tanum tungod sa pagsuyop sang katas ka tanum. Ang mga ulod kag ang mga hamtong nga insekto pareho nga nagasuyop sang katas sang tanum.",
         "recommendations": [
             "I-apply ang neem cake sa 12.5kg/20 sentimos nga nursery bilang basal dose.",
@@ -29,10 +29,10 @@
             "Mag-spray sang insecticide duha ka beses, 15 kag 30 ka adlaw pagkatapos sang pagtanum.",
             "Mag-spray sang bisan ano sa mga masunod: Fenitrothin 50 EC 80ml o Phosphamidon 40 SL 50ml o Fenthion 100 EC 40ml o Quinalphos 25 EC 80ml o Phosalone 35 EC 120ml o Monocrotophos 36SL 40ml."
         ],
-        "pest_img" : ""
+        "pest_img" : "images/pest/greenleafhopper.jpg"
     },
     {
-        "pest_name": "Mara-mara (mole cricket)",
+        "pest_name": "Mara-mara (Mole Cricket)",
         "recommendations": [
             "Ang kultural nga pagkontrol nagalakip sang pagmentinar sang tubig sa uma, nga makatabang sa pagtangtang sang mga itlog sa duta.",
             "Mahimo nga magtangtang ang mga itlog pinaagi sa pagshave sang bunds kag pagplastar sang bag-o kag basa nga duta.",
@@ -45,66 +45,90 @@
             "Mag-spray sang insecticide duha ka beses, 15 kag 30 ka adlaw pagkatapos sang pagtanum.",
             "Mag-spray sang bisan ano sa mga masunod: Fenitrothin 50 EC 80ml o Phosphamidon 40 SL 50ml o Fenthion 100 EC 40ml o Quinalphos 25 EC 80ml o Phosalone 35 EC 120ml o Monocrotophos 36SL 40ml."
         ],
-        "pest_img" : ""
+        "pest_img" : "images/pest/maramara.jpg"
     },
     {
-        "pest_name": "Tiangaw (rice bug)",
+        "pest_name": "Tiangaw (Rice bug)",
         "recommendations": [
-        
+            "",
+            "",
+            "" 
         ],
         "treatment": [
-            
+          "",
+          "",
+          ""  
         ],
-        "pest_img" : ""
+        "pest_img" : "images/pest/tiangaw.jpg"
     },
     {
-        "pest_name": "Tamasok (stemborer)",
+        "pest_name": "Tamasok (Stemborer)",
         "recommendations": [
-        
+            "",
+            "",
+            "" 
         ],
         "treatment": [
-            
+          "",
+          "",
+          ""  
         ],
-        "pest_img" : ""
+        "pest_img" : "images/pest/tamasok.jpg"
     },
     {
-        "pest_name": "Lukot-lukot (leafolder)",
+        "pest_name": "Lukot-lukot (Leafolder)",
         "recommendations": [
-        
+            "",
+            "",
+            "" 
         ],
         "treatment": [
-            
+          "",
+          "",
+          ""  
         ],
-        "pest_img" : ""
+        "pest_img" : "images/pest/lukotlukot.jpg"
     },
     {
-        "pest_name": "Balabaw (rats)",
+        "pest_name": "Balabaw (Rats)",
         "recommendations": [
-        
+            "",
+            "",
+            "" 
         ],
         "treatment": [
-            
+          "",
+          "",
+          ""  
         ],
-        "pest_img" : ""
+        "pest_img" : "images/pest/balabaw.jpg"
     },
     {
         "pest_name": "Black bug",
         "recommendations": [
-        
+            "",
+            "",
+            "" 
         ],
         "treatment": [
-            
+          "",
+          "",
+          ""  
         ],
-        "pest_img" : ""
+        "pest_img" : "images/pest/blackbug.jpg"
     },
     {
-        "pest_name": "Pispis",
+        "pest_name": "Pispis (Bird)",
         "recommendations": [
-        
+            "",
+            "",
+            "" 
         ],
         "treatment": [
-            
+          "",
+          "",
+          ""  
         ],
-        "pest_img" : ""
+        "pest_img" : "images/pest/pispis.jpg"
     }
 ]

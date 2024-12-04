@@ -110,7 +110,7 @@
             "treatment2",
             "treatment3"
         ],
-        "disease_img" : ""
+        "disease_img" : "images/disease/sample.png"
 
     },
     {
@@ -139,7 +139,7 @@
             "treatment2",
             "treatment3"
         ],
-        "disease_img" : "images/disease/"
+        "disease_img" : "images/disease/sample.png"
 
     },
     {
@@ -173,7 +173,7 @@
             "treatment2",
             "treatment3"
         ],
-        "disease_img" : ""
+        "disease_img" : "images/disease/sample.png"
 
     },
     {
@@ -203,7 +203,7 @@
             "treatment2",
             "treatment3"
         ],
-        "disease_img" : ""
+        "disease_img" : "images/disease/sample.png"
     },
     {
         "disease" : "Sheath rot" ,
@@ -238,7 +238,7 @@
             "Pagbulong sa binhi gamit ang mga fungicide pareho sang Mancozeb kag Benomyl epektibo nga mag-eliminar sang seedborne inoculum.",
             "Sa panahonsang booting, ang pag-spray sa dahon gamit ang Carbendezim, Edifenphos, o Mancozeb nakita nga nagabawas sang sheath rot."
         ],
-        "disease_img" : ""
+        "disease_img" : "images/disease/sample.png"
 
     },
     {
@@ -272,7 +272,7 @@
             "Epektibo ang pag-spray sang mga tanum nga may sakit gamit ang mga fungicides pareho sang Benomyl kag Iprodione, kag mga antibiotics pareho sang Validamycin kag Polyoxin batok sa sakit.",
             "Mag-spray sang Carbendazim 250g o Chlorothalonil 1kg o Edifenphos 1 lit/ha."
         ],
-        "disease_img" : ""
+        "disease_img" : "images/disease/sample.png"
 
     },
     {
@@ -307,7 +307,7 @@
             "mahimo nga mag-spray sang Fenthion 100 EC (40 ml/ha) 15 kag 30 ka adlaw pagkatapos sang pagtanum",
             "Dapat man mag-spray sang insecticide ang mga tanum sa mga bunds. Mantini ang 2.5 cm sang tubig sa nursery kag I-broadcast ang bisan ano sa masunod: 20 sentimos Carbonfuran 3G 3.5 kg. o Phorate 100G 1.0kg o Quinalphos 5G 2.0 kg."
         ],
-        "disease_img" : ""
+        "disease_img" : "images/disease/sample.png"
 
     }
 ]
