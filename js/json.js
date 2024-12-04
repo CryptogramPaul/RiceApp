@@ -2,7 +2,7 @@ function LoadSymptomsScript() {
   const url = "json/symptoms.json";
   const container = $("#LoadSymptoms");
   const viewMoreButton = $(
-    '<button id="viewMoreButton" class="btn btn-secondary my-1" > <small>More Symptoms</small></button>'
+    '<button id="viewMoreButton" class="btn btn-secondary my-1" ><small>More Symptoms</small></button>'
   );
 
   const ViewSymptomsButton = $(
@@ -90,19 +90,6 @@ function LoadSymptomsScript() {
   });
 }
 
-// function updateSelectedSymptoms() {
-//   selectedSymptoms = [];
-
-//   $(".symptom-checkbox:checked").each(function () {
-//     const symptomName = $(this).siblings("label").text().trim();
-//     const disease = $(this).attr("disease");
-//     // selectedSymptoms.push(symptomName, disease);
-//     selectedSymptoms.push({ disease: disease, symptom: symptomName });
-//   });
-
-//   console.log(selectedSymptoms); // You can use this for debugging
-// }
-
 let diseaseData = {};
 
 function loadDiseaseData() {
@@ -110,10 +97,9 @@ function loadDiseaseData() {
 
   $.getJSON(url, function (data) {
     data.forEach((entry) => {
-     
       const disease = entry.disease;
       const disease_img = entry.disease_img;
-    
+
       if (!diseaseData[disease]) {
         diseaseData[disease] = disease_img;
       }
@@ -146,7 +132,7 @@ function viewSelectedSymptoms() {
               <label class="form-check-label">
                 ${disease}
               </label>
-              <a href="x" class="text-center">VIEW INFORMATION</a>
+              <button class="btn btn-sm btn-outline-success" style="height: 30px;" onclick="ViewInformation('${disease}')">VIEW INFORMATION</button>
             </div>
           </div>
         </div>
@@ -160,158 +146,94 @@ function viewSelectedSymptoms() {
   modal.show();
 }
 
-// let selectedSymptoms = [];
+function ViewInformation(disease) {
+  const url = "json/symptoms.json";
+  const selectedSymptomsList = $("#DiseaseList");
+  selectedSymptomsList.empty();
 
-// function viewSelectedSymptoms() {
-//   loadDiseaseData();
+  $.getJSON(url, function (data) {
+    const diseaseEntry = data.find((entry) => entry.disease === disease);
 
-//   const selectedSymptomsList = $("#DiseaseList");
-//   selectedSymptomsList.empty();
+    if (diseaseEntry) {
+      const disease = diseaseEntry.disease;
+      const description = diseaseEntry.description;
+      const diseaseImg = diseaseEntry.disease_img;
+      const recommendations = diseaseEntry.recommendations || [];
+      const treatments = diseaseEntry.treatment || [];
 
-//   $(".symptom-checkbox:checked").each(function () {
-//     const disease = $(this).attr("disease");
-//     selectedSymptomsList.append(`
-//         <div class="col-xl-3 my-1">
-//           <div class="card mb-2">
-//             <img src="" class="card-img-top symptoms_img" alt="${disease}"  class="m-1" />
-//             <div class="card-body">
-//               <div class="form-check">
-//                 <label class="form-check-label"">
-//                   ${disease}
-//                 </label>
-//               </div>
-//             </div>
-//           </div>
-//         </div>
-//       `);
-//   });
+      selectedSymptomsList.append(`
+      <div class="col-12 col-xl-4 my-1">
+        <div class="card mb-2">
+          <img src="${diseaseImg}" class="card-img-top symptoms_img" alt="${disease}" class="m-1" />
+          <div class="card-body">
+              <h1 class="m-0 p-0">
+                ${disease}
+              </h1>
+          </div>
+          <div class="px-2">  
+            <h2 class="m-0 p-0">Descriptions:</h2>
+            <p class="card-text ">${description}</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-xl-4 " id="">
+        <h3>Recommendations:</h3>
+        <ul id="recommendations"></ul>
+      </div>
+      <div class="col-12 col-xl-4 " id="">
+        <h3>Treatment:</h3>
+        <ul id="treatment"></ul>
+      </div>
+    `);
 
-//   const modal = new bootstrap.Modal(
-//     document.getElementById("selectedSymptomsModal")
-//   );
-//   modal.show();
-// }
+      const recList = document.getElementById("recommendations");
+      recList.innerHTML = "";
+      recommendations.forEach((rec) => {
+        const li = document.createElement("li");
+        li.textContent = rec;
+        recList.appendChild(li);
+      });
 
-// function LoadSymptomsScript() {
+      const treList = document.getElementById("treatment");
+      treList.innerHTML = "";
+      treatments.forEach((treat) => {
+        const li = document.createElement("li");
+        li.textContent = treat;
+        treList.appendChild(li);
+      });
+
+      console.log("Description:", description);
+      console.log("Recommendations:", recommendations);
+      console.log("Treatments:", treatments);
+    } else {
+      console.log(`Disease "${disease}" not found in the dataset.`);
+    }
+  }).fail(function () {
+    console.error("Error loading the JSON file.");
+  });
+}
+
+// function ViewInformation(disease) {
 //   const url = "json/symptoms.json";
-//   const container = $("#LoadSymptoms");
-//   const viewMoreButton = $(`
-//     <button id="viewMoreButton" class="btn btn-secondary my-1">
-//       <small>View More Symptoms</small>
-//     </button>`);
-
-//   const ViewSymptomsButton = $(`
-//     <button id="ViewSymptoms" class="btn btn-success my-3" title="View Symptoms" disabled>
-//       View Symptoms
-//     </button>`);
 
 //   $.getJSON(url, function (data) {
-//     const groupedSymptoms = {};
-//     const diseaseData = [];
-
-//     data.forEach((value) => {
-//       value.symptoms.forEach((symptom) => {
-//         const name = symptom.name;
-//         if (!groupedSymptoms[name]) {
-//           groupedSymptoms[name] = symptom.img_path;
+//     data.forEach((entry) => {
+//       const descrption = entry.descrption;
+//       entry.recommendation.forEach((symptom) => {
+//         if (!diseaseData[disease]) {
+//           diseaseData[disease] = disease_img;
 //         }
 //       });
-
-//       diseaseData.push({
-//         disease: value.disease,
-//         symptoms: value.symptoms.map((s) => s.name.toLowerCase()), // Store symptoms as lowercase
+//       entry.recommendation.forEach((symptom) => {
+//         // Store the disease and its image if not already added
+//         if (!diseaseData[disease]) {
+//           diseaseData[disease] = disease_img;
+//         }
 //       });
 //     });
-
-//     const symptomsArray = Object.entries(groupedSymptoms);
-//     const totalSymptoms = symptomsArray.length;
-//     let displayedSymptomsCount = 8;
-
-//     // Function to append symptoms to the container
-//     function displaySymptoms(limit) {
-//       container.empty(); // Clear the current symptoms
-//       for (let i = 0; i < Math.min(limit, totalSymptoms); i++) {
-//         const [name, imgPath] = symptomsArray[i];
-//         container.append(`
-//           <div class="col-xl-3 my-1 symptom-item" data-name="${name.toLowerCase()}">
-//             <div class="card mb-2">
-//               <img src="${imgPath}" class="card-img-top symptoms_img" alt="${name}" width="" height="" class="m-1" />
-//               <div class="card-body">
-//                 <div class="form-check">
-//                   <input class="form-check-input symptom-checkbox" type="checkbox" value="" id="${name}">
-//                   <label class="form-check-label" for="${name}">
-//                     ${name}
-//                   </label>
-//                 </div>
-//               </div>
-//             </div>
-//           </div>
-//         `);
-//       }
-//       container.append(`
-//         <div id="NoRecordFound" class="col-12">
-//           <p class="text-center">No records found</p>
-//         </div>
-//       `);
-
-//       $("#NoRecordFound").hide();
-//       if (limit < totalSymptoms) {
-//         container.append(viewMoreButton);
-//       }
-//     }
-
-//     displaySymptoms(displayedSymptomsCount);
-//     $("#viewMoreButton").before(ViewSymptomsButton);
-
-//     viewMoreButton.on("click", function () {
-//       displayedSymptomsCount += 8; // Load next 8 symptoms
-//       displaySymptoms(displayedSymptomsCount); // Display them
-//       $("#viewMoreButton").before(ViewSymptomsButton);
-//     });
-
-//     container.on("change", ".symptom-checkbox", function () {
-//       const checkedSymptoms = $(".symptom-checkbox:checked")
-//         .map(function () {
-//           return $(this).attr("id").toLowerCase();
-//         })
-//         .get();
-
-//       const checkedCount = checkedSymptoms.length;
-//       $(ViewSymptomsButton).attr("disabled", false);
-
-//       if (checkedCount == 0) {
-//         $(ViewSymptomsButton).attr("disabled", true);
-//         $("#diseaseName").text(""); // Clear disease name if no symptoms selected
-//       }
-
-//       if (checkedCount > 5) {
-//         this.checked = false; // Uncheck the current box
-//         alert("You can select a maximum of 5 symptoms.");
-//       }
-
-//       // Check for disease based on selected symptoms
-//       if (checkedCount >= 1 && checkedCount <= 5) {
-//         findDiseaseBySymptoms(checkedSymptoms);
-//       }
-//     });
-
-//     function findDiseaseBySymptoms(selectedSymptoms) {
-//       const matchingDiseases = diseaseData.filter((disease) => {
-//         const symptoms = disease.symptoms;
-//         return selectedSymptoms.every((symptom) => symptoms.includes(symptom));
-//       });
-
-//       if (matchingDiseases.length > 0) {
-//         const diseaseName = matchingDiseases[0].disease;
-
-//         console.log(diseaseName);
-//         // $("#diseaseName").text("Possible Disease: " + diseaseName);
-//       } else {
-//         console.log("No matching disease found.");
-//         // $("#diseaseName").text("No matching disease found.");
-//       }
-//     }
 //   });
+
+//   console.log(disease);
 // }
 
 function handleSearch(event) {
@@ -329,59 +251,18 @@ function handleSearch(event) {
     }
   });
 
-  console.log(resultsFound);
+  // console.log(resultsFound);
 
   if (!resultsFound) {
-    $("#NoRecordFound").show();
     $("#viewMoreButton").hide();
+    $("#ViewSymptoms").hide();
+    $("#NoRecordFound").show();
   } else {
     $("#NoRecordFound").hide();
+    $("#ViewSymptoms").show();
     $("#viewMoreButton").show();
   }
 }
-// function LoadSymptomsScript() {
-//   const url = "json/symptoms.json";
-//   const container = $("#LoadSymptoms");
-
-//   $.getJSON(url, function (data) {
-//     const groupedSymptoms = {};
-
-//     data.forEach((value) => {
-//       value.symptoms.forEach((symptom) => {
-//         const name = symptom.name;
-//         if (!groupedSymptoms[name]) {
-//           groupedSymptoms[name] = symptom.img_path;
-//         }
-//       });
-//     });
-
-//     for (const [name, imgPath] of Object.entries(groupedSymptoms)) {
-//       container.append(`
-//         <div class="col-xl-3 my-1 symptom-item" data-name="${name.toLowerCase()}">
-//           <div class="card mb-2" >
-//             <img src="${imgPath}" class="card-img-top  symptoms_img" alt="${name}" width="" height="" class="m-1" />
-//             <div class="card-body">
-//               <div class="form-check">
-//                 <input class="form-check-input symptom-checkbox" type="checkbox" value="" id="${name}">
-//                 <label class="form-check-label" for="${name}">
-//                   ${name}
-//                 </label>
-//               </div>
-//             </div>
-//           </div>
-//         </div>
-//       `);
-//     }
-
-//     container.on("change", ".symptom-checkbox", function () {
-//       const checkedCount = $(".symptom-checkbox:checked").length;
-//       if (checkedCount > 5) {
-//         this.checked = false; // Uncheck the current box
-//         alert("You can select a maximum of 5 symptoms.");
-//       }
-//     });
-//   });
-// }
 
 function SearchSymptoms() {
   $("#symptomSearch").on("input", function () {
