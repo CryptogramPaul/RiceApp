@@ -2,9 +2,9 @@ function LoadPestScript() {
   const url = "json/pest.json";
   const container = $("#LoadPest");
 
-  const ViewPestSymptomsButton = $(
-    '<button id="ViewPestSymptomsButton" class="btn btn-success my-3 mx-2" title="View Symptoms" onclick="viewSelectedPest()" disabled>View Pest</button>'
-  );
+  // const ViewPestSymptomsButton = $(
+  //   '<button id="ViewPestSymptomsButton" class="btn btn-success my-3 mx-2" title="View Symptoms" onclick="viewSelectedPest()" disabled>View Pest</button>'
+  // );
 
   const viewPestMoreButton = $(
     '<button id="viewPestMoreButton" class="btn btn-secondary my-3 mx-2"><small>More Pest</small></button>'
@@ -14,7 +14,7 @@ function LoadPestScript() {
   const pestsPerLoad = 8; // Number of pests to display per load
 
   // Append buttons to the container
-  container.after(ViewPestSymptomsButton);
+  // container.after(ViewPestSymptomsButton);
   container.after(viewPestMoreButton);
 
   $.getJSON(url, function (data) {
@@ -43,26 +43,24 @@ function LoadPestScript() {
         `);
         pestCount++;
       }
-
-      container.append(`
-        <div id="NoPestRecordFound" class="col-12">
-          <p class="text-center">No records found</p>
-        </div>
-      `);
-
-      $("#NoPestRecordFound").hide();
-
-      if (pestCount >= data.length) {
-        viewPestMoreButton.hide(); // Hide the button when no more pests are left
-      }
-
       
+      if (pestCount >= data.length) {
+        viewPestMoreButton.hide(); 
+      }
     }
+    
+    container.append(`
+      <div id="NoPestRecordFound" class="col-12">
+        <p class="text-center">No records found.</p>
+      </div>
+    `);
+
+    $("#NoPestRecordFound").hide(); 
 
     loadPests();
-
     viewPestMoreButton.on("click", function () {
       loadPests();
+      $("#NoPestRecordFound").hide(); 
     });
 
   });
@@ -83,15 +81,11 @@ function PestSearch(event) {
     }
   });
 
-  // console.log(resultsFound);
-
   if (!resultsFound) {
     $("#viewPestMoreButton").hide();
-    $("#ViewPestSymptomsButton").hide();
     $("#NoPestRecordFound").show();
   } else {
     $("#NoPestRecordFound").hide();
-    $("#ViewPestSymptomsButton").show();
     $("#viewPestMoreButton").show();
   }
 }
@@ -171,71 +165,3 @@ function ViewPestInformation(pest) {
     modal.show();
 }
 
-
-
-function a(disease) {
-  const url = "json/symptoms.json";
-  const selectedSymptomsList = $("#DiseaseList");
-  selectedSymptomsList.empty();
-
-  $.getJSON(url, function (data) {
-    const diseaseEntry = data.find((entry) => entry.disease === disease);
-
-    if (diseaseEntry) {
-      const disease = diseaseEntry.disease;
-      const description = diseaseEntry.description;
-      const diseaseImg = diseaseEntry.disease_img;
-      const recommendations = diseaseEntry.recommendations || [];
-      const treatments = diseaseEntry.treatment || [];
-
-      selectedSymptomsList.append(`
-      <div class="col-12 col-xl-4 my-1">
-        <div class="card mb-2">
-          <img src="${diseaseImg}" class="card-img-top symptoms_img" alt="${disease}" class="m-1" />
-          <div class="card-body">
-              <h1 class="m-0 p-0">
-                ${disease}
-              </h1>
-          </div>
-          <div class="px-2">  
-            <h2 class="m-0 p-0">Descriptions:</h2>
-            <p class="card-text ">${description}</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-12 col-xl-4 " id="">
-        <h3>Recommendations:</h3>
-        <ul id="recommendations"></ul>
-      </div>
-      <div class="col-12 col-xl-4 " id="">
-        <h3>Treatment:</h3>
-        <ul id="treatment"></ul>
-      </div>
-    `);
-
-      const recList = document.getElementById("recommendations");
-      recList.innerHTML = "";
-      recommendations.forEach((rec) => {
-        const li = document.createElement("li");
-        li.textContent = rec;
-        recList.appendChild(li);
-      });
-
-      const treList = document.getElementById("treatment");
-      treList.innerHTML = "";
-      treatments.forEach((treat) => {
-        const li = document.createElement("li");
-        li.textContent = treat;
-        treList.appendChild(li);
-      });
-
-      // console.log("Description:", description);
-      // console.log("Recommendations:", recommendations);
-      // console.log("Treatments:", treatments);
-    } else {
-      console.log(`Disease "${disease}" not found in the dataset.`);
-    }
-  }).fail(function () {
-    console.error("Error loading the JSON file.");
-  });
-}
