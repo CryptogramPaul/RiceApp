@@ -33,6 +33,7 @@
     },
     {
         "pest_name": "Mara-mara (Mole Cricket)",
+        "description":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
         "recommendations": [
             "Ang kultural nga pagkontrol nagalakip sang pagmentinar sang tubig sa uma, nga makatabang sa pagtangtang sang mga itlog sa duta.",
             "Mahimo nga magtangtang ang mga itlog pinaagi sa pagshave sang bunds kag pagplastar sang bag-o kag basa nga duta.",
@@ -49,85 +50,91 @@
     },
     {
         "pest_name": "Tiangaw (Rice bug)",
+        "description":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
         "recommendations": [
-            "",
-            "",
-            "" 
+            "Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.",
+            "Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.",
+            "Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression." 
         ],
         "treatment": [
-          "",
-          "",
-          ""  
+          "Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.",
+          "Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.",
+          "Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression."  
         ],
         "pest_img" : "images/pest/tiangaw.jpg"
     },
     {
         "pest_name": "Tamasok (Stemborer)",
+        "description":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
         "recommendations": [
-            "",
-            "",
-            "" 
+            "Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.",
+            "Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.",
+            "Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression." 
         ],
         "treatment": [
-          "",
-          "",
-          ""  
+          "Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.",
+          "Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.",
+          "Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression."  
         ],
         "pest_img" : "images/pest/tamasok.jpg"
     },
     {
         "pest_name": "Lukot-lukot (Leafolder)",
+        "description":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
         "recommendations": [
-            "",
-            "",
-            "" 
+            "Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.",
+            "Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.",
+            "Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression." 
         ],
         "treatment": [
-          "",
-          "",
-          ""  
+          "Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.",
+          "Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.",
+          "Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression."  
         ],
         "pest_img" : "images/pest/lukotlukot.jpg"
     },
     {
         "pest_name": "Balabaw (Rats)",
+        "description":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
         "recommendations": [
-            "",
-            "",
-            "" 
+            "Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.",
+            "Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.",
+            "Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression." 
         ],
         "treatment": [
-          "",
-          "",
-          ""  
+          "Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.",
+          "Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.",
+          "Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression."  
         ],
         "pest_img" : "images/pest/balabaw.jpg"
     },
     {
         "pest_name": "Black bug",
+        "description":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
         "recommendations": [
-            "",
-            "",
-            "" 
+            "Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.",
+            "Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.",
+            "Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression." 
         ],
         "treatment": [
-          "",
-          "",
-          ""  
+          "Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.",
+          "Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.",
+          "Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression."  
         ],
         "pest_img" : "images/pest/blackbug.jpg"
     },
     {
         "pest_name": "Pispis (Bird)",
+        "description":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.",
         "recommendations": [
-            "",
-            "",
-            "" 
+            "Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.",
+            "Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.",
+            "Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression." 
         ],
         "treatment": [
-          "",
-          "",
-          ""  
+          "Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.",
+          "Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression.",
+          "Le Lorem Ipsum est simplement du faux texte employé dans la composition et la mise en page avant impression."  
         ],
         "pest_img" : "images/pest/pispis.jpg"
     }

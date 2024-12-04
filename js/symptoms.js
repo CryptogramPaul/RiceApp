@@ -2,11 +2,11 @@ function LoadSymptomsScript() {
   const url = "json/symptoms.json";
   const container = $("#LoadSymptoms");
   const viewMoreButton = $(
-    '<button id="viewMoreButton" class="btn btn-secondary my-1" ><small>More Symptoms</small></button>'
+    '<button id="viewMoreButton" class="btn btn-secondary my-3 mx-2" ><small>More Symptoms</small></button>'
   );
 
   const ViewSymptomsButton = $(
-    '<button id="ViewSymptoms" class="btn btn-success my-3" title="View Symptoms" onclick="viewSelectedSymptoms()" disabled>View Symptoms</button>'
+    '<button id="ViewSymptoms" class="btn btn-success my-3 mx-2" title="View Symptoms" onclick="viewSelectedSymptoms()" disabled>View Symptoms</button>'
   );
 
   $.getJSON(url, function (data) {
