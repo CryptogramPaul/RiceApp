@@ -4,11 +4,11 @@ function LoadSymptomsScript() {
   const url = "json/symptoms.json";
   const container = $("#LoadSymptoms");
   const viewMoreButton = $(
-    '<button id="viewMoreButton" class="btn btn-secondary my-1" ><small>More Symptoms</small></button>'
+    '<button id="viewMoreButton" class="btn btn-secondary my-3 mx-2" ><small>More Symptoms</small></button>'
   );
 
   const ViewSymptomsButton = $(
-    '<button id="ViewSymptoms" class="btn btn-success my-3" title="View Symptoms" onclick="viewSelectedSymptoms()" disabled>View Symptoms</button>'
+    '<button id="ViewSymptoms" class="btn btn-success my-3 mx-2" title="View Symptoms" onclick="viewSelectedSymptoms()" disabled>View Symptoms</button>'
   );
 
   $.getJSON(url, function (data) {
@@ -56,7 +56,7 @@ function LoadSymptomsScript() {
       }
       container.append(`
         <div id="NoRecordFound" class="col-12">
-          <p class="text-center">No records found</p>
+          <p class="text-center">No records found.</p>
         </div>
       `);
 
@@ -156,62 +156,6 @@ function viewSelectedSymptoms() {
     modal.show();
   });
 }
-
-// let diseaseData = {};
-
-// function loadDiseaseData() {
-//   const url = "json/symptoms.json";
-
-//   $.getJSON(url, function (data) {
-//     data.forEach((entry) => {
-//       const disease = entry.disease;
-//       const disease_img = entry.disease_img;
-
-//       if (!diseaseData[disease]) {
-//         diseaseData[disease] = disease_img;
-//       }
-//     });
-//   });
-// }
-
-// function viewSelectedSymptoms() {
-//   loadDiseaseData();
-//   const selectedSymptomsList = $("#DiseaseList");
-//   selectedSymptomsList.empty();
-//   const selectedDiseases = new Set();
-
-//   $(".symptom-checkbox:checked").each(function () {
-//     const disease = $(this).attr("disease");
-
-//     if (disease) {
-//       selectedDiseases.add(disease);
-//     }
-//   });
-
-//   selectedDiseases.forEach((disease) => {
-//     const diseaseImg = diseaseData[disease] || "images/sample.png";
-//     selectedSymptomsList.append(`
-//       <div class="col-xl-3 col-sm-6 col-md-4 my-1">
-//         <div class="card mb-2">
-//           <img src="${diseaseImg}" class="card-img-top symptoms_img" alt="${disease}" class="m-1" />
-//           <div class="card-body">
-//             <div class="form-check">
-//               <label class="form-check-label">
-//                 ${disease}
-//               </label>
-//               <button class="btn btn-sm btn-outline-success" style="height: 30px;" onclick="ViewInformation('${disease}')">VIEW INFORMATION</button>
-//             </div>
-//           </div>
-//         </div>
-//       </div>
-//     `);
-//   });
-
-//   const modal = new bootstrap.Modal(
-//     document.getElementById("selectedSymptomsModal")
-//   );
-//   modal.show();
-// }
 
 function ViewInformation(disease) {
   const url = "json/symptoms.json";
