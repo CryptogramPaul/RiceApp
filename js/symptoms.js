@@ -1,3 +1,5 @@
+LoadSymptomsScript();
+
 function LoadSymptomsScript() {
   const url = "json/symptoms.json";
   const container = $("#LoadSymptoms");

@@ -1,3 +1,5 @@
+LoadPestScript();
+
 function LoadPestScript() {
   const url = "json/pest.json";
   const container = $("#LoadPest");
