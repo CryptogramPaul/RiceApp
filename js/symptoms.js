@@ -8,7 +8,7 @@ function LoadSymptomsScript() {
   );
 
   const ViewSymptomsButton = $(
-    '<button id="ViewSymptoms" class="btn btn-success my-3 mx-2" title="View Symptoms" onclick="viewSelectedSymptoms()" disabled>View Symptoms</button>'
+    '<button id="ViewSymptoms" class="btn btn-success my-3 mx-2" title="View Symptoms" onclick="viewSelectedSymptoms()" disabled>View Diagnosis</button>'
   );
 
   $.getJSON(url, function (data) {
