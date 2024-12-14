@@ -1,12 +1,34 @@
 $(document).ready(function () {
   DiseaseDetails();
+
+  $("#FormDisease").on("submit", function (e) {
+    e.preventDefault();
+
+    if ($("#DiseaseOffCanvas").attr("operation") == 0) {
+      SaveDisease();
+    } else {
+      const id = $("#DiseaseOffCanvas").attr("disease_id");
+      UpdateDisease(id);
+    }
+  });
+
+  // $("#diseaseCanvas").oncanvas({
+  //   width: 600,
+  //   height: 400,
+  //   background: "#ffffff",
+  //   onDraw: function (context) {
+  //     context.fillStyle = "black";
+  //     context.font = "30px Arial";
+  //     context.fillText("Disease Canvas", 10, 30);
+  //   },
+  // });
 });
 function DiseaseDetails() {
   $.post("view/disease/components/disease-details.php", {}, function (data) {
     $("#LoadDiseaseDetails").html(data);
   });
 }
-function DiseaseEntry(id, operation) {
+function DiseaseEntry(operation, id) {
   $.post(
     "view/disease/components/disease-entry.php",
     {
@@ -15,29 +37,6 @@ function DiseaseEntry(id, operation) {
     },
     function (data) {
       $("#DiseaseEntry").html(data);
-    }
-  );
-}
-
-function SaveDisease() {
-  const disease_img = $("#disease_img")[0].files[0];
-  const disease = $("#disease_name").val();
-  const description = $("#disease_description").val();
-  $.post(
-    "view/disease/action/save.php",
-    {
-      disease_img: disease_img,
-      disease: disease,
-      description: description,
-    },
-    function (data) {
-      if (jQuery.trim(data) == "success") {
-        $("#diseaseCanvas").offcanvas("hide");
-        alert("Disease saved successfully");
-        DiseaseDetails();
-      } else {
-        alert(data);
-      }
     }
   );
 }

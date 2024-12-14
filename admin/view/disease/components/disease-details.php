@@ -17,10 +17,22 @@
 
 <tr>
     <td><?php echo $row['disease_id'] ?></td>
-    <td><?php echo $row['img_name'] ?></td>
+    <td><?php echo $row['disease_img'] ?></td>
     <td><?php echo $row['disease_name'] ?></td>
     <td><?php echo $row['descriptions'] ?></td>
-    <td></td>
+    <td>
+        <div class="d-flex justify-content-center">
+            <a class="badge bg-info text-white text-decoration-none badge-danger" data-bs-toggle="offcanvas"
+                data-bs-target="#diseaseCanvas" onclick="DiseaseEntry(1,<?php echo $row['disease_id'] ?>)" title="Edit">
+                <i class="fa fa-pen p-1"></i>
+            </a>
+            &nbsp;&nbsp;&nbsp;
+            <a class="badge bg-danger text-white text-decoration-none badge-primary"
+                onclick="DeleteDisease(<?php echo $row['disease_id'] ?>)" title="Delete">
+                <i class="fa fa-trash p-1"></i>
+            </a>
+        </div>
+    </td>
 </tr>
 
 <?php } ?>

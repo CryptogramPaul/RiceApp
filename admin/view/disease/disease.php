@@ -38,7 +38,7 @@
         </div>
     </div>
 </div>
-<form id="FormDiease">
+<form id="FormDisease">
     <div class="offcanvas offcanvas-end" data-bs-backdrop="false" tabindex="-1" id="diseaseCanvas"
         aria-labelledby="offcanvasRightLabel">
         <div class="offcanvas-header">
