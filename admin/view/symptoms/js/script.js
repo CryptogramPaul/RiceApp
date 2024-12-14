@@ -1,14 +1,14 @@
 $(document).ready(function () {
-  DiseaseDetails();
+  SymptomsDetails();
 
-  $("#FormDisease").on("submit", function (e) {
+  $("#FormSymptoms").on("submit", function (e) {
     e.preventDefault();
 
-    if ($("#DiseaseOffCanvas").attr("operation") == 0) {
-      SaveDisease();
+    if ($("#SymptomsOffCanvas").attr("operation") == 0) {
+      SaveSymptoms();
     } else {
-      const id = $("#DiseaseOffCanvas").attr("disease_id");
-      UpdateDisease(id);
+      const id = $("#SymptomsOffCanvas").attr("symptoms_id");
+      UpdateSymptoms(id);
     }
   });
 
@@ -23,26 +23,26 @@ $(document).ready(function () {
   //   },
   // });
 });
-function DiseaseDetails() {
-  $.post("view/disease/components/disease-details.php", {}, function (data) {
-    $("#LoadDiseaseDetails").html(data);
+function SymptomsDetails() {
+  $.post("view/symptoms/components/symptoms-details.php", {}, function (data) {
+    $("#LoadSymptomsDetails").html(data);
   });
 }
-function DiseaseEntry(operation, id) {
+function SymptomsEntry(operation, id) {
   $.post(
-    "view/disease/components/disease-entry.php",
+    "view/symptoms/components/symptoms-entry.php",
     {
       id: id,
       operation: operation,
     },
     function (data) {
-      $("#DiseaseEntry").html(data);
+      $("#SymptomsEntry").html(data);
     }
   );
 }
-function DeleteDisease(id){
+function DeleteSymptoms(id){
   $.post(
-    "view/disease/actions/delete.php",
+    "view/symptoms/actions/delete.php",
     {
       id: id,
      
@@ -50,7 +50,7 @@ function DeleteDisease(id){
     function (data) {
       if (jQuery.trim(data) === "success") {
         alert("Delete successfully");
-        DiseaseDetails(); // Call function to refresh disease details
+        SymptomsDetails(); // Call function to refresh disease details
     } else {
         alert(data);
     }

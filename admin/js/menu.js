@@ -6,3 +6,13 @@ function Disease() {
     $("#MainContent").html(data);
   });
 }
+function Symptoms() {
+  $.post("view/symptoms/symptoms.php", {}, function (data) {
+    $("#MainContent").html(data);
+  });
+}
+function Recommendations() {
+  $.post("view/recommendations/recommendations.php", {}, function (data) {
+    $("#MainContent").html(data);
+  });
+}

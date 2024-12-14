@@ -16,9 +16,9 @@
     </div> -->
     <div class="row ">
         <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 ">
-            <h2>Disease Registry</h2>
-            <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#diseaseCanvas"
-                aria-controls="offcanvasRight" onclick="DiseaseEntry(0,null)">Add</button>
+            <h2>Symptoms Registry</h2>
+            <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#SymptomsCanvas"
+                aria-controls="offcanvasRight" onclick="SymptomsEntry(0,null)">Add</button>
         </div>
         <div class="table-responsive small mt-2">
             <table class="table table-striped table-sm">
@@ -26,28 +26,28 @@
                     <tr>
                         <th scope="col">ID</th>
                         <th scope="col">Image</th>
-                        <th scope="col">Disease Name</th>
-                        <th scope="col">Description</th>
+                        <th scope="col">Disease</th>
+                        <th scope="col">Symptoms Name</th>
                         <th scope="col"></th>
                     </tr>
                 </thead>
-                <tbody id="LoadDiseaseDetails">
+                <tbody id="LoadSymptomsDetails">
 
                 </tbody>
             </table>
         </div>
     </div>
 </div>
-<form id="FormDisease">
-    <div class="offcanvas offcanvas-end" data-bs-backdrop="false" tabindex="-1" id="diseaseCanvas"
+<form id="FormSymptoms">
+    <div class="offcanvas offcanvas-end" data-bs-backdrop="false" tabindex="-1" id="SymptomsCanvas"
         aria-labelledby="offcanvasRightLabel">
         <div class="offcanvas-header">
-            <h5 id="offcanvasRightLabel">Disease Entry</h5>
+            <h5 id="offcanvasRightLabel">Symptoms Entry</h5>
             <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
-        <div class="offcanvas-body" id="DiseaseEntry">
+        <div class="offcanvas-body" id="SymptomsEntry">
 
         </div>
     </div>
 </form>
-<script src="view/disease/js/script.js"></script>
+<script src="view/symptoms/js/script.js"></script>

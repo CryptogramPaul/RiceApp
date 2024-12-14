@@ -58,8 +58,9 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="#" onclick="Disease()">Disease</a></li>
-                            <li><a class="dropdown-item" href="#">Recommendations</a></li>
-                            <li><a class="dropdown-item" href="#">Treatment</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="Symptoms()">Symptoms</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="Recommendations()">Recommendations</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="Treatment()">Treatment</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">

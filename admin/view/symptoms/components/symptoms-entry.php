@@ -5,46 +5,58 @@
     $operation = $_POST['operation'];	
 
     try {
-        $sql=$conn->prepare("SELECT *
-            FROM disease a
-            WHERE a.disease_id = ?
+        $sql=$conn->prepare("SELECT a.*, b.disease_name
+            FROM symptoms a
+            LEFT JOIN disease b ON b.disease_id = a.disease_id
+            WHERE a.symptoms_id = ?
             ");
         $sql->execute([$id]);
         $result = $sql->fetch();
 
-        $disease_img  =  $result['disease_img'] ?? '';
-        $disease_name =  $result['disease_name'] ?? '';
-        $descriptions =  $result['descriptions'] ?? '';
+        $symptoms_img  =  $result['symptoms_img'] ?? '';
+        $symptoms_name =  $result['symptoms_name'] ?? '';
+        $disease =  $result['disease_name'] ?? '';
     } catch (PDOException $e) {
         echo "Please Contact System Administrator".$e->getMessage();
     }
    
 ?>
 
-<div class="row mb-2 mt-5" id="DiseaseOffCanvas" operation="<?php echo $operation ?>" disease_id="<?php echo $id ?>">
+<div class="row mb-2 mt-5" id="SymptomsOffCanvas" operation="<?php echo $operation ?>" symptoms_id="<?php echo $id ?>">
     <div class="col">
-        <label for="disease_img">Disease Photo</label>
-        <input type="file" class="form-control form-control-sm" id="disease_img" required>
-        <input type="text" value="<?php echo $disease_img ?>" hidden id="disease_img_update">
-        <?php if (!empty($disease_img)) : ?>
-        <small>Current file: <a href="../uploads/<?php echo htmlspecialchars($disease_img); ?>" target="_blank">
-                <?php echo htmlspecialchars($disease_img); ?>
+        <label for="symptoms_img">Symptoms Photo</label>
+        <input type="file" class="form-control form-control-sm" id="symptoms_img" required>
+        <input type="text" value="<?php echo $symptoms_img ?>" hidden id="symptoms_img_update">
+        <?php if (!empty($symptoms_img)) : ?>
+        <small>Current file: <a href="../uploads/<?php echo htmlspecialchars($symptoms_img); ?>" target="_blank">
+                <?php echo htmlspecialchars($symptoms_img); ?>
             </a></small>
         <?php endif; ?>
     </div>
 </div>
 <div class="row mb-2">
     <div class="col">
-        <label for="disease_name">Disease</label>
-        <input type="text" class="form-control form-control-sm" id="disease_name"
-            value="<?php echo $operation == 0 ? '': $disease_name ?>" Placeholder="Disease" required>
+        <label for="disease">Disease</label>
+        <select class="form-control form-control-sm" id="disease">
+            <option value="">Select Disease</option>
+            <?php
+                $sql=$conn->prepare("SELECT disease_id, disease_name FROM disease");
+                $sql->execute();
+                while($row = $sql->fetch(PDO::FETCH_ASSOC)) {
+                    echo '<option value="'.$row['disease_id'].'">'.$row['disease_name'].'</option>';
+                }
+           ?>
+        </select>
+        <!-- <input type="text" class="form-control form-control-sm" id="disease"
+            value="<?php echo $operation == 0 ? '': $disease ?>" Placeholder="Disease" required> -->
     </div>
 </div>
+
 <div class="row mb-2">
     <div class="col">
-        <label for="disease_description">Disease Description</label>
-        <textarea class="form-control form-control-sm" id="disease_description" cols="30" rows="10"
-            Placeholder="Descriptions" required><?php echo $operation == 0 ? '': $descriptions ?></textarea>
+        <label for="symptoms_name">Symptoms</label>
+        <textarea class="form-control form-control-sm" id="symptoms_name" cols="30" rows="10"
+            Placeholder="Symptoms" required><?php echo $operation == 0 ? '': $symptoms_name ?></textarea>
     </div>
 </div>
 <div class="row mt-5">
@@ -58,15 +70,15 @@
 </div>
 <script>
 function SaveDisease() {
-    const disease_img = $("#disease_img")[0].files[0];
-    const disease = $("#disease_name").val();
-    const description = $("#disease_description").val();
+    const symptoms_img = $("#symptoms_img")[0].files[0];
+    const disease = $("#symptoms_name").val();
+    const description = $("#symptoms_description").val();
 
     // Create a FormData object
     const formData = new FormData();
-    formData.append("disease_img", disease_img);
+    formData.append("symptoms_img", symptoms_img);
     formData.append("disease", disease);
-    formData.append("disease_description", description);
+    formData.append("symptoms_description", description);
 
     // Use $.ajax for the file upload
     $.ajax({
@@ -91,25 +103,25 @@ function SaveDisease() {
 }
 
 function UpdateDisease(id) {
-    var disease_img = null;
+    var symptoms_img = null;
     var NotChange = false;
-    if ($("#disease_img").val() == '') {
-        disease_img = $("#disease_img_update").val();
+    if ($("#symptoms_img").val() == '') {
+        symptoms_img = $("#symptoms_img_update").val();
         NotChange = false;
     } else {
-        disease_img = $("#disease_img")[0].files[0];
+        symptoms_img = $("#symptoms_img")[0].files[0];
         NotChange = true;
     }
-    const disease = $("#disease_name").val();
-    const description = $("#disease_description").val();
+    const disease = $("#symptoms_name").val();
+    const description = $("#symptoms_description").val();
 
     // Create a FormData object
     const formData = new FormData();
     formData.append("NotChange", NotChange);
-    formData.append("disease_img", disease_img);
+    formData.append("symptoms_img", symptoms_img);
     formData.append("disease", disease);
-    formData.append("disease_description", description);
-    formData.append("disease_id", id);
+    formData.append("symptoms_description", description);
+    formData.append("symptoms_id", id);
 
     // Use $.ajax for the file upload
     $.ajax({
