@@ -12,7 +12,7 @@
     try {
         $conn->beginTransaction();
 
-        $sql_delete = $conn->prepare("DELETE FROM recommendations WHERE id = ?");
+        $sql_delete = $conn->prepare("DELETE FROM treatment WHERE id = ?");
         $sql_delete->execute([$id]);
        
         $conn->commit();

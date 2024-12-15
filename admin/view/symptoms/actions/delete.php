@@ -12,8 +12,8 @@
     try {
         $conn->beginTransaction();
 
-        $sql_insert_disease = $conn->prepare("DELETE FROM disease WHERE disease_id = ?");
-        $sql_insert_disease->execute([$id]);
+        $sql_delete = $conn->prepare("DELETE FROM symptoms WHERE symptoms_id = ?");
+        $sql_delete->execute([$id]);
        
         $conn->commit();
         echo "success";

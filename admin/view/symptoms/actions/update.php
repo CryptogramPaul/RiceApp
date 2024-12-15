@@ -6,18 +6,18 @@
     require_once '../../../../conn/connection.php';
     require_once '../../../../functions.php';
 
-    // $disease = isset($_FILES['disease_img']) ? $_FILES['disease_img'] : null;
+    // $disease = isset($_FILES['symptoms_id']) ? $_FILES['symptoms_id'] : null;
     $disease = sanitize_input($_POST['disease']);
-    $disease_description = sanitize_input($_POST['disease_description']);
-    $disease_id = sanitize_input($_POST['disease_id']);
+    $symptoms_name = sanitize_input($_POST['symptoms_name']);
+    $symptoms_id = sanitize_input($_POST['symptoms_id']);
     $NotChange = sanitize_input($_POST['NotChange']);
-    $disease_img = null;
+    $symptoms_id = null;
 
   
     try {
         if ($NotChange == 'true') {
-            if (isset($_FILES['disease_img']) && $_FILES['disease_img']['error'] == 0) {
-                $file = $_FILES['disease_img'];
+            if (isset($_FILES['symptoms_id']) && $_FILES['symptoms_id']['error'] == 0) {
+                $file = $_FILES['symptoms_id'];
                 $targetDir = "../../../../uploads/";
 
                 // Ensure the upload directory exists
@@ -29,23 +29,23 @@
                 $fileExtension = pathinfo($file['name'], PATHINFO_EXTENSION);
                 $uniqueFileName = uniqid("disease_", true) . '.' . $fileExtension;
                 $targetFile = $targetDir . $uniqueFileName;
-                $disease_img = $uniqueFileName;
+                $symptoms_id = $uniqueFileName;
                 
             }
         }else{
-            $disease_img = $_POST['disease_img'];
+            $symptoms_id = $_POST['symptoms_id'];
         }
 
 
 
         $conn->beginTransaction();
 
-        $sql_update_disease = $conn->prepare("UPDATE disease SET disease_img = ?, disease_name = ?, descriptions = ? WHERE disease_id = ?");
-        $sql_update_disease->execute([$disease_img, $disease, $disease_description, $disease_id]);
+        $sql_update_disease = $conn->prepare("UPDATE symptoms SET disease_id = ?, symptoms_name = ?, symptoms_name = ? WHERE symptoms_id = ?");
+        $sql_update_disease->execute([$disease, $symptoms_name, $symptoms_name, $symptoms_id]);
         
         if ($NotChange == 'true') {
             if (move_uploaded_file($file['tmp_name'], $targetFile)) {
-                $disease_img = $uniqueFileName; // Save the file name for database entry
+                $symptoms_id = $uniqueFileName; // Save the file name for database entry
             } else {
                 throw new Exception("Failed to upload file.");
             }

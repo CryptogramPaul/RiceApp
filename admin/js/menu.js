@@ -16,3 +16,8 @@ function Recommendations() {
     $("#MainContent").html(data);
   });
 }
+function Treatment() {
+  $.post("view/treatment/treatment.php", {}, function (data) {
+    $("#MainContent").html(data);
+  });
+}

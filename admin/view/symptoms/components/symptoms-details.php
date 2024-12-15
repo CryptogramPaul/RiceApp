@@ -4,8 +4,9 @@
     // $keysearch = sanitize_input($_POST['keysearch']);	
 
     try {
-        $sql=$conn->prepare("SELECT *
+        $sql=$conn->prepare("SELECT a.*, b.disease_name
             FROM symptoms a
+            LEFT JOIN disease b ON b.disease_id = a.disease_id
             ");
         $sql->execute([]);
         
@@ -18,12 +19,13 @@
 <tr>
     <td><?php echo $row['symptoms_id'] ?></td>
     <td><?php echo $row['symptoms_img'] ?></td>
-    <td>Disease</td>
+    <td><?php echo $row['disease_name'] ?></td>
     <td><?php echo $row['symptoms_name'] ?></td>
     <td>
         <div class="d-flex justify-content-center">
             <a class="badge bg-info text-white text-decoration-none badge-danger" data-bs-toggle="offcanvas"
-                data-bs-target="#SymptomsCanvas" onclick="SymptomsEntry(1,<?php echo $row['symptoms_id'] ?>)" title="Edit">
+                data-bs-target="#SymptomsCanvas" onclick="SymptomsEntry(1,<?php echo $row['symptoms_id'] ?>)"
+                title="Edit">
                 <i class="fa fa-pen p-1"></i>
             </a>
             &nbsp;&nbsp;&nbsp;

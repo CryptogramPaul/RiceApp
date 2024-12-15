@@ -24,7 +24,7 @@
 <div class="row mb-2 mt-5" id="DiseaseOffCanvas" operation="<?php echo $operation ?>" disease_id="<?php echo $id ?>">
     <div class="col">
         <label for="disease_img">Disease Photo</label>
-        <input type="file" class="form-control form-control-sm" id="disease_img" required>
+        <input type="file" class="form-control form-control-sm" id="disease_img">
         <input type="text" value="<?php echo $disease_img ?>" hidden id="disease_img_update">
         <?php if (!empty($disease_img)) : ?>
         <small>Current file: <a href="../uploads/<?php echo htmlspecialchars($disease_img); ?>" target="_blank">

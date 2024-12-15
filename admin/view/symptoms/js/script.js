@@ -40,20 +40,19 @@ function SymptomsEntry(operation, id) {
     }
   );
 }
-function DeleteSymptoms(id){
+function DeleteSymptoms(id) {
   $.post(
     "view/symptoms/actions/delete.php",
     {
       id: id,
-     
     },
     function (data) {
       if (jQuery.trim(data) === "success") {
         alert("Delete successfully");
         SymptomsDetails(); // Call function to refresh disease details
-    } else {
+      } else {
         alert(data);
-    }
+      }
     }
   );
 }

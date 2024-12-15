@@ -6,7 +6,7 @@
 
     try {
         $sql=$conn->prepare("SELECT a.*, b.disease_name
-            FROM recommendations a
+            FROM treatment a
             LEFT JOIN disease b ON b.disease_id = a.type_id 
             WHERE a.id = ? AND a.type = 'Disease'
             ");
@@ -14,15 +14,15 @@
         $result = $sql->fetch();
 
         $disease  =  $result['disease_name'] ?? '';
-        $recommendations =  $result['recommendations'] ?? '';
+        $treatment =  $result['treatment'] ?? '';
     } catch (PDOException $e) {
         echo "Please Contact System Administrator".$e->getMessage();
     }
    
 ?>
 
-<div class="row mb-2 mt-5" id="RecommendationsOffCanvas" operation="<?php echo $operation ?>"
-    recommendations_id="<?php echo $id ?>">
+<div class="row mb-2 mt-5" id="TreatmentOffCanvas" operation="<?php echo $operation ?>"
+    treatment_id="<?php echo $id ?>">
     <div class="col">
         <label for="disease">Disease</label>
         <select class="form-control form-control-sm" id="disease">
@@ -43,9 +43,9 @@
 </div>
 <div class="row mb-2">
     <div class="col">
-        <label for="recommendations">Recommendations</label>
-        <textarea class="form-control form-control-sm" id="recommendations" cols="30" rows="10"
-            Placeholder="Recommendations" required><?php echo $operation == 0 ? '': $recommendations ?></textarea>
+        <label for="treatment">Treatment</label>
+        <textarea class="form-control form-control-sm" id="treatment" cols="30" rows="10" Placeholder="treatment"
+            required><?php echo $operation == 0 ? '': $treatment ?></textarea>
     </div>
 </div>
 <div class="row mt-5">

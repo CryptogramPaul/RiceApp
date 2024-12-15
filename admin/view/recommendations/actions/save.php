@@ -8,39 +8,14 @@
 
     // $disease = isset($_FILES['disease_img']) ? $_FILES['disease_img'] : null;
     $disease = sanitize_input($_POST['disease']);
-    $disease_description = sanitize_input($_POST['disease_description']);
-    $disease_img = null;
+    $recommendations = sanitize_input($_POST['recommendations']);
 
-  
     try {
-        if (isset($_FILES['disease_img']) && $_FILES['disease_img']['error'] == 0) {
-            $file = $_FILES['disease_img'];
-            $targetDir = "../../../../uploads/";
-
-            // Ensure the upload directory exists
-            if (!is_dir($targetDir)) {
-                mkdir($targetDir, 0777, true);
-            }
-
-            // Generate a unique file name to avoid collisions
-            $fileExtension = pathinfo($file['name'], PATHINFO_EXTENSION);
-            $uniqueFileName = uniqid("disease_", true) . '.' . $fileExtension;
-            $targetFile = $targetDir . $uniqueFileName;
-            $disease_img = $uniqueFileName;
-            
-        }
-
         $conn->beginTransaction();
 
-        $sql_insert_disease = $conn->prepare("INSERT INTO disease (disease_img, disease_name, descriptions)VALUES(?,?,?)");
-        $sql_insert_disease->execute([$disease_img, $disease, $disease_description ]);
+        $sql_insert = $conn->prepare("INSERT INTO recommendations (type, type_id, recommendations)VALUES(?,?,?)");
+        $sql_insert->execute(['Disease', $disease, $recommendations ]);
         
-        if (move_uploaded_file($file['tmp_name'], $targetFile)) {
-            $disease_img = $uniqueFileName; // Save the file name for database entry
-        } else {
-            throw new Exception("Failed to upload file.");
-        }
-
         $conn->commit();
         echo "success";
     } catch (PDOException $e) {

@@ -1,14 +1,14 @@
 $(document).ready(function () {
-  DiseaseDetails();
+  RecommendationDetails();
 
-  $("#FormDisease").on("submit", function (e) {
+  $("#FormRecommendations").on("submit", function (e) {
     e.preventDefault();
 
-    if ($("#DiseaseOffCanvas").attr("operation") == 0) {
-      SaveDisease();
+    if ($("#RecommendationsOffCanvas").attr("operation") == 0) {
+      SaveRecommendations();
     } else {
-      const id = $("#DiseaseOffCanvas").attr("disease_id");
-      UpdateDisease(id);
+      const id = $("#RecommendationsOffCanvas").attr("recommendations_id");
+      UpdateRecommendations(id);
     }
   });
 
@@ -23,37 +23,84 @@ $(document).ready(function () {
   //   },
   // });
 });
-function DiseaseDetails() {
-  $.post("view/disease/components/disease-details.php", {}, function (data) {
-    $("#LoadDiseaseDetails").html(data);
-  });
-}
-function DiseaseEntry(operation, id) {
+function RecommendationDetails() {
   $.post(
-    "view/disease/components/disease-entry.php",
+    "view/recommendations/components/recommendations-details.php",
+    {},
+    function (data) {
+      $("#LoadRecommendationsDetails").html(data);
+    }
+  );
+}
+function RecommendationsEntry(operation, id) {
+  $.post(
+    "view/recommendations/components/recommendations-entry.php",
     {
       id: id,
       operation: operation,
     },
     function (data) {
-      $("#DiseaseEntry").html(data);
+      $("#RecommendationsEntry").html(data);
     }
   );
 }
-function DeleteDisease(id){
+function DeleteRecommendations(id) {
   $.post(
-    "view/disease/actions/delete.php",
+    "view/recommendations/actions/delete.php",
     {
       id: id,
-     
     },
     function (data) {
       if (jQuery.trim(data) === "success") {
         alert("Delete successfully");
-        DiseaseDetails(); // Call function to refresh disease details
-    } else {
+        RecommendationDetails(); // Call function to refresh disease details
+      } else {
         alert(data);
+      }
     }
+  );
+}
+function SaveRecommendations() {
+  const disease = $("#disease").val();
+  const recommendations = $("#recommendations").val();
+
+  $.post(
+    "view/recommendations/actions/save.php",
+    {
+      disease: disease,
+      recommendations: recommendations,
+    },
+    function (data) {
+      if (jQuery.trim(data) === "success") {
+        $("#RecommendationsCanvas").offcanvas("hide");
+        alert("Recommendations saved successfully");
+        RecommendationDetails(); // Call function to refresh disease details
+      } else {
+        alert(data);
+      }
+    }
+  );
+}
+
+function UpdateRecommendations(id) {
+  const disease = $("#disease").val();
+  const recommendations = $("#recommendations").val();
+
+  $.post(
+    "view/recommendations/actions/update.php",
+    {
+      id: id,
+      disease: disease,
+      recommendations: recommendations,
+    },
+    function (data) {
+      if (jQuery.trim(data) === "success") {
+        $("#RecommendationsCanvas").offcanvas("hide");
+        alert("Recommendations saved successfully");
+        RecommendationDetails(); // Call function to refresh disease details
+      } else {
+        alert(data);
+      }
     }
   );
 }

@@ -6,15 +6,16 @@
     require_once '../../../../conn/connection.php';
     require_once '../../../../functions.php';
 
-    $id = sanitize_input($_POST['id']);
-   
-  
+    // $disease = isset($_FILES['disease_img']) ? $_FILES['disease_img'] : null;
+    $disease = sanitize_input($_POST['disease']);
+    $treatment = sanitize_input($_POST['treatment']);
+
     try {
         $conn->beginTransaction();
 
-        $sql_delete = $conn->prepare("DELETE FROM recommendations WHERE id = ?");
-        $sql_delete->execute([$id]);
-       
+        $sql_insert = $conn->prepare("INSERT INTO treatment (type, type_id, treatment)VALUES(?,?,?)");
+        $sql_insert->execute(['Disease', $disease, $treatment ]);
+        
         $conn->commit();
         echo "success";
     } catch (PDOException $e) {

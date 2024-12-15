@@ -16,10 +16,9 @@
     </div> -->
     <div class="row ">
         <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 ">
-            <h2>Recommendations Registry</h2>
-            <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas"
-                data-bs-target="#RecommendationsCanvas" aria-controls="offcanvasRight"
-                onclick="RecommendationsEntry(0,null)">Add</button>
+            <h2>Treatment Registry</h2>
+            <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#TreatmentCanvas"
+                aria-controls="offcanvasRight" onclick="TreatmentEntry(0,null)">Add</button>
         </div>
         <div class="table-responsive small mt-2">
             <table class="table table-striped table-sm">
@@ -27,27 +26,27 @@
                     <tr>
                         <th scope="col">ID</th>
                         <th scope="col">Disease</th>
-                        <th scope="col">Recommendations</th>
+                        <th scope="col">Treatment</th>
                         <th scope="col"></th>
                     </tr>
                 </thead>
-                <tbody id="LoadRecommendationsDetails">
+                <tbody id="LoadTreatmentDetails">
 
                 </tbody>
             </table>
         </div>
     </div>
 </div>
-<form id="FormRecommendations">
-    <div class="offcanvas offcanvas-end" data-bs-backdrop="false" tabindex="-1" id="RecommendationsCanvas"
+<form id="FormTreatment">
+    <div class="offcanvas offcanvas-end" data-bs-backdrop="false" tabindex="-1" id="TreatmentCanvas"
         aria-labelledby="offcanvasRightLabel">
         <div class="offcanvas-header">
-            <h5 id="offcanvasRightLabel">Recommendations Entry</h5>
+            <h5 id="offcanvasRightLabel">Treatment Entry</h5>
             <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
-        <div class="offcanvas-body" id="RecommendationsEntry">
+        <div class="offcanvas-body" id="TreatmentEntry">
 
         </div>
     </div>
 </form>
-<script src="view/recommendations/js/script.js"></script>
+<script src="view/Treatment/js/script.js"></script>

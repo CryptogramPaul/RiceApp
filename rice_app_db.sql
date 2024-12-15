@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 13, 2024 at 07:52 AM
+-- Generation Time: Dec 15, 2024 at 01:21 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -36,6 +36,20 @@ CREATE TABLE `disease` (
   `date_updated` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `disease`
+--
+
+INSERT INTO `disease` (`disease_id`, `disease_name`, `descriptions`, `disease_img`, `date_created`, `date_updated`) VALUES
+(1, 'Tungro', 'Nagadala ini sang pagka dilaw (yellow) sang dahon, pagkaputot, pagbuhin sang kadamuon sang suwi, kag baog ukon wala sing laman o wala napuno ang mga butil.', 'disease_675d125f121ab6.54629765.png', '2024-12-14 05:06:39', '2024-12-15 02:19:35'),
+(2, 'Bacterial Leaf Blight', 'Nagadala ini sang pagkalanta sa mga punla ukon kresek, kag pagkadilaw kag pagkamala sang mga dahon. Isa sa mga sintomas sini amo ang pagkadilaw (yellow) nga kurit halin sa tuktok sini kag may kurba ang magkabilang gilid.', 'disease_675e39ee802006.64075836.jpg', '2024-12-15 02:07:42', '2024-12-15 02:07:42'),
+(3, 'Bacterial Leaf Streak', 'Nagadala ini sang pagkamala kag pagkadilaw (yellow) sang mga dahon. Ang pag-usad sang streaks ukon marka nagapalabog, limitado sa mga ugat kag sa ulihi nagaka orange-brown ang kolor Ini ang sakit nga ginadala sang fungi nga nagaguba sa bisan diin nga parte sang paray. Isa sa mga sintomas sini amo ang pagkabatik-batik sa dahon nga may kayumanggi (brown) sa palibot sini. Ang impeksyon nagakatabo man sa bulak, li-og nga may angay mn nga kolor sang kayumanggi (brown).', 'disease_675e3c13c02998.35695780.jpg', '2024-12-15 02:13:01', '2024-12-15 02:16:51'),
+(4, 'Brown Spot', 'Ini ang sakit nga ginadala sang fungi nga nagaguba sa bisan diin nga parte sang paray. Isa sa mga sintomas sini amo ang pagkabatik-batik sa dahon nga may kayumanggi (brown) sa palibot sini. Ang impeksyon nagakatabo man sa bulak, li-og nga may angay mn nga kolor sang kayumanggi (brown).', 'disease_675e3b8a647da8.11729037.png', '2024-12-15 02:14:34', '2024-12-15 02:14:34'),
+(5, 'Blast (leaf)', 'Ang blast makita sa mga lugar nga indi kaayo mahalumigmig, nagaka eksperyensya sang malawig kag masami nga pag-uran, kag may mabugnaw nga temperatura sa aga. Ang mga sintomas sa dahon, amo sini ang pagka batik-batik nga dahon nga kayumanggi (brown) nga kolor kag mala hugis diyamante nga marka sa dahon.', 'disease_675e3ba50cc8a0.45325948.png', '2024-12-15 02:15:01', '2024-12-15 02:15:01'),
+(6, 'Blast (neck)', 'Ang blast makita sa mga lugar nga indi kaayo mahalumigmig, nagaka eksperyensya sang malawig kag masami nga pag-uran, kag may mabugnaw nga temperatura sa aga. Ang rehiyon sang li-og sang bulak nagaka kayumanggi (brown) kag nagakupas sing lubos/ bahagya nga napunggan ang pagkabunga sang butil, ang bulak nagakabali sa li-og kag nagabitay.', 'disease_675e3bfbe74af8.12625483.png', '2024-12-15 02:16:27', '2024-12-15 02:16:27'),
+(7, 'Blast (node)', 'Ang blast makita sa mga lugar nga indi kaayo mahalumigmig, nagaka eksperyensya sang malawig kag masami nga pag-uran, kag may mabugnaw nga temperatura sa aga. Ang pinsala sang pamumutok-batok (node blast) amo ang pilas nga may malaabong-kayumanggi (grayish brown) ang kolor nga nagapalibot sa batok hasta nga mautod ang uhay.', 'disease_675e3c3806c0d2.45601144.png', '2024-12-15 02:17:28', '2024-12-15 02:17:28'),
+(8, 'Sheath rot', 'Ang sakit nagadala sang pagbuhin sang ani tungod sa pagka-hinay sang pagtubo ikon indi na pagtubo sang uhay. Ang mga sintomas amo ang pagkadunot sang lapak, mga batik-batik nga kayumanggi (brown) sa lapak ukon talukap, kag ang bata nga bunga nagapabilin sa lapak.', 'disease_675e3c505e9b06.02620257.png', '2024-12-15 02:17:52', '2024-12-15 02:17:52');
+
 -- --------------------------------------------------------
 
 --
@@ -66,6 +80,20 @@ CREATE TABLE `recommendations` (
   `date_updated` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `recommendations`
+--
+
+INSERT INTO `recommendations` (`id`, `type`, `type_id`, `recommendations`, `date_created`, `date_updated`) VALUES
+(1, 'Disease', 3, 'Pagbulong sang binhi gamit ang bleaching powder (100g/l) kag zinc sulfate (2%) makabawas sang bacterial blight.', '2024-12-15 11:02:11', '2024-12-15 11:02:11'),
+(2, 'Disease', 3, 'Pagbulong sang binhi-paghulom sang binhi sa sulod sang 8 ka oras sa Agrimycin (0.025%) kag wettable caresan (0.05%) kag init nga tubig sa sulod sang 30 ka minuti sa 52-54oC; paghulom sang binhi sa sulod ka 8 ka oras sa caresan (0.1%) kag pagbulong gamit ang Streptocyclin (3g sa 1 ka litro).', '2024-12-15 11:09:11', '2024-12-15 11:09:11'),
+(3, 'Disease', 3, 'Mag-spray sang neem oil 3% o NSKE 5%.', '2024-12-15 11:09:29', '2024-12-15 11:09:29'),
+(4, 'Disease', 3, 'Magtanum sang mga nursery sa husto nga lugar nga malayo sa uban nga lugar kag ara sa mataas nga lugar.', '2024-12-15 11:09:42', '2024-12-15 11:09:42'),
+(5, 'Disease', 3, 'Likawan ang pag-utod sang mga seedling sa panahon sang pagtanum.', '2024-12-15 11:09:57', '2024-12-15 11:09:57'),
+(6, 'Disease', 3, 'Balanseha ang pag-abuno, likawan ang sobra nga paggamit sang N- application.', '2024-12-15 11:10:07', '2024-12-15 11:10:07'),
+(7, 'Disease', 3, 'I-skip ang N-application sapanahon sang booting (kung medyo mabug-at ang sakit).', '2024-12-15 11:12:35', '2024-12-15 11:12:35'),
+(8, 'Disease', 3, 'Pamul on ang hilamon sa palibot.', '2024-12-15 11:12:45', '2024-12-15 11:12:45');
+
 -- --------------------------------------------------------
 
 --
@@ -74,12 +102,19 @@ CREATE TABLE `recommendations` (
 
 CREATE TABLE `symptoms` (
   `symptoms_id` int(11) NOT NULL,
-  `disease__id` int(11) NOT NULL,
-  `symptom_name` varchar(500) NOT NULL,
-  `symptom_img` varchar(1000) NOT NULL,
+  `disease_id` int(11) NOT NULL,
+  `symptoms_name` varchar(500) NOT NULL,
+  `symptoms_img` varchar(1000) NOT NULL,
   `date_created` timestamp NOT NULL DEFAULT current_timestamp(),
   `date_updated` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `symptoms`
+--
+
+INSERT INTO `symptoms` (`symptoms_id`, `disease_id`, `symptoms_name`, `symptoms_img`, `date_created`, `date_updated`) VALUES
+(1, 2, 'Pagkalanta sang dahon.', 'symptoms_675e430a961760.79000546.png', '2024-12-15 02:46:34', '2024-12-15 03:33:16');
 
 -- --------------------------------------------------------
 
@@ -95,6 +130,13 @@ CREATE TABLE `treatment` (
   `date_created` timestamp NOT NULL DEFAULT current_timestamp(),
   `date_updated` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `treatment`
+--
+
+INSERT INTO `treatment` (`id`, `type`, `type_id`, `treatment`, `date_created`, `date_updated`) VALUES
+(2, 'Disease', 2, 'aasd', '2024-12-15 12:16:29', '2024-12-15 12:17:19');
 
 --
 -- Indexes for dumped tables
@@ -138,7 +180,7 @@ ALTER TABLE `treatment`
 -- AUTO_INCREMENT for table `disease`
 --
 ALTER TABLE `disease`
-  MODIFY `disease_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `disease_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `pest`
@@ -150,19 +192,19 @@ ALTER TABLE `pest`
 -- AUTO_INCREMENT for table `recommendations`
 --
 ALTER TABLE `recommendations`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `symptoms`
 --
 ALTER TABLE `symptoms`
-  MODIFY `symptoms_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `symptoms_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `treatment`
 --
 ALTER TABLE `treatment`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

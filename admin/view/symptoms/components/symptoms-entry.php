@@ -25,8 +25,10 @@
 <div class="row mb-2 mt-5" id="SymptomsOffCanvas" operation="<?php echo $operation ?>" symptoms_id="<?php echo $id ?>">
     <div class="col">
         <label for="symptoms_img">Symptoms Photo</label>
-        <input type="file" class="form-control form-control-sm" id="symptoms_img" required>
+        <input type="file" class="form-control form-control-sm" id="symptoms_img">
         <input type="text" value="<?php echo $symptoms_img ?>" hidden id="symptoms_img_update">
+        <!-- <input type="file" class="form-control form-control-sm" value="../../../../images/symptoms_img/sample.png"
+            id="default_img"> -->
         <?php if (!empty($symptoms_img)) : ?>
         <small>Current file: <a href="../uploads/<?php echo htmlspecialchars($symptoms_img); ?>" target="_blank">
                 <?php echo htmlspecialchars($symptoms_img); ?>
@@ -40,11 +42,16 @@
         <select class="form-control form-control-sm" id="disease">
             <option value="">Select Disease</option>
             <?php
+                
                 $sql=$conn->prepare("SELECT disease_id, disease_name FROM disease");
                 $sql->execute();
                 while($row = $sql->fetch(PDO::FETCH_ASSOC)) {
-                    echo '<option value="'.$row['disease_id'].'">'.$row['disease_name'].'</option>';
-                }
+           ?>
+            <option <?php echo $disease == $row['disease_name'] ? 'selected':''?>
+                value="<?php echo $row['disease_id'] ?>">
+                <?php echo $row['disease_name'] ?></option>
+            <?php
+            }
            ?>
         </select>
         <!-- <input type="text" class="form-control form-control-sm" id="disease"
@@ -55,13 +62,13 @@
 <div class="row mb-2">
     <div class="col">
         <label for="symptoms_name">Symptoms</label>
-        <textarea class="form-control form-control-sm" id="symptoms_name" cols="30" rows="10"
-            Placeholder="Symptoms" required><?php echo $operation == 0 ? '': $symptoms_name ?></textarea>
+        <textarea class="form-control form-control-sm" id="symptoms_name" cols="30" rows="10" Placeholder="Symptoms"
+            required><?php echo $operation == 0 ? '': $symptoms_name ?></textarea>
     </div>
 </div>
 <div class="row mt-5">
     <div class="flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3">
-        <button type="button" class="btn btn-sm btn-danger" data-bs-toggle="offcanvas" data-bs-target="#diseaseCanvas"
+        <button type="button" class="btn btn-sm btn-danger" data-bs-toggle="offcanvas" data-bs-target="#SymptomsCanvas"
             aria-controls="offcanvasRight">Close</button>
         <button type="submit" class="btn btn-sm btn-primary">
             <?php echo $operation == 0 ? 'Save' : 'Update'?>
@@ -69,29 +76,29 @@
     </div>
 </div>
 <script>
-function SaveDisease() {
+function SaveSymptoms() {
     const symptoms_img = $("#symptoms_img")[0].files[0];
-    const disease = $("#symptoms_name").val();
-    const description = $("#symptoms_description").val();
+    const disease = $("#disease").val();
+    const symptoms_name = $("#symptoms_name").val();
 
     // Create a FormData object
     const formData = new FormData();
     formData.append("symptoms_img", symptoms_img);
     formData.append("disease", disease);
-    formData.append("symptoms_description", description);
+    formData.append("symptoms_name", symptoms_name);
 
     // Use $.ajax for the file upload
     $.ajax({
-        url: "view/disease/actions/save.php",
+        url: "view/symptoms/actions/save.php",
         type: "POST",
         data: formData,
         processData: false, // Prevent jQuery from converting the data into a query string
         contentType: false, // Prevent jQuery from setting the Content-Type header
         success: function(data) {
             if ($.trim(data) === "success") {
-                $("#diseaseCanvas").offcanvas("hide");
-                alert("Disease saved successfully");
-                DiseaseDetails(); // Call function to refresh disease details
+                $("#SymptomsCanvas").offcanvas("hide");
+                alert("Symptoms saved successfully");
+                SymptomsDetails(); // Call function to refresh disease details
             } else {
                 alert(data);
             }
@@ -102,7 +109,7 @@ function SaveDisease() {
     });
 }
 
-function UpdateDisease(id) {
+function UpdateSymptoms(id) {
     var symptoms_img = null;
     var NotChange = false;
     if ($("#symptoms_img").val() == '') {
@@ -112,29 +119,29 @@ function UpdateDisease(id) {
         symptoms_img = $("#symptoms_img")[0].files[0];
         NotChange = true;
     }
-    const disease = $("#symptoms_name").val();
-    const description = $("#symptoms_description").val();
+    const disease = $("#disease").val();
+    const symptoms_name = $("#symptoms_name").val();
 
     // Create a FormData object
     const formData = new FormData();
     formData.append("NotChange", NotChange);
     formData.append("symptoms_img", symptoms_img);
     formData.append("disease", disease);
-    formData.append("symptoms_description", description);
+    formData.append("symptoms_name", symptoms_name);
     formData.append("symptoms_id", id);
 
     // Use $.ajax for the file upload
     $.ajax({
-        url: "view/disease/actions/update.php",
+        url: "view/symptoms/actions/update.php",
         type: "POST",
         data: formData,
         processData: false, // Prevent jQuery from converting the data into a query string
         contentType: false, // Prevent jQuery from setting the Content-Type header
         success: function(data) {
             if ($.trim(data) === "success") {
-                $("#diseaseCanvas").offcanvas("hide");
-                alert("Disease updated successfully");
-                DiseaseDetails(); // Call function to refresh disease details
+                $("#SymptomsCanvas").offcanvas("hide");
+                alert("Symptoms updated successfully");
+                SymptomsDetails(); // Call function to refresh disease details
             } else {
                 alert(data);
             }
