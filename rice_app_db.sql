@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 15, 2024 at 01:21 PM
+-- Generation Time: Dec 16, 2024 at 09:53 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -114,7 +114,17 @@ CREATE TABLE `symptoms` (
 --
 
 INSERT INTO `symptoms` (`symptoms_id`, `disease_id`, `symptoms_name`, `symptoms_img`, `date_created`, `date_updated`) VALUES
-(1, 2, 'Pagkalanta sang dahon.', 'symptoms_675e430a961760.79000546.png', '2024-12-15 02:46:34', '2024-12-15 03:33:16');
+(1, 3, 'Pagkalanta sang dahon.', 'symptoms_675e430a961760.79000546.png', '2024-12-15 02:46:34', '2024-12-16 03:28:48'),
+(3, 3, 'Dilaw nga kurit sa dahon nga nagakurba ang magkabilang gilid.', 'symptoms_675f86b562c153.84995603.jpeg', '2024-12-16 01:47:33', '2024-12-16 01:47:33'),
+(4, 3, 'Dilaw nga parte sa dahon.', 'symptoms_675f86d9efec85.49742154.jpeg', '2024-12-16 01:48:09', '2024-12-16 01:48:09'),
+(5, 3, 'Nagamara nga paray.', 'symptoms_675f87a4884cb9.78201956.jpg', '2024-12-16 01:51:32', '2024-12-16 01:51:32'),
+(6, 3, 'Gagmay nga batik-batik nga brown.', 'symptoms_675f87ba0336f9.09121082.jpeg', '2024-12-16 01:51:54', '2024-12-16 01:51:54'),
+(7, 1, 'Dilaw nga parte sa dahon.', 'symptoms_675fa064b5eb21.08124067.jpeg', '2024-12-16 03:37:08', '2024-12-16 03:37:08'),
+(8, 1, 'Putot nga pagtubo sang paray.', 'symptoms_675fa09b25eee8.94674315.png', '2024-12-16 03:38:03', '2024-12-16 03:38:03'),
+(9, 1, 'Pagkalanta sang dahon.', 'symptoms_675fa0b6311208.49978796.png', '2024-12-16 03:38:30', '2024-12-16 03:38:30'),
+(10, 8, 'Batik-batik nga kayumanggi (brown) sa lapak ukon talukap.', 'symptoms_675fa4489d1299.27248687.jpeg', '2024-12-16 03:53:44', '2024-12-16 03:53:44'),
+(11, 8, 'Pagkadunot sang lapak (sheath).', 'symptoms_675fa45cea6920.08378534.jpeg', '2024-12-16 03:54:04', '2024-12-16 03:54:04'),
+(12, 8, 'Kayumanggi (brown) nga kolor sang uhay.', 'symptoms_675fa46ce2d128.82044502.jpg', '2024-12-16 03:54:20', '2024-12-16 03:54:20');
 
 -- --------------------------------------------------------
 
@@ -198,7 +208,7 @@ ALTER TABLE `recommendations`
 -- AUTO_INCREMENT for table `symptoms`
 --
 ALTER TABLE `symptoms`
-  MODIFY `symptoms_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `symptoms_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `treatment`
