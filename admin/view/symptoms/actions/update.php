@@ -16,8 +16,8 @@
   
     try {
         if ($NotChange == 'true') {
-            if (isset($_FILES['symptoms_id']) && $_FILES['symptoms_id']['error'] == 0) {
-                $file = $_FILES['symptoms_id'];
+            if (isset($_FILES['symptoms_img']) && $_FILES['symptoms_img']['error'] == 0) {
+                $file = $_FILES['symptoms_img'];
                 $targetDir = "../../../../uploads/";
 
                 // Ensure the upload directory exists
@@ -27,13 +27,13 @@
 
                 // Generate a unique file name to avoid collisions
                 $fileExtension = pathinfo($file['name'], PATHINFO_EXTENSION);
-                $uniqueFileName = uniqid("disease_", true) . '.' . $fileExtension;
+                $uniqueFileName = uniqid("symptoms_", true) . '.' . $fileExtension;
                 $targetFile = $targetDir . $uniqueFileName;
                 $symptoms_id = $uniqueFileName;
                 
             }
         }else{
-            $symptoms_id = $_POST['symptoms_id'];
+            $symptoms_id = $_POST['symptoms_img'];
         }
 
 

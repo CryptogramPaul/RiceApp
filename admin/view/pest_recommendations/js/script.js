@@ -25,7 +25,7 @@ $(document).ready(function () {
 });
 function RecommendationDetails() {
   $.post(
-    "view/recommendations/components/recommendations-details.php",
+    "view/pest_recommendations/components/recommendations-details.php",
     {},
     function (data) {
       $("#LoadRecommendationsDetails").html(data);
@@ -34,7 +34,7 @@ function RecommendationDetails() {
 }
 function RecommendationsEntry(operation, id) {
   $.post(
-    "view/recommendations/components/recommendations-entry.php",
+    "view/pest_recommendations/components/recommendations-entry.php",
     {
       id: id,
       operation: operation,
@@ -46,7 +46,7 @@ function RecommendationsEntry(operation, id) {
 }
 function DeleteRecommendations(id) {
   $.post(
-    "view/recommendations/actions/delete.php",
+    "view/pest_recommendations/actions/delete.php",
     {
       id: id,
     },
@@ -65,7 +65,7 @@ function SaveRecommendations() {
   const recommendations = $("#recommendations").val();
 
   $.post(
-    "view/recommendations/actions/save.php",
+    "view/pest_recommendations/actions/save.php",
     {
       disease: disease,
       recommendations: recommendations,
@@ -87,7 +87,7 @@ function UpdateRecommendations(id) {
   const recommendations = $("#recommendations").val();
 
   $.post(
-    "view/recommendations/actions/update.php",
+    "view/pest_recommendations/actions/update.php",
     {
       id: id,
       disease: disease,

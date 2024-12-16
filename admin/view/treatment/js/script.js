@@ -53,7 +53,7 @@ function DeleteTreatment(id) {
     function (data) {
       if (jQuery.trim(data) === "success") {
         alert("Delete successfully");
-        TreatmentDetails(); // Call function to refresh disease details
+        TreatmentDetails();
       } else {
         alert(data);
       }
@@ -74,7 +74,7 @@ function SaveTreatment() {
       if (jQuery.trim(data) === "success") {
         $("#TreatmentCanvas").offcanvas("hide");
         alert("Treatment saved successfully");
-        TreatmentDetails(); // Call function to refresh disease details
+        TreatmentDetails();
       } else {
         alert(data);
       }

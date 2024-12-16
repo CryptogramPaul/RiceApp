@@ -50,4 +50,4 @@
         </div>
     </div>
 </form>
-<script src="view/recommendations/js/script.js"></script>
+<script src="view/disease_recommendations/js/script.js"></script>

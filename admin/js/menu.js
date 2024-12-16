@@ -11,12 +11,27 @@ function Symptoms() {
     $("#MainContent").html(data);
   });
 }
-function Recommendations() {
+function DiseaseRecommendations() {
   $.post("view/recommendations/recommendations.php", {}, function (data) {
     $("#MainContent").html(data);
   });
 }
-function Treatment() {
+function DiseaseTreatment() {
+  $.post("view/treatment/treatment.php", {}, function (data) {
+    $("#MainContent").html(data);
+  });
+}
+function Pest() {
+  $.post("view/pest/pest.php", {}, function (data) {
+    $("#MainContent").html(data);
+  });
+}
+function PestRecommendations() {
+  $.post("view/pest_recommendations/recommendations.php", {}, function (data) {
+    $("#MainContent").html(data);
+  });
+}
+function PestTreatment() {
   $.post("view/treatment/treatment.php", {}, function (data) {
     $("#MainContent").html(data);
   });
