@@ -16,38 +16,37 @@
     </div> -->
     <div class="row ">
         <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 ">
-            <h2>Pest Registry</h2>
-            <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#pestCanvas"
-                aria-controls="offcanvasRight" onclick="PestEntry(0,null)">Add</button>
+            <h2>Disease Treatment</h2>
+            <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#TreatmentCanvas"
+                aria-controls="offcanvasRight" onclick="TreatmentEntry(0,null)">Add</button>
         </div>
         <div class="table-responsive small mt-2">
             <table class="table table-striped table-sm">
                 <thead>
                     <tr>
                         <th scope="col">ID</th>
-                        <th scope="col">Image</th>
-                        <th scope="col">Pest Name</th>
-                        <th scope="col">Description</th>
+                        <th scope="col">Disease</th>
+                        <th scope="col">Treatment</th>
                         <th scope="col"></th>
                     </tr>
                 </thead>
-                <tbody id="LoadPestDetails">
+                <tbody id="LoadTreatmentDetails">
 
                 </tbody>
             </table>
         </div>
     </div>
 </div>
-<form id="FormPest">
-    <div class="offcanvas offcanvas-end" data-bs-backdrop="false" tabindex="-1" id="pestCanvas"
+<form id="FormTreatment">
+    <div class="offcanvas offcanvas-end" data-bs-backdrop="false" tabindex="-1" id="TreatmentCanvas"
         aria-labelledby="offcanvasRightLabel">
         <div class="offcanvas-header">
-            <h5 id="offcanvasRightLabel">Pest Entry</h5>
+            <h5 id="offcanvasRightLabel">Treatment Entry</h5>
             <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
-        <div class="offcanvas-body" id="PestEntry">
+        <div class="offcanvas-body" id="TreatmentEntry">
 
         </div>
     </div>
 </form>
-<script src="view/pest/script/script.js"></script>
+<script src="view/pest_treatment/js/script.js"></script>

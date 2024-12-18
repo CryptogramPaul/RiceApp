@@ -1,29 +1,23 @@
 <?php
 require_once '../conn/connection.php';
 
-// Get the JSON data
 $DiseaseJson = $_POST['DiseaseJson'];    
 $json_disease = json_decode($DiseaseJson, true);
 
-// Initialize an array to store unique disease IDs (to prevent duplicate queries)
 $disease_ids = array();
 
-// Loop through the incoming JSON data to collect unique disease IDs
 foreach($json_disease as $value){
     $disease_ids[] = $value['disease'];
 }
 
-// Remove duplicates from the array
 $disease_ids = array_unique($disease_ids);
 
-// Loop through each unique disease ID and query the database
 foreach($disease_ids as $disease_id){
     $disease = $conn->prepare("SELECT * FROM disease WHERE disease_id = ?");
     $disease->execute([$disease_id]);
 
     $fetch_result = $disease->fetchAll();
     
-    // Render the disease if results are found
     foreach($fetch_result as $key => $value){
 ?>
 <div class="col-xl-3 col-sm-6 col-md-4 my-1">

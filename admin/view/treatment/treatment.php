@@ -16,7 +16,7 @@
     </div> -->
     <div class="row ">
         <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 ">
-            <h2>Treatment Registry</h2>
+            <h2>Disease Treatment</h2>
             <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#TreatmentCanvas"
                 aria-controls="offcanvasRight" onclick="TreatmentEntry(0,null)">Add</button>
         </div>
@@ -49,4 +49,4 @@
         </div>
     </div>
 </form>
-<script src="view/Treatment/js/script.js"></script>
+<script src="view/treatment/js/script.js"></script>

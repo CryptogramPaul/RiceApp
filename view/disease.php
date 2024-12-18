@@ -40,8 +40,7 @@
 ?>
 <div class="">
     <button id="viewMoreButton" class="btn btn-secondary my-3 mx-2"
-        onclick="ViewDisease(`<?php echo $forpage+8 ?>`)"><small>More
-            Symptoms</small></button>
+        onclick="ViewDisease(`<?php echo $forpage+8 ?>`)"><small>click for more</small></button>
     <button id="ViewSymptoms" data-bs-target="#selectedSymptomsModal" data-bs-toggle="modal"
         class="btn btn-success my-3 mx-2" title="View Symptoms" onclick="viewSelectedSymptoms()" disabled>View
         Diagnosis</button>

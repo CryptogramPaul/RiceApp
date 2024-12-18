@@ -6,15 +6,14 @@
     require_once '../../../../conn/connection.php';
     require_once '../../../../functions.php';
 
-    // $disease = isset($_FILES['disease_img']) ? $_FILES['disease_img'] : null;
-    $disease = sanitize_input($_POST['disease']);
+    $pest = sanitize_input($_POST['pest']);
     $recommendations = sanitize_input($_POST['recommendations']);
 
     try {
         $conn->beginTransaction();
 
         $sql_insert = $conn->prepare("INSERT INTO recommendations (type, type_id, recommendations)VALUES(?,?,?)");
-        $sql_insert->execute(['Disease', $disease, $recommendations ]);
+        $sql_insert->execute(['Pest', $pest, $recommendations ]);
         
         $conn->commit();
         echo "success";

@@ -16,7 +16,7 @@
     </div> -->
     <div class="row ">
         <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 ">
-            <h2>Recommendations Registry</h2>
+            <h2>Pest Recommendations</h2>
             <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas"
                 data-bs-target="#RecommendationsCanvas" aria-controls="offcanvasRight"
                 onclick="RecommendationsEntry(0,null)">Add</button>
@@ -26,7 +26,7 @@
                 <thead>
                     <tr>
                         <th scope="col">ID</th>
-                        <th scope="col">Disease</th>
+                        <th scope="col">Pest</th>
                         <th scope="col">Recommendations</th>
                         <th scope="col"></th>
                     </tr>

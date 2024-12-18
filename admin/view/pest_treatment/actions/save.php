@@ -6,15 +6,15 @@
     require_once '../../../../conn/connection.php';
     require_once '../../../../functions.php';
 
-    $id = sanitize_input($_POST['id']);
+    // $disease = isset($_FILES['disease_img']) ? $_FILES['disease_img'] : null;
     $pest = sanitize_input($_POST['pest']);
-    $recommendations = sanitize_input($_POST['recommendations']);
+    $treatment = sanitize_input($_POST['treatment']);
 
     try {
         $conn->beginTransaction();
 
-        $sql_insert = $conn->prepare("UPDATE recommendations SET type = ?, type_id = ?, recommendations = ? WHERE id = ?");
-        $sql_insert->execute(['Pest', $pest, $recommendations, $id ]);
+        $sql_insert = $conn->prepare("INSERT INTO treatment (type, type_id, treatment)VALUES(?,?,?)");
+        $sql_insert->execute(['Pest', $pest, $treatment ]);
         
         $conn->commit();
         echo "success";

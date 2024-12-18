@@ -7,15 +7,20 @@
     require_once '../../../../functions.php';
 
     $id = sanitize_input($_POST['id']);
-    $pest = sanitize_input($_POST['pest']);
-    $recommendations = sanitize_input($_POST['recommendations']);
-
+   
+  
     try {
         $conn->beginTransaction();
 
-        $sql_insert = $conn->prepare("UPDATE recommendations SET type = ?, type_id = ?, recommendations = ? WHERE id = ?");
-        $sql_insert->execute(['Pest', $pest, $recommendations, $id ]);
+        $sql_delete = $conn->prepare("DELETE FROM pest WHERE id = ?");
+        $sql_delete->execute([$id]);
         
+        $recommendations = $conn->prepare("DELETE FROM recommendations WHERE type_id = ?");
+        $recommendations->execute([$id]);
+        
+        $treatment = $conn->prepare("DELETE FROM treatment WHERE type_id = ?");
+        $treatment->execute([$id]);
+
         $conn->commit();
         echo "success";
     } catch (PDOException $e) {

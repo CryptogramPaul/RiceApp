@@ -198,7 +198,7 @@
 <script src="js/plugins.js"></script>
 <script src="js/script.js"></script>
 <!-- <script src="js/symptoms.js"></script> -->
-<script src="js/pest.js"></script>
+<!-- <script src="js/pest.js"></script> -->
 <script src="js/view.js"></script>
 
 </html>

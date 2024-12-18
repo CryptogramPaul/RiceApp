@@ -13,23 +13,23 @@ $(document).ready(function () {
   });
 });
 function PestDetails() {
-  $.post("view/pest/components/disease-details.php", {}, function (data) {
+  $.post("view/pest/components/pest-details.php", {}, function (data) {
     $("#LoadPestDetails").html(data);
   });
 }
-function DiseaseEntry(operation, id) {
+function PestEntry(operation, id) {
   $.post(
-    "view/pest/components/disease-entry.php",
+    "view/pest/components/pest-entry.php",
     {
       id: id,
       operation: operation,
     },
     function (data) {
-      $("#DiseaseEntry").html(data);
+      $("#PestEntry").html(data);
     }
   );
 }
-function DeleteDisease(id) {
+function DeletePest(id) {
   $.post(
     "view/pest/actions/delete.php",
     {

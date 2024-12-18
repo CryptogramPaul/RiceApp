@@ -11,17 +11,7 @@ $(document).ready(function () {
       UpdateRecommendations(id);
     }
   });
-
-  // $("#diseaseCanvas").oncanvas({
-  //   width: 600,
-  //   height: 400,
-  //   background: "#ffffff",
-  //   onDraw: function (context) {
-  //     context.fillStyle = "black";
-  //     context.font = "30px Arial";
-  //     context.fillText("Disease Canvas", 10, 30);
-  //   },
-  // });
+  
 });
 function RecommendationDetails() {
   $.post(
@@ -61,20 +51,20 @@ function DeleteRecommendations(id) {
   );
 }
 function SaveRecommendations() {
-  const disease = $("#disease").val();
+  const pest = $("#pest").val();
   const recommendations = $("#recommendations").val();
 
   $.post(
     "view/pest_recommendations/actions/save.php",
     {
-      disease: disease,
+      pest: pest,
       recommendations: recommendations,
     },
     function (data) {
       if (jQuery.trim(data) === "success") {
         $("#RecommendationsCanvas").offcanvas("hide");
         alert("Recommendations saved successfully");
-        RecommendationDetails(); // Call function to refresh disease details
+        RecommendationDetails();
       } else {
         alert(data);
       }
@@ -83,21 +73,21 @@ function SaveRecommendations() {
 }
 
 function UpdateRecommendations(id) {
-  const disease = $("#disease").val();
+  const pest = $("#pest").val();
   const recommendations = $("#recommendations").val();
 
   $.post(
     "view/pest_recommendations/actions/update.php",
     {
       id: id,
-      disease: disease,
+      pest: pest,
       recommendations: recommendations,
     },
     function (data) {
       if (jQuery.trim(data) === "success") {
         $("#RecommendationsCanvas").offcanvas("hide");
-        alert("Recommendations saved successfully");
-        RecommendationDetails(); // Call function to refresh disease details
+        alert("Recommendations update successfully");
+        RecommendationDetails(); 
       } else {
         alert(data);
       }

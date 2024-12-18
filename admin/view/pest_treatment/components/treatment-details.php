@@ -5,11 +5,11 @@
 
     try {
         $sql=$conn->prepare("SELECT a.*, b.pest_name
-            FROM recommendations a
+            FROM treatment a
             LEFT JOIN pest b ON b.id = a.type_id 
             WHERE a.type = 'Pest'
             ");
-        $sql->execute([]);
+        $sql->execute();
         
     } catch (PDOException $e) {
         echo "Please Contact System Administrator".$e->getMessage();
@@ -20,17 +20,16 @@
 <tr>
     <td><?php echo $row['id'] ?></td>
     <td><?php echo $row['pest_name'] ?></td>
-    <td><?php echo $row['recommendations'] ?></td>
+    <td><?php echo $row['treatment'] ?></td>
     <td>
         <div class="d-flex justify-content-center">
             <a class="badge bg-info text-white text-decoration-none badge-danger" data-bs-toggle="offcanvas"
-                data-bs-target="#RecommendationsCanvas" onclick="RecommendationsEntry(1,<?php echo $row['id'] ?>)"
-                title="Edit">
+                data-bs-target="#TreatmentCanvas" onclick="TreatmentEntry(1,<?php echo $row['id'] ?>)" title="Edit">
                 <i class="fa fa-pen p-1"></i>
             </a>
             &nbsp;&nbsp;&nbsp;
             <a class="badge bg-danger text-white text-decoration-none badge-primary"
-                onclick="DeleteRecommendations(<?php echo $row['id'] ?>)" title="Delete">
+                onclick="DeleteTreatment(<?php echo $row['id'] ?>)" title="Delete">
                 <i class="fa fa-trash p-1"></i>
             </a>
         </div>

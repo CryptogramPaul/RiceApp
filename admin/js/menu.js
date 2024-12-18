@@ -32,7 +32,7 @@ function PestRecommendations() {
   });
 }
 function PestTreatment() {
-  $.post("view/treatment/treatment.php", {}, function (data) {
+  $.post("view/pest_treatment/treatment.php", {}, function (data) {
     $("#MainContent").html(data);
   });
 }

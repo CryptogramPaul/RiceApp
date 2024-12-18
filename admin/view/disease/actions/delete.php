@@ -14,6 +14,12 @@
 
         $sql_delete = $conn->prepare("DELETE FROM disease WHERE disease_id = ?");
         $sql_delete->execute([$id]);
+        
+        $recommendations = $conn->prepare("DELETE FROM recommendations WHERE type_id = ?");
+        $recommendations->execute([$id]);
+        
+        $treatment = $conn->prepare("DELETE FROM treatment WHERE type_id = ?");
+        $treatment->execute([$id]);
        
         $conn->commit();
         echo "success";

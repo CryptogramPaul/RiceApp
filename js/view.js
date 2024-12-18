@@ -1,9 +1,15 @@
 $(document).ready(function () {
   ViewDisease(8);
+  ViewPest(8);
 });
 function ViewDisease(page) {
   $.post("view/disease.php", { page: page }, function (data) {
     $("#LoadSymptoms").html(data);
+  });
+}
+function ViewPest(page) {
+  $.post("view/pest.php", { page: page }, function (data) {
+    $("#LoadPest").html(data);
   });
 }
 
@@ -55,6 +61,19 @@ function ViewDiseaseInformation(disease_id) {
     },
     function (data) {
       $("#DiseaseList").html(data);
+    }
+  );
+}
+
+
+function ViewPestInformation(id){
+  $.post(
+    "view/pest-info.php",
+    {
+      id: id,
+    },
+    function (data) {
+      $("#PestDescription").html(data);
     }
   );
 }

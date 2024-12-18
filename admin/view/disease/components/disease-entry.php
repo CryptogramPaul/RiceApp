@@ -42,7 +42,7 @@
 </div>
 <div class="row mb-2">
     <div class="col">
-        <label for="disease_description">Disease Description</label>
+        <label for="disease_description">Disease Descriptions</label>
         <textarea class="form-control form-control-sm" id="disease_description" cols="30" rows="10"
             Placeholder="Descriptions" required><?php echo $operation == 0 ? '': $descriptions ?></textarea>
     </div>

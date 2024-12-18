@@ -8,7 +8,6 @@
 
     $id = sanitize_input($_POST['id']);
    
-  
     try {
         $conn->beginTransaction();
 
