@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.1.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 16, 2024 at 09:53 AM
--- Server version: 10.4.32-MariaDB
--- PHP Version: 8.2.12
+-- Generation Time: Dec 18, 2024 at 02:25 PM
+-- Server version: 10.4.18-MariaDB
+-- PHP Version: 8.0.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -34,7 +34,7 @@ CREATE TABLE `disease` (
   `disease_img` varchar(500) NOT NULL,
   `date_created` timestamp NOT NULL DEFAULT current_timestamp(),
   `date_updated` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `disease`
@@ -58,12 +58,20 @@ INSERT INTO `disease` (`disease_id`, `disease_name`, `descriptions`, `disease_im
 
 CREATE TABLE `pest` (
   `id` int(11) NOT NULL,
-  `pest_name` int(11) NOT NULL,
-  `description` varchar(500) NOT NULL,
+  `pest_name` varchar(40) NOT NULL,
+  `descriptions` varchar(500) NOT NULL,
   `pest_img` varchar(500) NOT NULL,
   `date_created` timestamp NOT NULL DEFAULT current_timestamp(),
   `date_updated` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `pest`
+--
+
+INSERT INTO `pest` (`id`, `pest_name`, `descriptions`, `pest_img`, `date_created`, `date_updated`) VALUES
+(1, 'Balabaw', 'sample', 'pest_6762bf2b824497.55152656.jpg', '2024-12-18 12:25:15', '2024-12-18 12:29:55'),
+(2, 'Pispis', 'ssss', 'pest_6762bfb99e5a00.39557775.jpg', '2024-12-18 12:27:37', '2024-12-18 12:30:06');
 
 -- --------------------------------------------------------
 
@@ -78,7 +86,7 @@ CREATE TABLE `recommendations` (
   `recommendations` varchar(1000) NOT NULL,
   `date_created` timestamp NOT NULL DEFAULT current_timestamp(),
   `date_updated` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `recommendations`
@@ -92,7 +100,9 @@ INSERT INTO `recommendations` (`id`, `type`, `type_id`, `recommendations`, `date
 (5, 'Disease', 3, 'Likawan ang pag-utod sang mga seedling sa panahon sang pagtanum.', '2024-12-15 11:09:57', '2024-12-15 11:09:57'),
 (6, 'Disease', 3, 'Balanseha ang pag-abuno, likawan ang sobra nga paggamit sang N- application.', '2024-12-15 11:10:07', '2024-12-15 11:10:07'),
 (7, 'Disease', 3, 'I-skip ang N-application sapanahon sang booting (kung medyo mabug-at ang sakit).', '2024-12-15 11:12:35', '2024-12-15 11:12:35'),
-(8, 'Disease', 3, 'Pamul on ang hilamon sa palibot.', '2024-12-15 11:12:45', '2024-12-15 11:12:45');
+(8, 'Disease', 3, 'Pamul on ang hilamon sa palibot.', '2024-12-15 11:12:45', '2024-12-15 11:12:45'),
+(10, 'Pest', 1, 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.', '2024-12-18 12:38:53', '2024-12-18 12:40:09'),
+(12, 'Pest', 2, 'sadasdasd', '2024-12-18 13:20:15', '2024-12-18 13:20:15');
 
 -- --------------------------------------------------------
 
@@ -107,7 +117,7 @@ CREATE TABLE `symptoms` (
   `symptoms_img` varchar(1000) NOT NULL,
   `date_created` timestamp NOT NULL DEFAULT current_timestamp(),
   `date_updated` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `symptoms`
@@ -139,7 +149,7 @@ CREATE TABLE `treatment` (
   `treatment` varchar(1000) NOT NULL,
   `date_created` timestamp NOT NULL DEFAULT current_timestamp(),
   `date_updated` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `treatment`
@@ -196,13 +206,13 @@ ALTER TABLE `disease`
 -- AUTO_INCREMENT for table `pest`
 --
 ALTER TABLE `pest`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `recommendations`
 --
 ALTER TABLE `recommendations`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `symptoms`
