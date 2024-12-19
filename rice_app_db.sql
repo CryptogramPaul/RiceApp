@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 18, 2024 at 02:25 PM
+-- Generation Time: Dec 19, 2024 at 02:06 PM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 8.0.3
 
@@ -156,7 +156,23 @@ CREATE TABLE `treatment` (
 --
 
 INSERT INTO `treatment` (`id`, `type`, `type_id`, `treatment`, `date_created`, `date_updated`) VALUES
-(2, 'Disease', 2, 'aasd', '2024-12-15 12:16:29', '2024-12-15 12:17:19');
+(2, 'Disease', 2, 'aasd', '2024-12-15 12:16:29', '2024-12-15 12:17:19'),
+(3, 'Pest', 1, 'xzzxz', '2024-12-19 12:51:02', '2024-12-19 12:51:02');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user`
+--
+
+CREATE TABLE `user` (
+  `id` int(11) NOT NULL,
+  `firstname` varchar(50) NOT NULL,
+  `lastname` varchar(50) NOT NULL,
+  `middlename` varchar(50) NOT NULL,
+  `username` varchar(50) NOT NULL,
+  `password` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Indexes for dumped tables
@@ -193,6 +209,12 @@ ALTER TABLE `treatment`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `user`
+--
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -224,7 +246,13 @@ ALTER TABLE `symptoms`
 -- AUTO_INCREMENT for table `treatment`
 --
 ALTER TABLE `treatment`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `user`
+--
+ALTER TABLE `user`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

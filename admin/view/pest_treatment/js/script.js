@@ -67,7 +67,7 @@ function SaveTreatment() {
   $.post(
     "view/pest_treatment/actions/save.php",
     {
-      pest: disease,
+      pest: pest,
       treatment: treatment,
     },
     function (data) {
