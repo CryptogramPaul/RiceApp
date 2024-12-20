@@ -17,7 +17,9 @@
 
 <tr>
     <td><?php echo $row['disease_id'] ?></td>
-    <td><?php echo $row['disease_img'] ?></td>
+    <td>
+        <?php echo $row['disease_img'] ?>
+    </td>
     <td><?php echo $row['disease_name'] ?></td>
     <td><?php echo $row['descriptions'] ?></td>
     <td>
