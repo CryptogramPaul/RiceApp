@@ -18,7 +18,7 @@
 <tr>
     <td><?php echo $row['disease_id'] ?></td>
     <td>
-        <?php echo $row['disease_img'] ?>
+        <img src="../uploads/<?php echo $row['disease_img'] ?>" alt="<?php echo $row['disease_img'] ?>" height="50px" width="50px">
     </td>
     <td><?php echo $row['disease_name'] ?></td>
     <td><?php echo $row['descriptions'] ?></td>

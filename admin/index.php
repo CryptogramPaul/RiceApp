@@ -1,3 +1,16 @@
+<?php 
+  require_once '../conn/connection.php';
+  if (!isset($_COOKIE['userid'])) {
+      header("Location: login.php");
+  }
+
+  $id = $_COOKIE['userid'];
+//   $user_role = $_COOKIE['user_role'];
+
+    $sql_user = $conn->prepare("SELECT CONCAT_WS(' ', firstname, lastname) as name FROM user WHERE id = ?");
+    $sql_user->execute([$id]);
+    $user = $sql_user->fetch();
+  ?>
 <!doctype html>
 <html lang="en">
 
@@ -8,6 +21,8 @@
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.84.0">
     <title>Rice Disease Identifier - Admin</title>
+
+    <link rel="icon" href="../images/frontlogo.png" type="image/x-icon">
 
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
@@ -44,7 +59,11 @@
 <body>
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
         <div class="container">
-            <a class="navbar-brand" href="#">Rice Disease Identifier</a>
+            <a class="navbar-brand" href="#">
+                <img src="../images/frontlogo.png" alt="" height="50px" width="50px">
+                &nbsp;
+                Rice Disease Identifier
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
                 aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -76,7 +95,24 @@
                             <li><a class="dropdown-item" href="#" onclick="PestTreatment()">Treatment</a></li>
                         </ul>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="#" onclick="UserRegistry()">User</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fa fa-user-circle"></i>
+                            <?php echo $user['name'] ?>
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <!-- <li><a class="dropdown-item" data-bs-toggle="modal"
+                                    data-bs-target="#sign_up_modal"
+                                    onclick="SignUpModal('', 1)"
+                                    href="#">User Profile</a></li> -->
+                            <li><a class="dropdown-item" href="#" onclick="Logout()">Logout</a></li>
 
+                        </ul>
+                    </li>
                 </ul>
             </div>
         </div>

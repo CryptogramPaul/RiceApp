@@ -12,7 +12,7 @@ function Symptoms() {
   });
 }
 function DiseaseRecommendations() {
-  $.post("view/recommendations/recommendations.php", {}, function (data) {
+  $.post("view/disease_recommendations/recommendations.php", {}, function (data) {
     $("#MainContent").html(data);
   });
 }
@@ -33,6 +33,11 @@ function PestRecommendations() {
 }
 function PestTreatment() {
   $.post("view/pest_treatment/treatment.php", {}, function (data) {
+    $("#MainContent").html(data);
+  });
+}
+function UserRegistry() {
+  $.post("view/user/user.php", {}, function (data) {
     $("#MainContent").html(data);
   });
 }
