@@ -2,9 +2,10 @@
     require_once '../conn/connection.php';
     
     $page = $_POST['page'];
+    $symptom_search = $_POST['symptom_search'];
 
-    $symptoms = $conn->prepare("SELECT * FROM symptoms GROUP BY symptoms_name LIMIT $page");
-    $symptoms->execute();
+    $symptoms = $conn->prepare("SELECT * FROM symptoms WHERE symptoms_name LIKE ? GROUP BY symptoms_name LIMIT $page");
+    $symptoms->execute(["%".$symptom_search."%"]);
     $fetch_result = $symptoms->fetchAll();
     $count = $symptoms->rowCount();
     $forpage = $symptoms->rowCount();

@@ -2,15 +2,39 @@ $(document).ready(function () {
   ViewDisease(8);
   ViewPest(8);
 });
+
+$("#SymptomSearch").on("keyup", function () {
+  ViewDisease(8);
+});
+$("#PestSearch").on("keyup", function () {
+  ViewPest(8);
+});
+
 function ViewDisease(page) {
-  $.post("view/disease.php", { page: page }, function (data) {
-    $("#LoadSymptoms").html(data);
-  });
+  var symptom_search = $("#SymptomSearch").val();
+  $.post(
+    "view/disease.php",
+    {
+      page: page,
+      symptom_search: symptom_search,
+    },
+    function (data) {
+      $("#LoadSymptoms").html(data);
+    }
+  );
 }
 function ViewPest(page) {
-  $.post("view/pest.php", { page: page }, function (data) {
-    $("#LoadPest").html(data);
-  });
+  var pest_search = $("#PestSearch").val();
+  $.post(
+    "view/pest.php",
+    {
+      page: page,
+      pest_search: pest_search,
+    },
+    function (data) {
+      $("#LoadPest").html(data);
+    }
+  );
 }
 
 const container = $("#LoadSymptoms");
@@ -65,8 +89,7 @@ function ViewDiseaseInformation(disease_id) {
   );
 }
 
-
-function ViewPestInformation(id){
+function ViewPestInformation(id) {
   $.post(
     "view/pest-info.php",
     {

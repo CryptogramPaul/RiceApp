@@ -37,7 +37,9 @@ function LoadPestScript() {
                     <label for="${value.pest_name}">${value.pest_name}</label>
                   </div>
                   <div class="">
-                    <button class="btn btn-sm btn-outline-success" style="height: 30px;" onclick="ViewPestInformation('${value.pest_name}')">VIEW INFORMATION</button>
+                    <button class="btn btn-sm btn-outline-success" style="height: 30px;" onclick="ViewPestInformation('${
+                      value.pest_name
+                    }')">VIEW INFORMATION</button>
                   </div>
                 </div>
               </div>
@@ -45,26 +47,25 @@ function LoadPestScript() {
         `);
         pestCount++;
       }
-      
+
       if (pestCount >= data.length) {
-        viewPestMoreButton.hide(); 
+        viewPestMoreButton.hide();
       }
     }
-    
+
     container.append(`
       <div id="NoPestRecordFound" class="col-12">
         <p class="text-center">No records found.</p>
       </div>
     `);
 
-    $("#NoPestRecordFound").hide(); 
+    $("#NoPestRecordFound").hide();
 
     loadPests();
     viewPestMoreButton.on("click", function () {
       loadPests();
-      $("#NoPestRecordFound").hide(); 
+      $("#NoPestRecordFound").hide();
     });
-
   });
 }
 
@@ -92,9 +93,7 @@ function PestSearch(event) {
   }
 }
 
-
 function ViewPestInformation(pest) {
-
   const url = "json/pest.json";
   const PestDescription = $("#PestDescription");
   PestDescription.empty();
@@ -160,10 +159,6 @@ function ViewPestInformation(pest) {
     console.error("Error loading the JSON file.");
   });
 
-
-    const modal = new bootstrap.Modal(
-      document.getElementById("PestModal")
-    );
-    modal.show();
+  const modal = new bootstrap.Modal(document.getElementById("PestModal"));
+  modal.show();
 }
-
