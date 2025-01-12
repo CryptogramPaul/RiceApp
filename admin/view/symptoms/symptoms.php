@@ -21,14 +21,19 @@
                 aria-controls="offcanvasRight" onclick="SymptomsEntry(0,null)">Add</button>
         </div>
         <div class="table-responsive small mt-2">
-            <table class="table table-striped table-sm">
+            <table class="table table-bordered table-sm">
                 <thead>
+                    <col width="5%">
+                    <col width="10%">
+                    <col width="10%">
+                    <col width="40%">
+                    <col width="10%">
                     <tr>
-                        <th scope="col">ID</th>
-                        <th scope="col">Image</th>
-                        <th scope="col">Disease</th>
-                        <th scope="col">Symptoms Name</th>
-                        <th scope="col"></th>
+                        <th class="text-center">ID</th>
+                        <th class="text-center">Image</th>
+                        <th class="text-center">Disease</th>
+                        <th class="text-center">Symptoms Name</th>
+                        <th class="text-center"></th>
                     </tr>
                 </thead>
                 <tbody id="LoadSymptomsDetails">

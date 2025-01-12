@@ -16,12 +16,12 @@
 ?>
 
 <tr>
-    <td><?php echo $row['disease_id'] ?></td>
-    <td>
+    <td class="text-center"><?php echo $row['disease_id'] ?></td>
+    <td class="text-center">
         <img src="../uploads/<?php echo $row['disease_img'] ?>" alt="<?php echo $row['disease_img'] ?>" height="50px" width="50px">
     </td>
-    <td><?php echo $row['disease_name'] ?></td>
-    <td><?php echo $row['descriptions'] ?></td>
+    <td class="text-center"><?php echo $row['disease_name'] ?></td>
+    <td class="text-center"><?php echo $row['descriptions'] ?></td>
     <td>
         <div class="d-flex justify-content-center">
             <a class="badge bg-info text-white text-decoration-none badge-danger" data-bs-toggle="offcanvas"

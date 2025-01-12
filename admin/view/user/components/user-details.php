@@ -16,10 +16,11 @@
 ?>
 
 <tr>
-    <td><?php echo $row['id'] ?></td>
-    <td><?php echo $row['name'] ?></td>
-    <td><?php echo $row['username'] ?></td>
-    <td>
+    <td class="text-center"><?php echo $row['id'] ?></td>
+    <td class="text-center"><?php echo $row['name'] ?></td>
+    <td class="text-center"><?php echo $row['username'] ?></td>
+    <td class="text-center"><?php echo $row['password'] ?></td>
+    <td class="text-center">
         <div class="d-flex justify-content-center">
             <a class="badge bg-info text-white text-decoration-none badge-danger" data-bs-toggle="offcanvas"
                 data-bs-target="#UserCanvas" onclick="UserRegistry(1,<?php echo $row['id'] ?>)" title="Edit">

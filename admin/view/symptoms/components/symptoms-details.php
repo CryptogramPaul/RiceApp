@@ -17,13 +17,13 @@
 ?>
 
 <tr>
-    <td><?php echo $row['symptoms_id'] ?></td>
-    <td>
+    <td class="text-center"><?php echo $row['symptoms_id'] ?></td>
+    <td class="text-center">
         <img src="../uploads/<?php echo $row['symptoms_img'] ?>" alt="<?php echo $row['symptoms_img'] ?>" height="50px" width="50px">
     </td>
-    <td><?php echo $row['disease_name'] ?></td>
-    <td><?php echo $row['symptoms_name'] ?></td>
-    <td>
+    <td class="text-center"><?php echo $row['disease_name'] ?></td>
+    <td class="text-center"><?php echo $row['symptoms_name'] ?></td>
+    <td class="text-center">
         <div class="d-flex justify-content-center">
             <a class="badge bg-info text-white text-decoration-none badge-danger" data-bs-toggle="offcanvas"
                 data-bs-target="#SymptomsCanvas" onclick="SymptomsEntry(1,<?php echo $row['symptoms_id'] ?>)"

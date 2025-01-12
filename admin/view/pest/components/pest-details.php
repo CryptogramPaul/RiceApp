@@ -16,13 +16,13 @@
 ?>
 
 <tr>
-    <td><?php echo $row['id'] ?></td>
-    <td>
+    <td class="text-center"><?php echo $row['id'] ?></td>
+    <td class="text-center">
         <img src="../uploads/<?php echo $row['pest_img'] ?>" alt="<?php echo $row['pest_img'] ?>" height="50px" width="50px">
     </td>
-    <td><?php echo $row['pest_name'] ?></td>
-    <td><?php echo $row['descriptions'] ?></td>
-    <td>
+    <td class="text-center"><?php echo $row['pest_name'] ?></td>
+    <td class="text-center"><?php echo $row['descriptions'] ?></td>
+    <td class="text-center">
         <div class="d-flex justify-content-center">
             <a class="badge bg-info text-white text-decoration-none badge-danger" data-bs-toggle="offcanvas"
                 data-bs-target="#pestCanvas" onclick="PestEntry(1,<?php echo $row['id'] ?>)" title="Edit">

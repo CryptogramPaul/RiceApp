@@ -21,13 +21,19 @@
                 aria-controls="offcanvasRight" onclick="UserRegistry(0,null)">Add</button>
         </div>
         <div class="table-responsive small mt-2">
-            <table class="table table-striped table-sm">
+            <table class="table table-bordered table-sm">
                 <thead>
+                    <col width="5%">
+                    <col width="10%">
+                    <col width="10%">
+                    <col width="10%">
+                    <col width="5%">
                     <tr>
-                        <th scope="col">ID</th>
-                        <th scope="col">Name</th>
-                        <th scope="col">Username</th>
-                        <th scope="col"></th>
+                        <th class="text-center">ID</th>
+                        <th class="text-center">Name</th>
+                        <th class="text-center">Username</th>
+                        <th class="text-center">Password</th>
+                        <th class="text-center"></th>
                     </tr>
                 </thead>
                 <tbody id="LoadUserDetails">

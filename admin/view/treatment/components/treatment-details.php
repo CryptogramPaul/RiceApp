@@ -18,10 +18,10 @@
 ?>
 
 <tr>
-    <td><?php echo $row['id'] ?></td>
-    <td><?php echo $row['disease_name'] ?></td>
-    <td><?php echo $row['treatment'] ?></td>
-    <td>
+    <td class="text-center"><?php echo $row['id'] ?></td>
+    <td class="text-center"><?php echo $row['disease_name'] ?></td>
+    <td class="text-center"><?php echo $row['treatment'] ?></td>
+    <td class="text-center">
         <div class="d-flex justify-content-center">
             <a class="badge bg-info text-white text-decoration-none badge-danger" data-bs-toggle="offcanvas"
                 data-bs-target="#TreatmentCanvas" onclick="TreatmentEntry(1,<?php echo $row['id'] ?>)" title="Edit">
