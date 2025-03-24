@@ -39,7 +39,7 @@
 <div class="row mb-2">
     <div class="col">
         <label for="disease">Disease</label>
-        <select class="form-control form-control-sm" id="disease">
+        <select class="form-control form-control-sm" id="disease" required>
             <option value="">Select Disease</option>
             <?php
                 

@@ -25,7 +25,7 @@
     recommendations_id="<?php echo $id ?>">
     <div class="col">
         <label for="pest">Pest</label>
-        <select class="form-control form-control-sm" id="pest">
+        <select class="form-control form-control-sm" id="pest" required>
             <option value="">Select Pest</option>
             <?php
                 $sql=$conn->prepare("SELECT id, pest_name FROM pest");
