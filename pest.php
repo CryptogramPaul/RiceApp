@@ -32,11 +32,11 @@ body {
 #home {
     background-image: url('images/background.jpg');
     background-size: cover;
-    background-position: center;
+    background-position: relative;
     height: 100vh;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    /* align-items: center; */
+    /* justify-content: center; */
 }
 
 #home.container {
@@ -46,8 +46,14 @@ body {
 #home h1 {
     font-size: 4rem;
     color: white;
-    text-align: center;
+    /* text-align: center; */
 
+}
+
+.card-img-top {
+    width: 100%;
+    height: 10vw;
+    object-fit: cover;
 }
 </style>
 
@@ -55,38 +61,42 @@ body {
     <section id="home">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-md-4 text-center">
+                <!-- <div class="col-md-4 text-center">
                     <img src="images/frontlogo.png" alt="square-image" class="mt-5"
                         style="object-fit: cover 50%; border-radius: 30px; width: 400px; height: 400px; ">
-                </div>
+                </div> -->
                 <div class="col-md-8" id="home-div">
-                    <h1 class="text-uppercase text-center">Rice Disease Identifier</h1>
-                    <h1 class="text-center ">Ano ang nakita mo sa imo parayan?</h1>
-
-                    <div class="row justify-content-center">
-                        <div class="text-center col-xl-3 col-sm-6 col-md-4 ">
-                            <div class="card" style="width: 14rem;">
-                                <img class="card-img-left" src="images/symptoms-logo.png">
-                                <div class="card-body">
-                                    <a href="symptoms.php" type="button" class="btn btn-secondary">Sintomas</a>
-                                </div>
-                            </div>
+                    <h1 class="text-uppercase ">Rice Disease Identifier - Peste</h1>
+                    <div class="row">
+                        <div class="col-12 col-xl-6">
+                            <input type="search" class="form-control" onkeypress="PestSearch(event)" id="PestSearch"
+                                placeholder="Search for pests">
                         </div>
-                        <div class="text-center col-xl-3 col-sm-6 col-md-4 ">
-                            <div class="card" style="width: 14rem;">
-                                <img class="card-img-left" src="images/pest-logo.jpg">
-                                <div class="card-body">
-                                    <a href="pest.php" type="button" class="btn btn-secondary"
-                                        onclick="Peste()">Peste</a>
-                                </div>
-                            </div>
-                        </div>
+                    </div>
+                    <div class="row" id="LoadPest">
                     </div>
                 </div>
             </div>
         </div>
+        </div>
     </section>
 
+    <div class="modal fade" id="PestModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header py-0 my-0">
+                    <h1 class="modal-title" id="pestModalLabel">Pest</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row" id="PestDescription">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 <script src="js/jquery-3.7.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
@@ -97,5 +107,10 @@ body {
 <!-- <script src="js/symptoms.js"></script> -->
 <!-- <script src="js/pest.js"></script> -->
 <script src="js/view.js"></script>
+<script>
+$(document).ready(function() {
+    ViewPest(8);
+});
+</script>
 
 </html>

@@ -9,6 +9,7 @@
     // $disease = isset($_FILES['symptoms_img']) ? $_FILES['symptoms_img'] : null;
     $disease = sanitize_input($_POST['disease']);
     $symptoms_name = sanitize_input($_POST['symptoms_name']);
+    $category = sanitize_input($_POST['category']);
     $symptoms_img = null;
 
   
@@ -32,8 +33,8 @@
 
         $conn->beginTransaction();
 
-        $sql_insert_disease = $conn->prepare("INSERT INTO symptoms (symptoms_img, symptoms_name, disease_id)VALUES(?,?,?)");
-        $sql_insert_disease->execute([$symptoms_img, $symptoms_name, $disease ]);
+        $sql_insert_disease = $conn->prepare("INSERT INTO symptoms (symptoms_img, symptoms_name, category, disease_id)VALUES(?,?,?,?)");
+        $sql_insert_disease->execute([$symptoms_img, $symptoms_name, $category, $disease ]);
         
         if (move_uploaded_file($file['tmp_name'], $targetFile)) {
             $symptoms_img = $uniqueFileName; // Save the file name for database entry

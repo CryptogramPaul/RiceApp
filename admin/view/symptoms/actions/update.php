@@ -9,9 +9,10 @@
     // $disease = isset($_FILES['symptoms_id']) ? $_FILES['symptoms_id'] : null;
     $disease = sanitize_input($_POST['disease']);
     $symptoms_name = sanitize_input($_POST['symptoms_name']);
+    $category = sanitize_input($_POST['category']);
     $symptoms_id = sanitize_input($_POST['symptoms_id']);
     $NotChange = sanitize_input($_POST['NotChange']);
-    $symptoms_id = null;
+    $symptoms_img = null;
 
   
     try {
@@ -29,23 +30,23 @@
                 $fileExtension = pathinfo($file['name'], PATHINFO_EXTENSION);
                 $uniqueFileName = uniqid("symptoms_", true) . '.' . $fileExtension;
                 $targetFile = $targetDir . $uniqueFileName;
-                $symptoms_id = $uniqueFileName;
+                $symptoms_img = $uniqueFileName;
                 
             }
         }else{
-            $symptoms_id = $_POST['symptoms_img'];
+            $symptoms_img = $_POST['symptoms_img'];
         }
 
 
 
         $conn->beginTransaction();
 
-        $sql_update_disease = $conn->prepare("UPDATE symptoms SET disease_id = ?, symptoms_name = ?, symptoms_name = ? WHERE symptoms_id = ?");
-        $sql_update_disease->execute([$disease, $symptoms_name, $symptoms_name, $symptoms_id]);
+        $sql_update_disease = $conn->prepare("UPDATE symptoms SET disease_id = ?, symptoms_name = ?, symptoms_img = ?, category = ? WHERE symptoms_id = ?");
+        $sql_update_disease->execute([$disease, $symptoms_name, $symptoms_img, $category, $symptoms_id]);
         
         if ($NotChange == 'true') {
             if (move_uploaded_file($file['tmp_name'], $targetFile)) {
-                $symptoms_id = $uniqueFileName; // Save the file name for database entry
+                $symptoms_img = $uniqueFileName; // Save the file name for database entry
             } else {
                 throw new Exception("Failed to upload file.");
             }

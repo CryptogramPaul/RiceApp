@@ -19,9 +19,11 @@
 <tr>
     <td class="text-center"><?php echo $row['symptoms_id'] ?></td>
     <td class="text-center">
-        <img src="../uploads/<?php echo $row['symptoms_img'] ?>" alt="<?php echo $row['symptoms_img'] ?>" height="50px" width="50px">
+        <img src="../uploads/<?php echo $row['symptoms_img'] ?>" alt="<?php echo $row['symptoms_img'] ?>" height="50px"
+            width="50px">
     </td>
     <td class="text-center"><?php echo $row['disease_name'] ?></td>
+    <td class="text-center"><?php echo $row['category'] ?></td>
     <td class="text-center"><?php echo $row['symptoms_name'] ?></td>
     <td class="text-center">
         <div class="d-flex justify-content-center">

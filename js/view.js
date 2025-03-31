@@ -1,7 +1,7 @@
-$(document).ready(function () {
-  ViewDisease(8);
-  ViewPest(8);
-});
+// $(document).ready(function () {
+//   ViewDisease(8);
+//   ViewPest(8);
+// });
 
 $("#SymptomSearch").on("keyup", function () {
   ViewDisease(8);
@@ -97,6 +97,22 @@ function ViewPestInformation(id) {
     },
     function (data) {
       $("#PestDescription").html(data);
+    }
+  );
+}
+
+function Sintomas() {
+  $("#home-div").html("");
+
+  // var symptom_search = $("#SymptomSearch").val();
+  $.post(
+    "view/disease.php",
+    {
+      page: "8",
+      symptom_search: "",
+    },
+    function (data) {
+      $("#home-div").html(data);
     }
   );
 }

@@ -13,9 +13,9 @@
     foreach($fetch_result as $key => $value){
 ?>
 <div class="col-xl-3 col-sm-6 col-md-4 my-1 symptom-item">
-    <div class="card mb-2">
+    <div class="card mb-2 h-100">
         <img src="uploads/<?php echo $value['symptoms_img']?>" class="card-img-top symptoms_img"
-            alt="<?php echo $value['symptoms_img']?>" class="m-1" />
+            alt="<?php echo $value['symptoms_img']?>" class="m-1" width="100" height="100" />
         <div class="card-body">
             <div class="form-check">
                 <input class="form-check-input symptom-checkbox" type="checkbox"

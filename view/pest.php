@@ -14,7 +14,7 @@
     foreach($fetch_result as $key => $value){
 ?>
 <div class="col-xl-3 col-sm-6 col-md-4 my-1 pest-item">
-    <div class="card mb-2">
+    <div class="card mb-2 h-100">
         <img src="uploads/<?php echo $value['pest_img']?>" class="card-img-top pests_img"
             alt="<?php echo $value['pest_img']?>" />
         <div class="card-body text-center">

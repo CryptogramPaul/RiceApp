@@ -26,12 +26,14 @@
                     <col width="5%">
                     <col width="10%">
                     <col width="10%">
+                    <col width="10%">
                     <col width="40%">
                     <col width="10%">
                     <tr>
                         <th class="text-center">ID</th>
                         <th class="text-center">Image</th>
                         <th class="text-center">Disease</th>
+                        <th class="text-center">Category</th>
                         <th class="text-center">Symptoms Name</th>
                         <th class="text-center"></th>
                     </tr>

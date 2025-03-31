@@ -9,7 +9,7 @@
 <div class="col-12 col-xl-4 my-1">
     <div class="card mb-2">
         <img src="uploads/<?php echo $row_disease['disease_img'] ?>" class="card-img-top symptoms_img"
-            alt="<?php echo $row_disease['disease_img'] ?>" class="m-1" />
+            alt="<?php echo $row_disease['disease_img'] ?>" class="m-1" width="100" height="100" />
         <div class="card-body">
             <h1 class="m-0 p-0">
                 <?php echo $row_disease['disease_name'] ?>

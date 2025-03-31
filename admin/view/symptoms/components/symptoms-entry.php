@@ -16,6 +16,7 @@
         $symptoms_img  =  $result['symptoms_img'] ?? '';
         $symptoms_name =  $result['symptoms_name'] ?? '';
         $disease =  $result['disease_name'] ?? '';
+        $category =  $result['category'] ?? '';
     } catch (PDOException $e) {
         echo "Please Contact System Administrator".$e->getMessage();
     }
@@ -58,7 +59,19 @@
             value="<?php echo $operation == 0 ? '': $disease ?>" Placeholder="Disease" required> -->
     </div>
 </div>
-
+<div class="row mb-2">
+    <div class="col">
+        <label for="category">Category</label>
+        <select class="form-control form-control-sm" id="category" required>
+            <option <?php echo $category == "Dahon" ? 'selected':'' ?> value="Dahon">Dahon</option>
+            <option <?php echo $category == "Collar" ? 'selected':'' ?> value="Collar">Collar</option>
+            <option <?php echo $category == "Node" ? 'selected':'' ?> value="Node">Node</option>
+            <option <?php echo $category == "Neck" ? 'selected':'' ?> value="Neck">Neck</option>
+            <option <?php echo $category == "Panicle" ? 'selected':'' ?> value="Panicle">Panicle</option>
+        </select>
+    </div>
+</div>
+</div>
 <div class="row mb-2">
     <div class="col">
         <label for="symptoms_name">Symptoms</label>
@@ -80,13 +93,14 @@ function SaveSymptoms() {
     const symptoms_img = $("#symptoms_img")[0].files[0];
     const disease = $("#disease").val();
     const symptoms_name = $("#symptoms_name").val();
+    const category = $("#category").val();
 
     // Create a FormData object
     const formData = new FormData();
     formData.append("symptoms_img", symptoms_img);
     formData.append("disease", disease);
     formData.append("symptoms_name", symptoms_name);
-
+    formData.append("category", category);
     // Use $.ajax for the file upload
     $.ajax({
         url: "view/symptoms/actions/save.php",
@@ -121,6 +135,7 @@ function UpdateSymptoms(id) {
     }
     const disease = $("#disease").val();
     const symptoms_name = $("#symptoms_name").val();
+    let category = $("#category").val();
 
     // Create a FormData object
     const formData = new FormData();
@@ -128,6 +143,7 @@ function UpdateSymptoms(id) {
     formData.append("symptoms_img", symptoms_img);
     formData.append("disease", disease);
     formData.append("symptoms_name", symptoms_name);
+    formData.append("category", category);
     formData.append("symptoms_id", id);
 
     // Use $.ajax for the file upload
