@@ -25,18 +25,17 @@
 </head>
 <style>
 body {
-    background-color: rgb(225, 243, 215);
-
+    background-image: url('images/background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 #home {
-    background-image: url('images/background.jpg');
-    background-size: cover;
-    background-position: relative;
     height: 100vh;
     display: flex;
     /* align-items: center; */
-    /* justify-content: center; */
+    justify-content: center;
 }
 
 #home.container {
@@ -54,6 +53,15 @@ body {
     width: 100%;
     height: 10vw;
     object-fit: cover;
+}
+
+.back-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
 }
 </style>
 
@@ -75,8 +83,12 @@ body {
                                 <input type="search" class="form-control" onkeypress="handleSearch(event)"
                                     id="SymptomSearch" placeholder="Search for symptoms">
                             </div>
-                            <div class="col-12">
-                                <h4 class="text-white">(Select up to 5 symptoms then click view diagnosis for more
+                            <div class="col-12 d-flex align-items-center">
+                                <a href="index.php" class="back-btn" type="button">Back</a>
+                                <h4 class="text-white"> &nbsp;&nbsp;&nbsp;&nbsp;
+                                    (Select up to 5
+                                    symptoms then click view
+                                    diagnosis for more
                                     info.)</h4>
                             </div>
                         </div>

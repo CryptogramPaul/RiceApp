@@ -12,9 +12,13 @@ function Symptoms() {
   });
 }
 function DiseaseRecommendations() {
-  $.post("view/disease_recommendations/recommendations.php", {}, function (data) {
-    $("#MainContent").html(data);
-  });
+  $.post(
+    "view/disease_recommendations/recommendations.php",
+    {},
+    function (data) {
+      $("#MainContent").html(data);
+    }
+  );
 }
 function DiseaseTreatment() {
   $.post("view/treatment/treatment.php", {}, function (data) {

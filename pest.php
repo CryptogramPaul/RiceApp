@@ -25,18 +25,17 @@
 </head>
 <style>
 body {
-    background-color: rgb(225, 243, 215);
-
+    background-image: url('images/background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 #home {
-    background-image: url('images/background.jpg');
-    background-size: cover;
-    background-position: relative;
     height: 100vh;
     display: flex;
     /* align-items: center; */
-    /* justify-content: center; */
+    justify-content: center;
 }
 
 #home.container {
@@ -46,14 +45,21 @@ body {
 #home h1 {
     font-size: 4rem;
     color: white;
-    /* text-align: center; */
-
 }
 
 .card-img-top {
     width: 100%;
     height: 10vw;
     object-fit: cover;
+}
+
+.back-btn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
 }
 </style>
 
@@ -66,9 +72,13 @@ body {
                         style="object-fit: cover 50%; border-radius: 30px; width: 400px; height: 400px; ">
                 </div> -->
                 <div class="col-md-8" id="home-div">
-                    <h1 class="text-uppercase ">Rice Disease Identifier - Peste</h1>
+                    <a href="index.php" class="back-btn mt-2" type="button">Back</a>
+                    <h1 class="text-uppercase "> Rice
+                        Disease
+                        Identifier - Peste</h1>
                     <div class="row">
-                        <div class="col-12 col-xl-6">
+                        <div></div>
+                        <div class="col-12 col-xl-6 d-flex">
                             <input type="search" class="form-control" onkeypress="PestSearch(event)" id="PestSearch"
                                 placeholder="Search for pests">
                         </div>

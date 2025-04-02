@@ -25,21 +25,21 @@
 </head>
 <style>
 body {
-    background-color: rgb(225, 243, 215);
-
+    background-image: url('images/background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* background-attachment: fixed; */
 }
 
 #home {
-    background-image: url('images/background.jpg');
-    background-size: cover;
-    background-position: center;
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
+
 }
 
-#home.container {
+#home.container-fluid {
     max-width: 500px;
 }
 

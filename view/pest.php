@@ -4,7 +4,7 @@
     $page = $_POST['page'];
     $pest_search = $_POST['pest_search'];
 
-    $pest = $conn->prepare("SELECT * FROM pest WHERE pest_name LIKE ? LIMIT $page");
+    $pest = $conn->prepare("SELECT * FROM pest WHERE pest_name LIKE ? ");
     $pest->execute(["%".$pest_search."%"]);
     $fetch_result = $pest->fetchAll();
     
@@ -35,13 +35,13 @@
 <?php
     if ($count == 0) {
 ?>
-<div id="NoRecordFound" class="col-12">
+<!-- <div id="NoRecordFound" class="col-12">
     <p class="text-center">No records found.</p>
-</div>
+</div> -->
 <?php
     }
 ?>
-<div class="">
+<!-- <div class="">
     <button id="viewMoreButton" class="btn btn-secondary my-3 mx-2"
         onclick="ViewPest(`<?php echo $forpage+8 ?>`)"><small>Click for More</small></button>
-</div>
+</div> -->
