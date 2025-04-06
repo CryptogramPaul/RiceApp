@@ -116,3 +116,18 @@ function Sintomas() {
     }
   );
 }
+
+
+function SintomasPage() {
+  window.location.href = "symptoms.php"
+}
+function PestePage() {
+  window.location.href = "pest.php"
+}
+function BackIndex() {
+  window.location.href = "index.php"
+}
+// function BackPeste() {
+//   window.location.href = "index.php"
+// }
+

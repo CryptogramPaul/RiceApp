@@ -24,7 +24,7 @@
 
 </head>
 <style>
-/* body {
+body {
     background-image: url('images/background.jpg');
     background-size: cover;
     background-repeat: no-repeat;
@@ -34,6 +34,7 @@
 #home {
     height: 100vh;
     display: flex;
+    /* align-items: center; */
     justify-content: center;
 }
 
@@ -59,135 +60,36 @@
     border-radius: 20px;
     padding: 10px 20px;
     cursor: pointer;
-} */
-
-body {
-    font-family: sans-serif;
-    background-image: url('images/background.jpg');
-    background-size: cover;
-    /* background-repeat: no-repeat; */
-    background-attachment: fixed;
-    overflow: hidden;
 }
-
-.div-logo{
-    display: flex;
-    align-items: center;
-}
-.main-logo{
-    width: 50px;
-    height: 50px;
-}
-
-.main-container {
-  display: flex;
-  height: 100vh;
-  /* overflow: hidden; */
-}
-
-.sidebar {
-  width: 300px;
-  /* background-color: rgba(0, 0, 0, 0.3); semi-transparent overlay */
-  background-image: url('images/background-text.jpg');
-  background-size: cover;
-  color: white;
-  text-align: center;
-  padding: 40px 20px;
-  flex-shrink: 0;
-  opacity: 0.9;
-  transition: transform 0.3s;
-}
-
-.icon {
-  width: 250px;
-  height: 250px;
-  margin-bottom: 20px;
-}
-
-.content-area {
-  flex: 1;
-  padding: 20px;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-}
-
-
-
-.card-scroll {
-  flex: 1;
-  overflow-x: auto;
-  padding-right: 10px; 
-  margin-bottom: 70px;
-}
-
-.card-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 10px;
-}
-@media (max-width: 1024px) {
-  .card-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 600px) {
-  .card-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-
-
-
 </style>
 
 <body>
-    <header id="header" class="bg-success">
+    <section id="home">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-md-12 d-flex div-logo" >
-                    <div class="main-logo">
-                        <a href="#"><img src="images/frontlogo.png" alt="logo" height="" ></a>
+                <!-- <div class="col-md-4 text-center">
+                    <img src="images/frontlogo.png" alt="square-image" class="mt-5"
+                        style="object-fit: cover 50%; border-radius: 30px; width: 400px; height: 400px; ">
+                </div> -->
+                <div class="col-md-8" id="home-div">
+                    <a href="index.php" class="back-btn mt-2" type="button">Back</a>
+                    <h1 class="text-uppercase "> Rice
+                        Disease
+                        Identifier - Peste</h1>
+                    <div class="row">
+                        <div></div>
+                        <div class="col-12 col-xl-6 d-flex">
+                            <input type="search" class="form-control" onkeypress="PestSearch(event)" id="PestSearch"
+                                placeholder="Search for pests">
+                        </div>
                     </div>
-                    &nbsp;&nbsp;&nbsp;&nbsp;
-                    <h2 class="text-uppercase text-center text-white">Rice Disease Identifier for Beginners</h2>
+                    <div class="row" id="LoadPest">
+                    </div>
                 </div>
             </div>
         </div>
-    </header>
-    <div class="main-container">
-        <div class="sidebar">
-            <img src="images/peste-logo.jpg" class="icon" />
-            <h1 class="text-white">Peste</h1>
         </div>
-
-        <div class="content-area">
-            <!-- <div class="top-bar">
-            <input type="text" placeholder="Search for symptoms..." />
-            <button>BACK</button>
-            </div> -->
-            <div class="flex items-center p-2 rounded-2xl shadow-md max-w-xl ml-auto">
-                <input 
-                    type="text" 
-                    placeholder="Search for pests..." 
-                    class="w-3/4 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
-                    onkeypress="PestSearch(event)" id="PestSearch"
-                />
-                
-                <button 
-                    class=" bg-blue-600 text-white bg-success font-semibold rounded-lg hover:bg-blue-700 transition ml-4"
-                    onclick="BackIndex()"
-                >
-                    Back
-                </button>
-            </div>
-            <div class="card-scroll" id="LoadPest">
-                
-            </div>
-        </div>
-    </div>
+    </section>
 
     <div class="modal fade" id="PestModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
         aria-labelledby="staticBackdropLabel" aria-hidden="true">

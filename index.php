@@ -33,15 +33,15 @@ body {
 
 #home {
     height: 100vh;
-    display: flex;
-    align-items: center;
+    /* display: flex;
+    align-items: center; */
     justify-content: center;
 
 }
 
-#home.container-fluid {
+/* #home.container-fluid {
     max-width: 500px;
-}
+} */
 
 #home h1 {
     font-size: 4rem;
@@ -49,11 +49,88 @@ body {
     text-align: center;
 
 }
+
+.main-logo{
+    width: 50px;
+    height: 50px;
+}
+
+.div-logo{
+    display: flex;
+    align-items: center;
+}
+
+                   
+.text-background{
+    background-image: url('images/background-text.jpg');
+    background-size: cover; /* Ensures the background image covers the entire element */
+    background-position: center; /* Centers the background image */
+    height: 100vh; /* Example height, you can adjust this value as needed */
+    text-align: center;
+    display: flex;
+    align-items: center;
+    opacity: 0.7;
+    /* background-color: rgba(255, 255, 255, 0.8); */
+}
+.action-btn{
+    padding: 10px 20px;
+    height: 100vh;
+    /* border-radius: 10px; */ 
+    display: flex;
+    align-items: center;
+    /* margin-right: 20px; */
+}
 </style>
 
 <body>
+    <header id="header" class=" bg-success">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12 d-flex div-logo" >
+                    <div class="main-logo">
+                        <a href="#"><img src="images/frontlogo.png" alt="logo" height="" ></a>
+                    </div>
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    <!-- <h1 class="text-uppercase text-center">Rice Disease Identifier</h1> -->
+                    <h2 class="text-uppercase text-center text-white">Rice Disease Identifier for Beginners</h2>
+                </div>
+            </div>
+        </div>
+    </header>
     <section id="home">
         <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-4 text-center">
+                    <div class="text-background">
+                        <h1 class="text-center text-uppercase">Ano ang makita nga problema sa paray?</h1>
+                    </div>
+                </div>
+                <div class="col-md-8" id="home-div">
+                    <div class="row justify-content-center action-btn">
+                        <div class="text-center col-xl-4 col-sm-6 col-md-4 ">
+                            <div class="card" style="width: 17rem;" onclick="SintomasPage()">
+                                <img class="card-img-left" src="images/sintomas-logo.jpg">
+                                <!-- <div class="card-body">
+                                    <a href="symptoms.php" type="button" class="btn btn-secondary">Sintomas</a>
+                                </div> -->
+                            </div>
+                        </div>
+                        &nbsp;&nbsp;&nbsp;&nbsp;
+                        <div class="text-center col-xl-4 col-sm-6 col-md-6" onclick="PestePage()">
+                            <div class="card " style="width: 17rem;">
+                                <img class="card-img-left" src="images/peste-logo.jpg">
+                                <!-- <div class="card-body">
+                                    <a href="pest.php" type="button" class="btn btn-secondary"
+                                        onclick="Peste()">Peste</a>
+                                </div> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- <div class="container-fluid">
             <div class="row">
                 <div class="col-md-4 text-center">
                     <img src="images/frontlogo.png" alt="square-image" class="mt-5"
@@ -84,7 +161,9 @@ body {
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
+        
+        
     </section>
 
 </body>

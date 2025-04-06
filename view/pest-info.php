@@ -22,7 +22,7 @@
     </div>
 </div>
 <div class="col-12 col-xl-4 " id="">
-    <h3>Recommendations:</h3>
+    <h3>REKOMENDASYON:</h3>
     <ul id="recommendations">
         <?php
             $recommendations = $conn->prepare("SELECT * FROM recommendations WHERE type_id = ? ");
@@ -37,7 +37,7 @@
     </ul>
 </div>
 <div class="col-12 col-xl-4 " id="">
-    <h3>Treatment:</h3>
+    <h3>PAGBULONG:</h3>
     <ul id="treatment">
         <?php
             $treatment = $conn->prepare("SELECT * FROM treatment WHERE type_id = ?");

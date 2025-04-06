@@ -1,3 +1,11 @@
+<style>
+    .card {
+        background-color: white;
+        border-radius: 12px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+        padding: 10px;
+    }
+</style>
 <?php
     require_once '../conn/connection.php';
     
@@ -11,9 +19,12 @@
     $count = $pest->rowCount();
     $forpage = $pest->rowCount();
 
-    foreach($fetch_result as $key => $value){
+    
 ?>
-<div class="col-xl-3 col-sm-6 col-md-4 my-1 pest-item">
+<div class="card-grid">
+    <?php
+        foreach($fetch_result as $key => $value){
+    ?>
     <div class="card mb-2 h-100">
         <img src="uploads/<?php echo $value['pest_img']?>" class="card-img-top pests_img"
             alt="<?php echo $value['pest_img']?>" />
@@ -28,10 +39,10 @@
             </div>
         </div>
     </div>
+    <?php
+        }
+    ?>
 </div>
-<?php
-    }
-?>
 <?php
     if ($count == 0) {
 ?>
