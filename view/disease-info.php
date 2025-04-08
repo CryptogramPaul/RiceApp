@@ -25,7 +25,7 @@
     <h3>REKOMENDASYON:</h3>
     <ul id="recommendations">
         <?php
-            $recommendations = $conn->prepare("SELECT * FROM recommendations WHERE type_id = ?");
+            $recommendations = $conn->prepare("SELECT * FROM recommendations WHERE type_id = ? AND type = 'Disease' ");
             $recommendations->execute([$id]);
             $recommendations = $recommendations->fetchAll();
             foreach ($recommendations as $recommendation) {
@@ -40,7 +40,7 @@
     <h3>PAGBULONG:</h3>
     <ul id="treatment">
         <?php
-            $treatment = $conn->prepare("SELECT * FROM treatment WHERE type_id = ?");
+            $treatment = $conn->prepare("SELECT * FROM treatment WHERE type_id = ?  AND type = 'Disease' ");
             $treatment->execute([$id]);
             $treatment = $treatment->fetchAll();
             foreach ($treatment as $val) {

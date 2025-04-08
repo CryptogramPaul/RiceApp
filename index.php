@@ -110,19 +110,21 @@ body {
                         <div class="text-center col-xl-4 col-sm-6 col-md-4 ">
                             <div class="card" style="width: 17rem;" onclick="SintomasPage()">
                                 <img class="card-img-left" src="images/sintomas-logo.jpg">
-                                <!-- <div class="card-body">
-                                    <a href="symptoms.php" type="button" class="btn btn-secondary">Sintomas</a>
-                                </div> -->
+                                <!-- <div class="card-body"> -->
+                                    <!-- <a href="symptoms.php" type="button" class="btn btn-secondary">Sintomas</a> -->
+                                <!-- </div> -->
+                                <h2>Sintomas</h2>
                             </div>
                         </div>
                         &nbsp;&nbsp;&nbsp;&nbsp;
                         <div class="text-center col-xl-4 col-sm-6 col-md-6" onclick="PestePage()">
                             <div class="card " style="width: 17rem;">
                                 <img class="card-img-left" src="images/peste-logo.jpg">
-                                <!-- <div class="card-body">
-                                    <a href="pest.php" type="button" class="btn btn-secondary"
-                                        onclick="Peste()">Peste</a>
-                                </div> -->
+                                <!-- <div class="card-body"> -->
+                                    <!-- <a href="pest.php" type="button" class="btn btn-secondary"
+                                        onclick="Peste()">Peste</a> -->
+                                    <!-- </div> -->
+                                    <h2>Peste</h2>
                             </div>
                         </div>
                     </div>
