@@ -63,11 +63,11 @@
     <div class="col">
         <label for="category">Category</label>
         <select class="form-control form-control-sm" id="category" required>
+            <option <?php echo $category == "Uhay" ? 'selected':'' ?> value="Uhay">Uhay</option>
+            <option <?php echo $category == "Buko-Buko" ? 'selected':'' ?> value="Buko-Buko">Buko-Buko</option>
+            <option <?php echo $category == "Sanga" ? 'selected':'' ?> value="Sanga">Sanga</option>
+            <option <?php echo $category == "Paklang" ? 'selected':'' ?> value="Paklang">Paklang</option>
             <option <?php echo $category == "Dahon" ? 'selected':'' ?> value="Dahon">Dahon</option>
-            <option <?php echo $category == "Collar" ? 'selected':'' ?> value="Collar">Collar</option>
-            <option <?php echo $category == "Node" ? 'selected':'' ?> value="Node">Node</option>
-            <option <?php echo $category == "Neck" ? 'selected':'' ?> value="Neck">Neck</option>
-            <option <?php echo $category == "Panicle" ? 'selected':'' ?> value="Panicle">Panicle</option>
         </select>
     </div>
 </div>

@@ -3,20 +3,44 @@ require_once '../conn/connection.php';
 
 $DiseaseJson = $_POST['DiseaseJson'];    
 $json_disease = json_decode($DiseaseJson, true);
+$count = 0;
 
 $disease_ids = array();
 
+// foreach($json_disease as $value){
+//     $disease_ids[] = $value['disease'];
+// }
+
+// $disease_ids = [];
 foreach($json_disease as $value){
-    $disease_ids[] = $value['disease'];
+    // $disease_ids[] = $value['disease'];
+    
+    $symptoms_name = $value['symptoms'];
+    
+    $symptoms = $conn->prepare("SELECT disease_id FROM symptoms WHERE symptoms_name = ?  ");
+    $symptoms->execute([$symptoms_name]);
+
+    foreach($symptoms->fetchAll() as $key => $value){
+
+        $disease_ids[] = $value['disease_id'];
+    }
 }
+// $unique_disease_ids = array_unique($disease_ids);
+// print_r($unique_disease_ids);
+// exit();
 
 $disease_ids = array_unique($disease_ids);
 
+// foreach ($disease_ids as $disease_id) {
+//    echo $disease_id;
+// }
+
+// exit();
 foreach($disease_ids as $disease_id){
     $disease = $conn->prepare("SELECT * FROM disease WHERE disease_id = ?");
-    $disease->execute([$disease_id]);
-
+    $disease->execute(params: [$disease_id]);
     $fetch_result = $disease->fetchAll();
+    $count = $disease->rowCount();
     
     foreach($fetch_result as $key => $value){
 ?>
@@ -40,7 +64,7 @@ foreach($disease_ids as $disease_id){
 }
 ?>
 <?php
-    if ($disease->rowCount() == 0) {
+    if ($count == 0) {
 ?>
 <div id="NoRecordFound" class="col-12">
     <p class="text-center">No records found.</p>

@@ -59,7 +59,8 @@ function viewSelectedSymptoms() {
 
   $(".symptom-checkbox:checked").each(function () {
     const disease = $(this).attr("disease");
-    selectedItems.push({ disease: disease });
+    const symptoms = $(this).attr("symptoms");
+    selectedItems.push({ disease: disease, symptoms: symptoms });
   });
 
   let DiseaseJson = JSON.stringify(selectedItems);
@@ -117,17 +118,15 @@ function Sintomas() {
   );
 }
 
-
 function SintomasPage() {
-  window.location.href = "symptoms.php"
+  window.location.href = "symptoms.php";
 }
 function PestePage() {
-  window.location.href = "pest.php"
+  window.location.href = "pest.php";
 }
 function BackIndex() {
-  window.location.href = "index.php"
+  window.location.href = "index.php";
 }
 // function BackPeste() {
 //   window.location.href = "index.php"
 // }
-
