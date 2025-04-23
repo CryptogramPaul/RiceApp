@@ -28,20 +28,16 @@ body {
     background-image: url('images/background.jpg');
     background-size: cover;
     background-repeat: no-repeat;
-    /* background-attachment: fixed; */
+    height: 100%;
+
 }
 
 #home {
     height: 100vh;
-    /* display: flex;
-    align-items: center; */
+
     justify-content: center;
 
 }
-
-/* #home.container-fluid {
-    max-width: 500px;
-} */
 
 #home h1 {
     font-size: 4rem;
@@ -50,32 +46,36 @@ body {
 
 }
 
-.main-logo{
+.main-logo {
     width: 50px;
     height: 50px;
 }
 
-.div-logo{
+.div-logo {
     display: flex;
     align-items: center;
 }
 
-                   
-.text-background{
+
+.text-background {
     background-image: url('images/background-text.jpg');
-    background-size: cover; /* Ensures the background image covers the entire element */
-    background-position: center; /* Centers the background image */
-    height: 100vh; /* Example height, you can adjust this value as needed */
+    background-size: cover;
+    /* Ensures the background image covers the entire element */
+    background-position: center;
+    /* Centers the background image */
+    height: 100vh;
+    /* Example height, you can adjust this value as needed */
     text-align: center;
     display: flex;
     align-items: center;
     opacity: 0.7;
     /* background-color: rgba(255, 255, 255, 0.8); */
 }
-.action-btn{
+
+.action-btn {
     padding: 10px 20px;
     height: 100vh;
-    /* border-radius: 10px; */ 
+    /* border-radius: 10px; */
     display: flex;
     align-items: center;
     /* margin-right: 20px; */
@@ -86,9 +86,9 @@ body {
     <header id="header" class=" bg-success">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-md-12 d-flex div-logo" >
+                <div class="col-md-12 d-flex div-logo">
                     <div class="main-logo">
-                        <a href="#"><img src="images/frontlogo.png" alt="logo" height="" ></a>
+                        <a href="#"><img src="images/frontlogo.png" alt="logo" height=""></a>
                     </div>
                     &nbsp;&nbsp;&nbsp;&nbsp;
                     <!-- <h1 class="text-uppercase text-center">Rice Disease Identifier</h1> -->
@@ -111,7 +111,7 @@ body {
                             <div class="card" style="width: 17rem;" onclick="SintomasPage()">
                                 <img class="card-img-left" src="images/sintomas-logo.jpg">
                                 <!-- <div class="card-body"> -->
-                                    <!-- <a href="symptoms.php" type="button" class="btn btn-secondary">Sintomas</a> -->
+                                <!-- <a href="symptoms.php" type="button" class="btn btn-secondary">Sintomas</a> -->
                                 <!-- </div> -->
                                 <h2>Sintomas</h2>
                             </div>
@@ -121,10 +121,10 @@ body {
                             <div class="card " style="width: 17rem;">
                                 <img class="card-img-left" src="images/peste-logo.jpg">
                                 <!-- <div class="card-body"> -->
-                                    <!-- <a href="pest.php" type="button" class="btn btn-secondary"
+                                <!-- <a href="pest.php" type="button" class="btn btn-secondary"
                                         onclick="Peste()">Peste</a> -->
-                                    <!-- </div> -->
-                                    <h2>Peste</h2>
+                                <!-- </div> -->
+                                <h2>Peste</h2>
                             </div>
                         </div>
                     </div>
@@ -164,8 +164,8 @@ body {
                 </div>
             </div>
         </div> -->
-        
-        
+
+
     </section>
 
 </body>
