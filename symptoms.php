@@ -24,78 +24,6 @@
 
 </head>
 <style>
-    /* body {
-        background-image: url('images/background.jpg');
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
-    
-    }
-
-    #home {
-        height: 100vh;
-        justify-content: center;
-        
-    }
-
-
-
-    #home h1 {
-        font-size: 3rem;
-        color: white;
-
-    }
-
-    .card-img-top {
-        width: 100%;
-        height: 10vw;
-        object-fit: cover;
-    }
-
-    .back-btn {
-        background-color: #007bff;
-        color: white;
-        border: none;
-        border-radius: 20px;
-        padding: 10px 20px;
-        cursor: pointer;
-    }
-    .text-background{
-        background-image: url('images/background-text.jpg');
-        background-size: cover; 
-        background-position: center; 
-        height: 100vh; 
-        text-align: center;
-        align-items: center;
-        opacity: 0.9;
-    }
-
-    .div-logo{
-        display: flex;
-        align-items: center;
-    }
-    .main-logo{
-        width: 70px;
-        height: 70px;   
-        border-radius: 50%;
-    }
-    .text-label{
-        font-size: 50px;
-        color: white;
-    }
-    .search-div{
-        display: flex;
-        align-items: center;
-        justify-content: between;
-    }
-
-    .card-scroll {
-    display: flex;
-    overflow-x: auto;
-    gap: 16px;
-    padding-bottom: 20px;
-    } */
-
 body {
     font-family: sans-serif;
     background-image: url('images/background.jpg');
@@ -105,70 +33,71 @@ body {
     overflow: hidden;
 }
 
-.div-logo{
+.div-logo {
     display: flex;
     align-items: center;
 }
-.main-logo{
+
+.main-logo {
     width: 50px;
     height: 50px;
 }
 
 .main-container {
-  display: flex;
-  height: 100vh;
-  /* overflow: hidden; */
+    display: flex;
+    height: 100vh;
+    /* overflow: hidden; */
 }
 
 .sidebar {
-  width: 300px;
-  /* background-color: rgba(0, 0, 0, 0.3); semi-transparent overlay */
-  background-image: url('images/background-text.jpg');
-  background-size: cover;
-  color: white;
-  text-align: center;
-  padding: 40px 20px;
-  flex-shrink: 0;
-  opacity: 0.9;
-  transition: transform 0.3s;
+    width: 300px;
+    /* background-color: rgba(0, 0, 0, 0.3); semi-transparent overlay */
+    background-image: url('images/background-text.jpg');
+    background-size: cover;
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+    flex-shrink: 0;
+    opacity: 0.9;
+    transition: transform 0.3s;
 }
 
 .icon {
-  width: 250px;
-  height: 250px;
-  margin-bottom: 20px;
+    width: 250px;
+    height: 250px;
+    margin-bottom: 20px;
 }
 
 .content-area {
-  flex: 1;
-  padding: 20px;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
+    flex: 1;
+    padding: 20px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
 }
 
 .top-bar {
-  display: flex;
-  justify-content: flex-start;
-  gap: 10px;
-  margin-bottom: 20px;
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+    margin-bottom: 20px;
 }
 
 .top-bar input {
-  flex: 1;
-  padding: 10px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
+    flex: 1;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
 }
 
 .top-bar button {
-  background-color: #2d8a48;
-  color: white;
-  font-weight: bold;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
+    background-color: #2d8a48;
+    color: white;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
 }
 
 /* .card-scroll {
@@ -178,28 +107,29 @@ body {
  
 } */
 .card-scroll {
-  flex: 1;
-  overflow-x: auto;
-  padding-right: 10px; 
-  /* padding-bottom: 50px; */
-  margin-bottom: 70px;
+    flex: 1;
+    overflow-x: auto;
+    padding-right: 10px;
+    /* padding-bottom: 50px; */
+    margin-bottom: 70px;
 }
 
 .card-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 10px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
 }
+
 @media (max-width: 1024px) {
-  .card-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+    .card-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 @media (max-width: 600px) {
-  .card-grid {
-    grid-template-columns: 1fr;
-  }
+    .card-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* .modal-content{
@@ -211,9 +141,9 @@ body {
     <header id="header" class="bg-success">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-md-12 d-flex div-logo" >
+                <div class="col-md-12 d-flex div-logo">
                     <div class="main-logo">
-                        <a href="#"><img src="images/frontlogo.png" alt="logo" height="" ></a>
+                        <a href="#"><img src="images/frontlogo.png" alt="logo" height=""></a>
                     </div>
                     &nbsp;&nbsp;&nbsp;&nbsp;
                     <h2 class="text-uppercase text-center text-white">Rice Disease Identifier for Beginners</h2>
@@ -221,44 +151,7 @@ body {
             </div>
         </div>
     </header>
-    <!-- <section id="home">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-4 text-center">
-                    <div class="text-background">
-                        <img src="images/sintomas-logo.jpg" alt="square-image" class="mt-5"
-                            style="object-fit: cover 50%; border-radius: 30px; width: 250px; height: 250px; ">
-                            <br>
-                        <h1 class="text-center text-label">Sintomas</h1>
-                    </div>
-                </div>
-                <div class="col-8" id="sintomas-div">
-                    <div class="container">
-                        <div class="row">
-                            <div class="flex items-center p-2 rounded-2xl shadow-md max-w-xl ml-auto">
-                                <input 
-                                    type="text" 
-                                    placeholder="Search for symptoms..." 
-                                    class="w-3/4 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
-                                    onkeypress="handleSearch(event)" id="SymptomSearch"
-                                />
-                                
-                                <button 
-                                    class="px-6 py-2 bg-blue-600 text-white bg-success font-semibold rounded-lg hover:bg-blue-700 transition ml-4"
-                                    onclick="BackSymptoms()"
-                                >
-                                    Back
-                                </button>
-                            </div>
-                        </div>
-                        <div class="row card-scroll" id="LoadSymptoms">
 
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> -->
     <div class="main-container">
         <div class="sidebar">
             <img src="images/sintomas-logo.jpg" class="icon" />
@@ -271,22 +164,23 @@ body {
             <button>BACK</button>
             </div> -->
             <div class="flex items-center p-2 rounded-2xl shadow-md max-w-xl ml-auto">
-                <input 
-                    type="text" 
-                    placeholder="Search for symptoms..." 
+                <input type="text" placeholder="Search for symptoms..."
                     class="w-3/4 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
-                    onkeypress="handleSearch(event)" id="SymptomSearch"
-                />
-                
-                <button 
+                    onkeypress="handleSearch(event)" id="SymptomSearch" />
+
+                <button
                     class=" bg-blue-600 text-white bg-success font-semibold rounded-lg hover:bg-blue-700 transition ml-4"
-                    onclick="BackIndex()"
-                >
+                    onclick="BackIndex()">
                     Back
                 </button>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <button id="ViewSymptoms" data-bs-target="#selectedSymptomsModal" data-bs-toggle="modal"
+                    class="btn btn-success my-3 mx-2" title="View Symptoms" onclick="viewSelectedSymptoms()"
+                    disabled>Posible nga
+                    sakit</button>
             </div>
             <div class="card-scroll" id="LoadSymptoms">
-                
+
             </div>
         </div>
     </div>
